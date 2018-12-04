@@ -12,6 +12,7 @@
 * [Digital samtid](teori/digital-samtid.md)
 * [Øvingsoppgaver](teori/ovingsoppgaver.md)
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1)
+* [Databaser](teori/databaser.md)
 
 ## IT 1 timelogg
 
