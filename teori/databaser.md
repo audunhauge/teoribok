@@ -2,7 +2,10 @@
 
 ## PostgresSQL
 
-Postgres er en
+Postgres er en database-server som vi kan installere på egen maskin eller på en hosted-server.  
+Etter at den er satt opp riktig kan vi starte opp pgsql \(kommandovindu\) 
+
+### Lage en ny database
 
 ```sql
 CREATE DATABASE bib;
@@ -39,6 +42,8 @@ CREATE TABLE bok
 Vi bruker kommandoen \d til å vise hvilke tabeller vi har.  
 Vi kan også sjekke tabellen bok med \d bok   \(definisjon av bok\).
 
+### Legge inn data \(insert-spørring\)
+
 Vi kan nå registrere \(legge inn\) forfattere på denne måten:
 
 ```sql
@@ -52,5 +57,36 @@ select * from forfatter
 # viser alle registrerte forfattere
 ```
 
+### Velge ut data \(spørring\)
 
+```sql
+select * from forfatter where navn ~ 'ole';
+// finner alle forfattere som har navn som ligner på 'ole'
+
+select isbn,antallSider from bok where tittel ~ 'krig';
+// alle isbn til bøker som inneholder 'krig' i tittelen
+```
+
+### Slette data \(slette-spørring\)
+
+```sql
+delete from forfatter where navn ~ 'ole';
+// sletter alle forfattere som har navn som ligner på 'ole'
+
+delete from bok where tittel ~ 'krig';
+// sletter alle bøker som inneholder 'krig' i tittelen
+```
+
+### Velge fra to tabeller \(inner join\)
+
+```sql
+select b.tittel, f.navn from bok b inner join forfatter f 
+       on (b.forfatterid = f.forfatterid)
+       where b.tittel ~ 'krig';
+// finner tittel,forfatternavn for alle bøker 
+// som har en tittel som inneholder 'krig'       
+```
+
+For å koble sammen to tabeller i en spørring bruker vi **inner join**.  
+Spørringen kobler sammen tabellene bok og forfatter \(de har en relasjon\) og finner verdiene som hører sammen.
 
