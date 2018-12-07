@@ -1,5 +1,97 @@
 # Øvingsoppgaver
 
+## Lag et klassebilde
+
+![Klassebilde fra NASA](../.gitbook/assets/astro.jpg)
+
+Oppgaven er å legge et grid over bildet slik at hver person får en gul firkant i nærheten av ansiktet. Under finner du en css som kommer et stykke på vei.  
+Din oppgave er å tilpasse css reglene slik at firkantene kommer nærmere ansiktene. Det er tilstrekkelig at firkanten delvis overlapper ansiktet.  
+Merk at bakerste rad har 11 personer - der kan du legge til en egen firkant \(utenom grid-et\).
+
+{% code-tabs %}
+{% code-tabs-item title="astro.css" %}
+```css
+#astro {
+   
+    background-image: url(../bilder/astro.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 477px;
+}
+
+#fjes {
+    position: relative;
+    left: 82px;
+    top:51px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    height: 200px;
+    width: 688px;
+}
+
+.fjes {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: solid yellow 1px;
+}
+
+.fjes:nth-child(n + 11) {
+   left: 13px;
+}
+
+.fjes:nth-child(n + 21) {
+    left: -24px;
+    top: -28px;
+ }
+
+ .fjes:nth-child(n + 24) {
+    left: -1px;
+    top: -13px;
+ }
+```
+{% endcode-tabs-item %}
+
+{% code-tabs-item title="astro.html" %}
+```markup
+
+<body>
+    <div id="astro">
+        <div id="fjes">
+            <div class="fjes"></div>
+            ... (3*10)
+```
+{% endcode-tabs-item %}
+
+{% code-tabs-item title="astro.js" %}
+```javascript
+function setup() {
+  let lyd = document.getElementById("lyd");
+  let divAstro = document.getElementById("astro");
+  divAstro.addEventListener("click", spill);
+ 
+  function spill() {
+    lyd.play();
+  }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+Du må lage et nytt prosjekt og legge inn filene over.  
+Sørg for at mappe-strukturen stemmer med url i css.
+
+Bruk egenskapen title i div elementene slik at navn på astronautene vise ved peker over \(dette skjer automatisk for element som har title\).
+
+Lag en animasjon for rutene \(.fjes\) slik at firkantene blir til rundinger - varighet 1s  
+ved :hover  \(muspeker over firkanten\).
+
+Bruk filen under til å legge til et audio element. Sørg for at det har id="lyd".  
+Javascriptet vil spille av lyden ved klikk på bakgrunnen.
+
+{% file src="../.gitbook/assets/happy.mp3" caption="julemusikk" %}
+
 ## Lag en julekalender
 
 ### Kalender i html og css
@@ -93,7 +185,7 @@ Lag **avatar.css** og lag regler slik at:
 
 ## Animasjon med spritesheet
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image.png)
 
 Bruk dette bildet til å lage en animasjon
 

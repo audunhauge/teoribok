@@ -18,7 +18,7 @@
 
 Datamaskinens hovedkort er et kretskort som binder sammen de andre komponentene i maskinen. På hovedkortet er det en databuss som kobler sammen de komponentene som må sende signaler til hverandre.
 
-![Hovedkort for en pc](../.gitbook/assets/image%20%281%29.png)
+![Hovedkort for en pc](../.gitbook/assets/image%20%283%29.png)
 
 ### **Ram**
 
@@ -38,13 +38,13 @@ I diagrammet over viser svarte piler dataflyt, røde er kontrollsignaler.
 Rendrer det som skal vises på skjermen.  
 Moderne skjermkort innholder en egen GPU \(graphics processing unit\) som kan være like avanserte som hovedprosessoren. Den er spesialisert på å utføre beregninger som trengs for å vise 3D grafikk.
 
-![Nvidia GeForce GTX 650 grafikk-kort](../.gitbook/assets/image%20%283%29.png)
+![Nvidia GeForce GTX 650 grafikk-kort](../.gitbook/assets/image%20%285%29.png)
 
 ### **Nettverkskort/WiFi**
 
 Sender signaler over kabel eller trådløst, mellom maskiner.
 
-![En mikroprosessor med wifi - det svarte feltet &#xF8;verst er antennen.](../.gitbook/assets/image.png)
+![En mikroprosessor med wifi - det svarte feltet &#xF8;verst er antennen.](../.gitbook/assets/image%20%284%29.png)
 
 ### **Skjerm**
 
