@@ -45,4 +45,5 @@
 * [Uke 43](it-3-timelogg/uke-43.md)
 * [Uke 45-46](it-3-timelogg/uke-45-46.md)
 * [Uke 48](it-3-timelogg/uke-48.md)
+* [Uke 49](it-3-timelogg/uke-49.md)
 
