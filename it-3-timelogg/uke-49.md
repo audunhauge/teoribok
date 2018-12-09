@@ -32,6 +32,20 @@ Samme teknikk virker også for video.
 
 En arrow function har formen : `(x) => x+2` . Eksemplet viser en funksjon som tar en parameter \(x\) og gir tilbake verdien x+2. Merk at funksjonen ikke har navn og at du ikke trenger å skrive **return**.  
 I funksjonen **spillOgStopp** over bruker vi en arrow function på denne måten - den trenger ikke navn da setTimeout tar en funksjon som parameter \(og setter navn på den selv\).  
+Dersom funksjonskroppen består av flere linjer - da må en arrow function skrives slik:
+
+```javascript
+const abcFormel = (a,b,c) => {
+  let dd = b * b - 4 * a * c;
+  if (dd >= 0 && a !== 0) {
+    let d = Math.sqrt(dd);
+    return { x0: (-b - d)/(2*a), x1:(-b + d)/(2*a) }
+  }
+  return { x0:NaN, x1:NaN, err:"Ingen løsning" }
+}
+// Merk at en arrow function MÅ HA RETURN dersom du gir den en kropp {..}
+```
+
 Dersom vi trenger navn på funksjonen bruker vi en av følgende:  
 `let dobbel = (x) => 2 * x;`  
 `const trippel = (x) => 3 * x;`
