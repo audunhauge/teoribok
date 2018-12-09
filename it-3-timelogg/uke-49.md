@@ -52,7 +52,7 @@ initialsNiceName ("ole petter olsen") => "O.P. Olsen"
 {% endcode-tabs-item %}
 
 {% code-tabs-item title="Løsning" %}
-```
+```javascript
 // bigName  ("ole") => "OLE"
 const bigName = (n) => n.toUpperCase();
 
