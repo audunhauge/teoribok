@@ -31,3 +31,55 @@
 | s.trimStart | " abc ".trimStar\(\) === "abc " |
 | s.trimEnd | " abc ".timEnd\(\) === " abc" |
 
+## Metoder for å lage strenger med bestemt tekst
+
+### Lime sammen tekstbiter
+
+Du kan lime sammen tekstbiter slik: `let a="fire"; let b = "en" + a + "to"` .  
+Her vil du få teksten "enfireto" som resultat. Dersom du trenger mellomrom må du ta det med eksplisitt i strengen: "fire ".
+
+### Variabler i teksten
+
+Med det nye \`backtick\` hermetegnet kan du få verdier fra variable inn i tekst slik:
+
+```javascript
+let navn = "ole";
+let alder = 22;
+let msg = `Velkommen ${ole}, du er ${alder} år gammel.`;
+```
+
+### Erstatte markører i tekst
+
+```javascript
+let data = {  plass:"Oslo", antall:4, pris:5600 };
+let pattern = `Velkommen til #plass#, du har bestillt
+  #antall# netter med overnatting. Prisen blir #pris#`;
+let msg = pattern.replace(/#(\w+)#/g, (m,s) => data[s] || m );
+```
+
+Merk at du kan velge markører helt fritt, /\#\(\w+\)/g vil matche \#plass - trenger ikke \# både før og etter. \(\w+\) vil matche en eller flere vanlige bosktaver a..zA..Z.  
+Poenget med   **\|\| m**  er at dersom data\[s\] === undefined -  da endres ikke teksten.  
+Du ser da lett feil fordi msg vil inneholde \#navn\# \(navn finnes ikke i data\).
+
+## Eksempler
+
+### Erstatte tekst
+
+```javascript
+// erstatte alle små tall (1,2..9) med tallord
+let rawMsg = "Du har 1 bil og kan ta 4 passasjerer"
+let tall2tale = { 1:" en ", 2:" to ", 4:" fire " };  
+// ikke komplett ...
+let niceMsg = rawMsg.replace(/ (\d) /g, (m,s) => tall2tale[s] || m);
+// niceMsg === "Du har en bil ..."
+```
+
+Merk at vi bare erstatter tall med space rundt.
+
+### Plukke ut siste bit av en tekst
+
+```javascript
+let s = "finn siste tre bokstaver";
+let siste = s.substr(-3);  // siste === "ver"
+```
+
