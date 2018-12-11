@@ -30,6 +30,7 @@
 * [Beregninger](it3/beregninger.md)
 * [Betingelser](it3/betingelser.md)
 * [Løkker](it3/lokker.md)
+* [String](it3/string.md)
 * [Array](it3/array.md)
 * [Map og Set](it3/map-og-set.md)
 * [Funksjoner](it3/funksjoner.md)
