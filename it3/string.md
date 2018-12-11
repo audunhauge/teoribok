@@ -14,7 +14,7 @@
 | s.padEnd | "1.0".padEnd\(6,"0"\) === "1.0000" |
 | s.padStart | "1".padStart\(4,"0"\) === "0001" |
 | s.repeat | "12".repeat\(4\) === "12121212" |
-| s.replace | "søvnløs".replace\(/ø/g, "o"\) === "sovlos" |
+| s.replace | "søvnløs".replace\(/ø/g, "o"\) === "sovnlos" |
 |  | "søvnløs".replace\("ø", "o"\) === "sovnløs" |
 | s.search | "og dermed".search\(/er/\) === 4  // -1 dersom ikke funnet |
 | s.slice | "abcdefg".slice\(1\) === "bcdefg" |
