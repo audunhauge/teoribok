@@ -38,6 +38,7 @@
 * [Klasser](it3/klasser.md)
 * [Eksamensoppgaver](it3/eksamensoppgaver.md)
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it2)
+* [Web API](it3/web-api.md)
 
 ## IT 2 TIMELOGG
 
