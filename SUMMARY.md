@@ -36,9 +36,9 @@
 * [Funksjoner](it3/funksjoner.md)
 * [Objekter](it3/objekter.md)
 * [Klasser](it3/klasser.md)
+* [Web API](it3/web-api.md)
 * [Eksamensoppgaver](it3/eksamensoppgaver.md)
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it2)
-* [Web API](it3/web-api.md)
 
 ## IT 2 TIMELOGG
 
