@@ -39,6 +39,7 @@
 * [Web API](it3/web-api.md)
 * [Eksamensoppgaver](it3/eksamensoppgaver.md)
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it2)
+* [Custom web components](it3/custom-web-components.md)
 
 ## IT 2 TIMELOGG
 
