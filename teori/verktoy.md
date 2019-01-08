@@ -109,7 +109,7 @@ Rediger filer som vanlig - før timen er slutt klikker du på **Source Control**
 Her vil du se en liste over filer som er endra - klikk på **+** knappen over lista.  
 Klikk nå på ok knappen \( ✓\)  \(se bildet under\) , skriv en liten melding om hva endringen går ut på \("redigerte noe"\). Klikk deretter på \(...\)  \(se bildet under\) knappen og velg **push**. Du må nå oppgi brukernavn og passord for din github.
 
-![Knapper for GIT i vscode](../.gitbook/assets/image%20%281%29.png)
+![Knapper for GIT i vscode](../.gitbook/assets/image%20%282%29.png)
 
   
 

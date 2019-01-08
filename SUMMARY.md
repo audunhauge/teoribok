@@ -13,6 +13,7 @@
 * [Øvingsoppgaver](teori/ovingsoppgaver.md)
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1)
 * [Databaser](teori/databaser.md)
+* [Tegning i Blender](teori/tegning-i-blender.md)
 
 ## IT 1 timelogg
 
