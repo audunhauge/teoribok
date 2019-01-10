@@ -8,5 +8,5 @@ Det kan lønne seg å settte opacity til ca 0.5 slik at bildet ikke dominerer fo
 
 Tegn oppå bildet og sett på farger.
 
-![Ferdig tegning](../.gitbook/assets/image%20%284%29.png)
+![Ferdig tegning](../.gitbook/assets/image%20%285%29.png)
 
