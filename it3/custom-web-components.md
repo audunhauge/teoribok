@@ -8,17 +8,16 @@ Overskrift med Tittel, navn, meny og info
 {% code-tabs-item title="Homebar.js" %}
 ```javascript
 class HomeBar extends HTMLElement {
-  _root: Object;
   constructor() {
     super();
-    const title = this.getAttribute("title") || "Demo";
+    const heading = this.getAttribute("heading") || "Demo";
     const username = this.getAttribute("username") || "Ole";
     const info = this.getAttribute("info") || "4 ledige";
     const menu = this.getAttribute("menu") || "Home";
     this._root = this.attachShadow({ mode: "open" });
     this._root.innerHTML = `
       <div id="home">
-        <div id="title">${title}</div>
+        <div id="heading">${heading}</div>
         <div id="menu">${menu}</div>
         <div id="username">${username}</div>
         <div id="info">${info}</div>
@@ -49,7 +48,7 @@ class HomeBar extends HTMLElement {
         `;
   }
   static get observedAttributes() {
-    return ["username","title","menu","info"];
+    return ["username","heading","menu","info"];
   }
   attributeChangedCallback(name, oldValue, newValue) {
     this._root.querySelector("#"+name).innerHTML = newValue;
