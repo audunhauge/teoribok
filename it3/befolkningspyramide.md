@@ -58,8 +58,12 @@ Søylene skal stables slik at de yngste er nederst, menn til venstre og kvinner 
 Lag en webkompononent som tegner et slikt diagram:
 
 ```text
-<pyramide land="norge" aar="1950"></pyramide>
+<pop-pyr country="Norway" year="1950"></pop-pyr> 
 ```
+
+Webkomponenten finner du som [pop-pyr](custom-web-components.md#en-befolkningspyramide) .  
+Bruk denne i en løsning hvor du kan sammenligne tre forskjellige land.  
+Slik komponenten er nå - så vises ikke skala \(max av antall menn\). Prøv å forbedre komponenten slik at en skala vises.
 
 Du kan også bruke canvas eller svg til å tegne diagrammet \(utvidet oppgave\).
 
