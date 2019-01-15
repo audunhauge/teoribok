@@ -73,3 +73,36 @@ for (i=0; i<antallElever; i+=1) {
 
 Her brukes _break_ til å bryte ut av en løkke som leter gjennom en tabell.
 
+## **while løkke**
+
+```javascript
+let i = 0;
+while (i<10) {
+    // kode som gjentas 10 ganger
+    i++;
+}
+
+// eksempel som venter på en betingelse
+let betingelse = true;
+while(betingelse) {
+   // forskjellig kode
+   betingelse = testOmNoeHarSkjedd();
+}
+// Denne passer best som while
+```
+
+Merk at en while løkke kan skrives om til en for løkke slik:
+
+```javascript
+let i = 0;
+while (i<10) {
+    // kode som gjentas 10 ganger
+    i++;
+}
+
+// blir til
+for (let i=0; i<10; i++) {
+  // kode som gjentas
+}
+```
+
