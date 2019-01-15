@@ -189,3 +189,8 @@ Lag **avatar.css** og lag regler slik at:
 
 Bruk dette bildet til å lage en animasjon
 
+Lag en div med passende dimensjoner for en frame \(et bilde i en film kalles en frame\) fra bildet \(150 x 200\).  
+Lag en css-animasjon slik at dette bildet glir over skjermen \(ca 4s\).
+
+
+
