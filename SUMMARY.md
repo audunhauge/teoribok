@@ -44,6 +44,7 @@
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it2)
 * [Custom web components](it3/custom-web-components.md)
 * [Befolkningspyramide](it3/befolkningspyramide.md)
+* [Canvas](it3/canvas.md)
 
 ## IT 2 TIMELOGG
 
