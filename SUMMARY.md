@@ -23,6 +23,7 @@
 * [Uke 44](it-2-timelogg/uke-44.md)
 * [Uke 45](it-2-timelogg/uke-45.md)
 * [Uke 46](it-2-timelogg/uke-46.md)
+* [Uke 48](it-2-timelogg/uke-48.md)
 
 ## IT2
 
