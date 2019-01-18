@@ -192,5 +192,107 @@ Bruk dette bildet til å lage en animasjon
 Lag en div med passende dimensjoner for en frame \(et bilde i en film kalles en frame\) fra bildet \(150 x 200\).  
 Lag en css-animasjon slik at dette bildet glir over skjermen \(ca 4s\).
 
+## Sjakkbrikker i html og css
+
+Lag en ny mappe med navnet **sjakk** - lag sjakk.html og start som vanlig med !
+
+```text
+#brett
+   div*64
+```
+
+I koden over bruker jeg emmet til å lage en div\#brett som inneholder 64 div-er  
+Legg til en css og bruk denne regelen for \#brett:
+
+```css
+#brett {
+    border: solid black 1px;
+    width: calc(50px * 8);
+    height: calc(50px * 8);
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+#brett > div {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+}
+```
+
+Lag regler slik at du får et sjakkbrett - under er en del hint.  
+Disse reglene lager et sjakkbrett hvor de to første radene er korrekt.  
+Pønsk ut variasjoner av disse slik at hele brettet bilr riktig \(endre på tallene +9 og +10\)
+
+```css
+#brett div:nth-child(odd) {
+    background-color: gray;
+} /* annen hver rute blir grå - virker for første rad*/
+
+#brett div:nth-child(2n+9) {
+    background-color: white;
+}   /* regel som fikser andre rad */
+#brett div:nth-child(2n+10) {
+    background-color: gray;
+}
+```
+
+Neste trinn er å få vist brikkene, css reglene under lager en bonde dersom vi setter class="bonde"
+
+```css
+div.bonde:after {
+    content: "";
+    position: absolute;
+    top:30px;
+    left: calc((50px - 30px) / 2);
+    width: 30px;
+    height: 10px;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+div.bonde:before {
+    content: "";
+    position: absolute;
+    top:5px;
+    left: calc((50px - 25px) / 2);
+    width: 25px;
+    height: 30px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px gray;
+}
+
+div.bonde.svart:before {
+  background-color: black;
+  box-shadow: 2px 2px 22px white
+}
+
+div.bonde.svart:after {
+    background-color: black;
+    box-shadow: 2px 2px 20px white
+ }
+```
+
+Lag tilsvarende regler slik at du kan vise et komplett sjakkbrett.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
