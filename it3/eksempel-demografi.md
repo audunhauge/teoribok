@@ -37,25 +37,23 @@ class Land {
 let personListe = [ ];
 
     let inpNavn = document.getElementById("navn");
-    let inpAlder = document.getElementById("alder");
-    let inpAdresse = document.getElementById("adresse");
-    let btnLagre = document.getElementById("lagre");
-    let divOversikt = document.getElementById("oversikt");
+    let inpBefolkning = document.getElementById("befolkning");
+    // ... flere linjer
     btnLagre.addEventListener("click", lagreData);
 
     function lagreData() {
         let navn = inpNavn.value;
-        let alder = inpAlder.value;
-        let adresse = inpAdresse.value;
-        let person = new Person(navn,alder,adresse);
-        personListe[0] = person;
+        let befolkning = inpBefolkning.value;
+        //  .. flere linjer
+        let land = new Land(navn,befolkning, /* flere verdier */ );
+        landListe.pushperson;
         visListe();
     }
 
     function visListe() {
         let innhold = "";
-        for (let p of personListe) {
-           innhold += `Navn:${p.navn}  Alder:${p.alder} Adresse:${p.adresse}`;
+        for (let l of landListe) {
+           innhold += `Navn:${l.navn}  Befolkning:${l.befolkning} ....`;
         }
         innhold += "";
         divOversikt.innerHTML = innhold;
