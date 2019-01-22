@@ -46,7 +46,7 @@ class Land {
         let befolkning = inpBefolkning.value;
         //  .. flere linjer
         let land = new Land(navn,befolkning, /* flere verdier */ );
-        landListe.pushperson;
+        landListe.push(person);
         visListe();
     }
 
