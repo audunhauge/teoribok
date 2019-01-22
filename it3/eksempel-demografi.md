@@ -34,7 +34,7 @@ class Land {
 {% code-tabs %}
 {% code-tabs-item title="function setup\(\)" %}
 ```javascript
-let personListe = [ ];
+    let landListe = [ ];
 
     let inpNavn = document.getElementById("navn");
     let inpBefolkning = document.getElementById("befolkning");
