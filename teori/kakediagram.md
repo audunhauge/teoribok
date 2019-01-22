@@ -19,16 +19,22 @@ class PieChart extends HTMLElement {
         let b = this.getAttribute("height");
         let width =  a || b || 250;
         let height =  b || a || 250;
+        let heading = this.getAttribute("heading") || "PieChart";
         let inner = `
         <div id="pie">
-          <div id="heading"></div>
+          <div id="heading">${heading}</div>
           <canvas id="paper" width=${width} height=${height}></canvas>
         </div>
         <style>
+          #heading {
+              font-size: 1.2em;
+              width: ${width}px;
+              text-align:center;
+              color: blue;
+          }
           #paper {
               width: ${width}px;
               height: ${height}px;
-              border: solid green 1px;
           }
         </style>
         `;
