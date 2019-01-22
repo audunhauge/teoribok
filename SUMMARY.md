@@ -46,6 +46,7 @@
 * [Custom web components](it3/custom-web-components.md)
 * [Befolkningspyramide](it3/befolkningspyramide.md)
 * [Canvas](it3/canvas.md)
+* [Eksempel - Demografi](it3/eksempel-demografi.md)
 
 ## IT 2 TIMELOGG
 
