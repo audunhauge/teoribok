@@ -16,6 +16,7 @@
 * [Tegning i Blender](teori/tegning-i-blender.md)
 * [Befolkningspyramide](teori/befolkningspyramide.md)
 * [Kakediagram](teori/kakediagram.md)
+* [SQL - spørringer](teori/sql-sporringer.md)
 
 ## IT 1 timelogg
 
