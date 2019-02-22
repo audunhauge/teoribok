@@ -278,21 +278,35 @@ div.bonde.svart:after {
 
 Lag tilsvarende regler slik at du kan vise et komplett sjakkbrett.
 
+## Komplett datamaskin
 
+Du skal lage en nettside som selger komponenter til datamaskiner.  
+Brukeren skal kunne velge mellom fem forskjellige hovedkort.  
+Deretter skal hun kunne velge CPU og RAM som passer \(sjekk at dette stemmer\).  
+Bruker skal kunne velge SSD og/eller Harddisk.
 
+### Valg av operativsystem
 
+Bruker skal kunne velge mellom fem forskjellige operativsystem \(windows + 4 linux varianter\).  
+Dersom windows velges skal han kunne velge mellom 2 typer \(home/pro\).  
+Dersom linux da er valget ubuntu, debian, linux-mint eller kali.
 
+### Utforming
 
+Butikken skal ha en felles menylinje \(lik for alle sidene\).  
+På 1. side må bruker velge hovedkort  
+   Her må du vise informasjon om de forskjellige typene.  
+På 2. side velges CPU og RAM  
+   Ta med beskrivelse av CPU og RAM \(virkemåte og forskjell på typer\)  
+På 3. side velges SSD og/eller hdd  
+   Ta med info slik at det blir lett for bruker å ta et begrunna valg.  
+På 4. side velges operativsystem.  
+   Beskriv de forskjellige OS - ta med pris  
+Til slutt en side hvor bruker må skrive inn navn, adresse og betalingsinfo.  
+Brukeren må velge mellom å bygge selv, eller at maskinen skal monteres.
 
+### Lagring av bestilling
 
-
-
-
-
-
-
-
-
-
-
+Lag en erd-modell som kan brukes til å lagre data om maskinen som skal bygges.  
+Her tenker vi mest på tekniker som skal bygge maskinen \(oversikt over komponenter\).
 
