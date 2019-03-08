@@ -35,15 +35,14 @@ I funksjonen **spillOgStopp** over bruker vi en arrow function på denne måten 
 Dersom funksjonskroppen består av flere linjer - da må en arrow function skrives slik:
 
 ```javascript
-const abcFormel = (a,b,c) => {
-  let dd = b * b - 4 * a * c;
-  if (dd >= 0 && a !== 0) {
-    let d = Math.sqrt(dd);
-    return { x0: (-b - d)/(2*a), x1:(-b + d)/(2*a) }
-  }
-  return { x0:NaN, x1:NaN, err:"Ingen løsning" }
+const abc = (a,b,c) => {
+   let dd = b*b-4*a*c;
+   if (dd >=0 && a !== 0) {
+     let d = Math.sqrt(dd);
+     return ({x1:(-b+d)/(2*a), x2:(-b-d)/(2*a) });
+   } else {
+     return ({x1:NaN, x2:NaN});
 }
-// Merk at en arrow function MÅ HA RETURN dersom du gir den en kropp {..}
 ```
 
 Dersom vi trenger navn på funksjonen bruker vi en av følgende:  
