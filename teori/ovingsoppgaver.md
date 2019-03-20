@@ -488,9 +488,5 @@ input[type="radio"]:checked + div {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-
-
-
-
-
+Link til ferdig versjon \(med en del forbedringer\)  [demo](https://audunhauge.github.io/it1/Quiz/quiz.html) .
 
