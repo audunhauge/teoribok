@@ -310,3 +310,187 @@ Brukeren må velge mellom å bygge selv, eller at maskinen skal monteres.
 Lag en erd-modell som kan brukes til å lagre data om maskinen som skal bygges.  
 Her tenker vi mest på tekniker som skal bygge maskinen \(oversikt over komponenter\).
 
+## Quiz i ren css \(nesten\)
+
+Vi skal prøve å lage en quiz i ren html og css. Poengberegning kan vi ikke løse uten javascript, men navigering og retting \(vis riktig/feil svar\) kan vi få til med bare html og css.  
+Planen er at spørsmålene vises ett om gangen og at en kan bla til neste spørsmål - det skal ikke være mulig å ombestemme seg \(et kryss kan ikke fjernes\) da en ellers lett kan "sjekke" alle alternativer.  
+En skal heller ikke kunne bla tilbake \(dette bare for å vise hvordan en slik sperre kan lages\).
+
+### HTML for en quiz
+
+Vi lager en enkel html og css med følgende innhold:
+
+{% code-tabs %}
+{% code-tabs-item title="quiz.html" %}
+```markup
+<div class="quiz" id="quiz">
+  <label class="qnum count" for="r1">Qnr</label>
+      <input type="radio" name="r" id="r1" checked />
+      <div class="question count">
+        <h4>Hvilke land er med i EU</h4>
+        <ul>
+          <li>
+            <label for="">Holland</label>
+            <input class="riktig" type="checkbox" />
+            <label for="">Riktig</label>
+          </li>
+          <li>
+            <label for="">Spania</label>
+            <input class="riktig" type="checkbox" />
+            <label for="">Riktig</label>
+          </li>
+          <li>
+            <label for="">UK</label>
+            <input type="checkbox" />
+            <label for="">Tja litt usikkert</label>
+          </li>
+          <li>
+            <label for="">Norge</label>
+            <input type="checkbox" />
+            <label for="">Galt</label>
+          </li>
+          <li>
+            <label for="">Danmark</label>
+            <input class="riktig" type="checkbox" />
+            <label for="">Riktig</label>
+          </li>
+          <li>
+            <label for="">Russland</label>
+            <input type="checkbox" />
+            <label for="">Galt</label>
+          </li>
+        </ul>
+      </div>
+</div>
+```
+{% endcode-tabs-item %}
+
+{% code-tabs-item title="quiz.css" %}
+```css
+input[type="checkbox"] + label {
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked + label {
+  opacity: 1;
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+HTML koden vår lager en div.quiz for hele quizen, hvert spørsmål ligger inne i en div.question.  
+Spørsmålet ligger i en H4, svaralternativene i en ul.  
+Alternativene bygges opp av en &lt;label&gt; med teksten som skal velges, en &lt;input\[checkbox\]&gt; og en ny label med tekst for tilbakemelding. Riktiv svar er markert med klasse for input-elementet \(riktig\).
+
+I CSS lager vi en regel som skjuler tilbakemelding for alternativer som ikke er valgt \(opacity 0/1\).
+
+Legg til flere spørsmål \(kopier hele div.question og rediger\). Legg til minst tre nye.
+
+### Nummerering av spørsmål
+
+Vi ønsker at alle spørsmål skal vises med "Question 1" og nummereres automatisk \(1,2,3 ... \).  
+Under er en del hint \(og løsnigsforslag\). Prøv selv før du sjekker løsning.
+
+{% code-tabs %}
+{% code-tabs-item title="Hjelpehint" %}
+```text
+google følgende:
+  css counter
+  css before
+```
+{% endcode-tabs-item %}
+
+{% code-tabs-item title="Løsningsforslag.css" %}
+```css
+/* lag en ny teller som starter på 0 
+   navnet (rnum) kan du velge helt fritt
+   rnum fordi det er radio nummer n (antall radioknapper)
+*/
+div.quiz {
+  counter-reset: rnum 0;
+}
+
+div.question.count::before {
+  content: "Question " counter(rnum);
+  font-size: 1.2em;
+  color: blue;
+}
+
+/* øk verdien på telleren */
+div.question.count {
+    counter-increment: rnum;
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+### Vise/skjule tilbakemelding for alternativer
+
+Vi skal nå skrive en regel i css slik at tilbakemelding blir vist for valgte alternativer. I CSS har vi to selectors som velger siblings \(søsken\) - dvs elementer som er barn av samme element og som er inntil hverandre \(+\) eller bare søsken \(~\).
+
+**input + label** vil velge en label som følger **rett etter** en input \(vi kan bare velge element som følger i html - ikke tidligere element\).   
+**input ~ label** vil velge alle element\(label\) som følger etter input \(og er barn av samme element som denne\).  
+**input:checked** vil velge alle input elementer som er markert med kryss \(valg\).  
+Du kan bruke opacity:0 til å skjule en tekst, opacity:1 for å vise \(unngår reflow\).
+
+Bruk teknikkene over til å lage regler slik at tilbakemelding vises ved valg av svar-alternativ.
+
+{% code-tabs %}
+{% code-tabs-item title="hint" %}
+```text
+Prøv selv før du sjekker løsningsforslag.
+google
+  css sibling selector
+  css input checked
+```
+{% endcode-tabs-item %}
+
+{% code-tabs-item title="Løsningsforslag" %}
+```css
+
+input[type="checkbox"] + label {
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked + label {
+  opacity: 1;
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+
+
+### Vise ett spørsmål om gangen - velg spørsmål med radioknapp
+
+Vi bruker nesten samme teknikk til å vise ett spørsmål om gangen.  
+Vi lager en regel som skjuler alle div-er som kommer etter en input\[type="radio\].  
+Vi lager en ny regel \(som er mer presis/spesifikk\) som viser div rett etter en input\[type="radio"\] som er checked \(valgt\). Husk at dersom to regler krangler - så vinner den mest presise.
+
+{% code-tabs %}
+{% code-tabs-item title="hint" %}
+```text
+Prøv selv først!
+Bruk sibling selector +
+```
+{% endcode-tabs-item %}
+
+{% code-tabs-item title="Løsningsforslag" %}
+```css
+input[type="radio"] + div {
+  display: none;
+}
+input[type="radio"]:checked + div {
+  display: block;
+  margin-top: 50px;  /* gir plass til ::before */
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+
+
+
+
+
+
