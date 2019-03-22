@@ -29,7 +29,7 @@ Merk at enkle const slik som BREDDE,NAVN,FERDIG ikke kan modifiseres.
 * Denne koden er gyldig: TABELL.push\(4\); // endrer innholdet i TABELL
 * Denne er ugyldig: TABELL = \[1,2,3,4\]; // Lager ny tabell
 
-### Interaksjon med skjema/html <a id="interaksjon-med-skjemahtml"></a>
+## Interaksjon med skjema/html
 
 ```text
 // hent verdi fra tekstfelt
@@ -54,7 +54,7 @@ function beregning(event) {
 }
 ```
 
-### Legge html elementer til en div <a id="legge-html-elementer-til-en-div"></a>
+## Legge html elementer til en div
 
 ```text
 let divMain = document.getElementById("main");
@@ -66,7 +66,7 @@ divMain.appendChild(btnKlikkMeg);
 // du må også lage funksjonen duKlikkaMeg
 ```
 
-### Beregninger <a id="beregninger"></a>
+## Beregninger
 
 ```text
 let verdi = (12 + 3) / 4;
@@ -74,7 +74,7 @@ let vinkel = Math.asin(3/4);
 let minst = Math.min(verdi, vinkel);
 ```
 
-### Betingelser og valg <a id="betingelser-og-valg"></a>
+## Betingelser og valg
 
 **enkel if**
 
@@ -98,11 +98,11 @@ if ( betingelse1 ) {
 // kan gjentas med så mange betingelser som nødvendig
 ```
 
-### Løkker <a id="l&#xF8;kker"></a>
+## Løkker
 
 **for løkke**
 
-```text
+```javascript
 for (let i=0; i < 10; i++) {
     // kode som gjentas 10 ganger
 }
@@ -110,7 +110,7 @@ for (let i=0; i < 10; i++) {
 
 **while løkke**
 
-```text
+```javascript
 let i = 0;
 while (i<10) {
     // kode som gjentas 10 ganger
@@ -120,7 +120,7 @@ while (i<10) {
 
 **travasering av array**
 
-```text
+```javascript
 // vi antar at tabell er en array
 let antall = tabell.length;
 for (let i=0; i < antall; i++) {
@@ -131,7 +131,7 @@ for (let i=0; i < antall; i++) {
 
 En moderne variant \(es6\)
 
-```text
+```javascript
 // vi antar at tabell er en array
 for (let verdi of tabell) {
     // kode som gjør noe med hver verdi
@@ -140,7 +140,7 @@ for (let verdi of tabell) {
 
 **finn minste / største verdi i en array**
 
-```text
+```javascript
 // vi antar at tabell er en array av tall
 // f.eks tabell = [1,2,3-5,8,0,1222]
 let minst = Math.min( ... tabell);
@@ -158,18 +158,18 @@ I eksemplene under antar vi at funksjonen **behandle** tar seg av bearbeiding av
 
 Koden under bruker fetch metoden som støttes av moderne nettlesere slik som Chrome og Firefox.
 
-```text
+```javascript
 let url = "elevliste.json";
 fetch(url).then(r => r.json())
   .then(data => behandle(data))
   .catch(e => console.log("Dette virka ikke."))
 ```
 
-**bruk av xhr**
+~~**bruk av xhr**~~
 
-Denne metoden virker i alle nettlesere, også de som er gått ut på dato.
+~~Denne metoden virker i alle nettlesere, også de som er gått ut på dato.~~
 
-```text
+```javascript
 var url = "elevliste.json";
 var xhr = new XMLHttpRequest();
 xhr.open('GET', url);
@@ -184,5 +184,13 @@ xhr.onerror = function() {
 };
 
 xhr.send();
+```
+
+## Kjøre kode etter en delay \(forsinkelse\)
+
+```javascript
+setTimeout(() => {
+    // denne koden kjøres etter 400ms
+}, 400);
 ```
 
