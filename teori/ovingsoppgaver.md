@@ -490,3 +490,26 @@ input[type="radio"]:checked + div {
 
 Link til ferdig versjon \(med en del forbedringer\)  [demo](https://audunhauge.github.io/it1/Quiz/quiz.html) .
 
+## Designoppgave - kortstokk
+
+### Ruter-ess
+
+Du skal lage en kortstokk i html/css  
+Lag først ruter-ess som vist i bildet.  
+Dimensjonene skal være 89mm x 57mm
+
+![](../.gitbook/assets/acediamond.png)
+
+
+
+### Framgangsmåte
+
+Lag som vanlig en mappe **Kortstokk** og lag filen **kort.html.**  
+Lag kort.css med regler slik at du kan lage et kort slik i html
+
+```text
+<div class="kort ruter1"></div>
+```
+
+Lag regler for alle ruter \(1..9\)
+
