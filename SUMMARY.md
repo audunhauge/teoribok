@@ -2,7 +2,7 @@
 
 * [Teori og timelogg for it1/it2](README.md)
 
-## IT1
+## IT1 <a id="teori"></a>
 
 * [Læreplanmål](teori/laereplanmal.md)
 * [Verktøy](teori/verktoy.md)
@@ -18,7 +18,7 @@
 * [Kakediagram](teori/kakediagram.md)
 * [SQL - spørringer](teori/sql-sporringer.md)
 
-## IT 1 timelogg
+## IT 1 timelogg <a id="it-2-timelogg"></a>
 
 * [Uke 39](it-2-timelogg/uke-39.md)
 * [Uke 42](it-2-timelogg/uke-42.md)
@@ -28,7 +28,7 @@
 * [Uke 46](it-2-timelogg/uke-46.md)
 * [Uke 48](it-2-timelogg/uke-48.md)
 
-## IT2
+## IT2 <a id="it3"></a>
 
 * [Læreplanmål](it3/laereplanmal.md)
 * [Variable og funksjoner](it3/teori.md)
@@ -50,7 +50,7 @@
 * [Canvas](it3/canvas.md)
 * [Eksempel - Demografi](it3/eksempel-demografi.md)
 
-## IT 2 TIMELOGG
+## IT 2 TIMELOGG <a id="it-3-timelogg"></a>
 
 * [Uke 34](it-3-timelogg/uke-34.md)
 * [Uke 42](it-3-timelogg/uke-42.md)

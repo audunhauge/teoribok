@@ -109,7 +109,33 @@ Rediger filer som vanlig - før timen er slutt klikker du på **Source Control**
 Her vil du se en liste over filer som er endra - klikk på **+** knappen over lista.  
 Klikk nå på ok knappen \( ✓\)  \(se bildet under\) , skriv en liten melding om hva endringen går ut på \("redigerte noe"\). Klikk deretter på \(...\)  \(se bildet under\) knappen og velg **push**. Du må nå oppgi brukernavn og passord for din github.
 
-![Knapper for GIT i vscode](../.gitbook/assets/image%20%283%29.png)
+![Knapper i vs-code for GIT](../.gitbook/assets/image%20%283%29.png)
+
+### Installasjon av postgresql
+
+Søk opp postgresapp \(postgresapp.com\) og følg instruksene  
+Dette er database serveren som vi skal bruke - nå skal vi bare kjapt installere den - mer om bruk siden.
+
+### Innstallasjon av dbeaver
+
+Søk opp og innstaller dbeaver  \(dbeaver.io \) og følg instruksene.  
+Hva er dbeaver \(se under\).  
+Vi skal bruke dbeaver til å lage database-modeller og deretter lage tabeller i postgres.  
+
+
+_DBeaver is free and open source universal database tool for developers and database administrators._
+
+* Usability is the main goal of this project, program UI is carefully designed and implemented.
+* It is free and open-source \([ASL](https://dbeaver.io/files/dbeaver_license.txt)\).
+* It is multiplatform.
+* It is based on opensource framework and allows writing of various extensions \(plugins\).
+* It supports any database having a JDBC driver.
+* It may handle any external datasource which may or may not have a JDBC driver.
+* There is a set of plugins for certain databases \(MySQL, Oracle, DB2, SQL Server, PostgreSQL, Vertica, Informix, MongoDB, Cassandra, Redis, InfluxDB in version 5.x\) and different database management utilities \(e.g. ERD, data transfer, compare, data export/import, mock data generation, etc\).
+* It has a great number of [features](https://dbeaver.io/features/).
+
+  
+
 
   
 
