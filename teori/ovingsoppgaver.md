@@ -8,8 +8,8 @@ Oppgaven er å legge et grid over bildet slik at hver person får en gul firkant
 Din oppgave er å tilpasse css reglene slik at firkantene kommer nærmere ansiktene. Det er tilstrekkelig at firkanten delvis overlapper ansiktet.  
 Merk at bakerste rad har 11 personer - der kan du legge til en egen firkant \(utenom grid-et\).
 
-{% code-tabs %}
-{% code-tabs-item title="astro.css" %}
+{% tabs %}
+{% tab title="astro.css" %}
 ```css
 #astro {
    
@@ -51,9 +51,9 @@ Merk at bakerste rad har 11 personer - der kan du legge til en egen firkant \(ut
     top: -13px;
  }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="astro.html" %}
+{% tab title="astro.html" %}
 ```markup
 
 <body>
@@ -62,9 +62,9 @@ Merk at bakerste rad har 11 personer - der kan du legge til en egen firkant \(ut
             <div class="fjes"></div>
             ... (3*10)
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="astro.js" %}
+{% tab title="astro.js" %}
 ```javascript
 function setup() {
   let lyd = document.getElementById("lyd");
@@ -76,8 +76,8 @@ function setup() {
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Du må lage et nytt prosjekt og legge inn filene over.  
 Sørg for at mappe-strukturen stemmer med url i css.
@@ -108,8 +108,8 @@ Du trenger da 24 bilder som skal vises \(en for hver luke\). De skal være mindr
 Koden under ordner åpningen av luker ved klikk.  
 Forutsetningen for at den skal virke er at du har en div med id="vis", alle lukene har class="luke", alle bildene er navngitt som nevnt og at du har css regler som passer.
 
-{% code-tabs %}
-{% code-tabs-item title="julekal.js" %}
+{% tabs %}
+{% tab title="julekal.js" %}
 ```javascript
 function setup() {
   let divVis = document.getElementById("vis");
@@ -125,8 +125,8 @@ function setup() {
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 ```text
 
@@ -320,8 +320,8 @@ En skal heller ikke kunne bla tilbake \(dette bare for å vise hvordan en slik s
 
 Vi lager en enkel html og css med følgende innhold:
 
-{% code-tabs %}
-{% code-tabs-item title="quiz.html" %}
+{% tabs %}
+{% tab title="quiz.html" %}
 ```markup
 <div class="quiz" id="quiz">
   <label class="qnum count" for="r1">Qnr</label>
@@ -363,9 +363,9 @@ Vi lager en enkel html og css med følgende innhold:
       </div>
 </div>
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="quiz.css" %}
+{% tab title="quiz.css" %}
 ```css
 input[type="checkbox"] + label {
   opacity: 0;
@@ -375,8 +375,8 @@ input[type="checkbox"]:checked + label {
   opacity: 1;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 HTML koden vår lager en div.quiz for hele quizen, hvert spørsmål ligger inne i en div.question.  
 Spørsmålet ligger i en H4, svaralternativene i en ul.  
@@ -391,16 +391,16 @@ Legg til flere spørsmål \(kopier hele div.question og rediger\). Legg til mins
 Vi ønsker at alle spørsmål skal vises med "Question 1" og nummereres automatisk \(1,2,3 ... \).  
 Under er en del hint \(og løsnigsforslag\). Prøv selv før du sjekker løsning.
 
-{% code-tabs %}
-{% code-tabs-item title="Hjelpehint" %}
+{% tabs %}
+{% tab title="Hjelpehint" %}
 ```text
 google følgende:
   css counter
   css before
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="Løsningsforslag.css" %}
+{% tab title="Løsningsforslag.css" %}
 ```css
 /* lag en ny teller som starter på 0 
    navnet (rnum) kan du velge helt fritt
@@ -421,8 +421,8 @@ div.question.count {
     counter-increment: rnum;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 ### Vise/skjule tilbakemelding for alternativer
 
@@ -435,17 +435,17 @@ Du kan bruke opacity:0 til å skjule en tekst, opacity:1 for å vise \(unngår r
 
 Bruk teknikkene over til å lage regler slik at tilbakemelding vises ved valg av svar-alternativ.
 
-{% code-tabs %}
-{% code-tabs-item title="hint" %}
+{% tabs %}
+{% tab title="hint" %}
 ```text
 Prøv selv før du sjekker løsningsforslag.
 google
   css sibling selector
   css input checked
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="Løsningsforslag" %}
+{% tab title="Løsningsforslag" %}
 ```css
 
 input[type="checkbox"] + label {
@@ -456,8 +456,8 @@ input[type="checkbox"]:checked + label {
   opacity: 1;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 
 
@@ -467,15 +467,15 @@ Vi bruker nesten samme teknikk til å vise ett spørsmål om gangen.
 Vi lager en regel som skjuler alle div-er som kommer etter en input\[type="radio\].  
 Vi lager en ny regel \(som er mer presis/spesifikk\) som viser div rett etter en input\[type="radio"\] som er checked \(valgt\). Husk at dersom to regler krangler - så vinner den mest presise.
 
-{% code-tabs %}
-{% code-tabs-item title="hint" %}
+{% tabs %}
+{% tab title="hint" %}
 ```text
 Prøv selv først!
 Bruk sibling selector +
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="Løsningsforslag" %}
+{% tab title="Løsningsforslag" %}
 ```css
 input[type="radio"] + div {
   display: none;
@@ -485,8 +485,8 @@ input[type="radio"]:checked + div {
   margin-top: 50px;  /* gir plass til ::before */
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Link til ferdig versjon \(med en del forbedringer\)  [demo](https://audunhauge.github.io/it1/Quiz/quiz.html) .
 

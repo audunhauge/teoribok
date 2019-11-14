@@ -4,8 +4,8 @@
 
 I vs-code kan du lage en ny webside ved å opprette en ny fil \(gi den navnet test.html\) og skrive ! i editoren. Ved trykk på enter vil du da få følgende struktur:
 
-{% code-tabs %}
-{% code-tabs-item title="test.html" %}
+{% tabs %}
+{% tab title="test.html" %}
 ```markup
 <!DOCTYPE html>
 <html lang="en">
@@ -20,8 +20,8 @@ I vs-code kan du lage en ny webside ved å opprette en ny fil \(gi den navnet te
 </body>
 </html>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 
 

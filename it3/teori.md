@@ -98,8 +98,8 @@ function navnPaaFunksjon(parameter1, p2) {
 
 Som et eksempel viser vi definisjonen av sin\(\):
 
-{% code-tabs %}
-{% code-tabs-item title="sin.js" %}
+{% tabs %}
+{% tab title="sin.js" %}
 ```javascript
 function sin(x) {
    var y;  // verdien som skal returneres
@@ -110,9 +110,9 @@ function sin(x) {
 }
 
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="cos.js" %}
+{% tab title="cos.js" %}
 ```javascript
 function cos(x) {
    var y;  // verdien som skal returneres
@@ -124,9 +124,9 @@ function cos(x) {
 
 
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="atan.js" %}
+{% tab title="atan.js" %}
 ```javascript
 function atan(x) {
    var y;  // verdien som skal returneres
@@ -138,8 +138,8 @@ function atan(x) {
 }
 
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 
 

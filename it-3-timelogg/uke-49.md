@@ -53,8 +53,8 @@ Dersom vi trenger navn på funksjonen bruker vi en av følgende:
 
 Lag arrow funksjoner :
 
-{% code-tabs %}
-{% code-tabs-item title="Oppgaver" %}
+{% tabs %}
+{% tab title="Oppgaver" %}
 ```text
 bigName  ("ole") => "OLE"
 niceName ("ole") => "Ole"
@@ -62,9 +62,9 @@ niceNames ("ole olsen") => "Ole Olsen"
 lastNiceName ("ole petter olsen") => "Olsen, Ole Petter"
 initialsNiceName ("ole petter olsen") => "O.P. Olsen"
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="Løsning" %}
+{% tab title="Løsning" %}
 ```javascript
 // bigName  ("ole") => "OLE"
 const bigName = (n) => n.toUpperCase();
@@ -103,6 +103,6 @@ const initialsNiceName = (n) {
   return initials + " " + niceName(last);
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 

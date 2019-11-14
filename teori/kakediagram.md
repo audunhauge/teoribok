@@ -2,8 +2,8 @@
 
 ### PieChart / kakediagram
 
-{% code-tabs %}
-{% code-tabs-item title="PieChart.js" %}
+{% tabs %}
+{% tab title="PieChart.js" %}
 ```javascript
 // @ts-check
 class PieChart extends HTMLElement {
@@ -104,6 +104,6 @@ class PieChart extends HTMLElement {
 }
 window.customElements.define("pie-chart", PieChart);
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 

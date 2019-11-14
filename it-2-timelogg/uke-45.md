@@ -7,8 +7,8 @@ Vi lagde [denne](https://github.com/audunhauge/audunhauge.github.io/tree/master/
 Merk bruken av ::after slik at rutene får tallverdien plassert over \(rotert 45grader\).  
 Merk også bruken av `content: attr(data-tall);` som henter en verdi fra html elementet.
 
-{% code-tabs %}
-{% code-tabs-item title="bin.css" %}
+{% tabs %}
+{% tab title="bin.css" %}
 ```css
 div.bit:after {
     font-size: 0.8em;
@@ -20,9 +20,9 @@ div.bit:after {
     transform: rotate(-45deg);
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="bin.html" %}
+{% tab title="bin.html" %}
 ```markup
     <div id="main">
         <div id="register">
@@ -37,8 +37,8 @@ div.bit:after {
         </div>
     </div>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Datamaskiner bruker binærtall internt \(CPU bruker binærtall\)  
 Et binærtall slik som 11011011 kan konverteres til desimal slik:

@@ -10,23 +10,23 @@ Når du skriver en css-regel bruker du en css-selector til å bestemme hvilket/h
 
 ### tag-selector
 
-{% code-tabs %}
-{% code-tabs-item title="div.css" %}
+{% tabs %}
+{% tab title="div.css" %}
 ```css
 div {
   color: green;
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="span.css" %}
+{% tab title="span.css" %}
 ```css
 span {
   background-color: rgb(12,123,205);
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Her gjelder regelen for alle &lt;div&gt; i dokumentet, de får grønn skriftfarrge. Dette er et eksempel på en **tag**- selector \(slik som **div span p article table td li ol ul** ...\)
 

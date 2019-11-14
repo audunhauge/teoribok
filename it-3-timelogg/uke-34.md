@@ -11,8 +11,8 @@ Vi lager følgende html ved å skrive ! og trykke enter \(emmet abbreviation\).
 
 #### Resultat
 
-{% code-tabs %}
-{% code-tabs-item title="skjema.html" %}
+{% tabs %}
+{% tab title="skjema.html" %}
 ```markup
 <!DOCTYPE html>
 <html lang="en">
@@ -27,8 +27,8 @@ Vi lager følgende html ved å skrive ! og trykke enter \(emmet abbreviation\).
 </body>
 </html>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Så gjør vi følgende endringer:
 
@@ -43,8 +43,8 @@ Vi redigerte filen skjema.js på samme måte.
 
 Nå skal filene se slik ut \(klikk på fanene for å velge fil\):
 
-{% code-tabs %}
-{% code-tabs-item title="skjema.html" %}
+{% tabs %}
+{% tab title="skjema.html" %}
 ```markup
 <!DOCTYPE html>
 <html lang="en">
@@ -64,19 +64,19 @@ Nå skal filene se slik ut \(klikk på fanene for å velge fil\):
 </body>
 </html>
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="skjema.css" %}
+{% tab title="skjema.css" %}
 ```css
 body { background-color: red; }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="skjema.js" %}
+{% tab title="skjema.js" %}
 ```javascript
 function setup() {
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 

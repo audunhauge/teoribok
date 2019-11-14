@@ -2,45 +2,70 @@
 
 ## PostgresSQL
 
+Først lager vi en ny mappe i vs-code med navnet bibliotek.  
+I denne mappa lager vi filen **bib.sql** som vi skal bruke gjennom hele eksemplet.  
+Installer **SQLTools** extension i visual studio.
+
 Postgres er en database-server som vi kan installere på egen maskin eller på en hosted-server.  
-Etter at den er satt opp riktig kan vi starte opp pgsql \(kommandovindu\) 
+På mac søker vi på _install postgres mac_ og installerer postgres.app.  
+Etter at den er satt opp riktig kan vi starte opp programmet.  
+På **mac** starter vi postgress.app - da får vi et vindu som viser databasene vi har laga.  
+  -  Første gang finner vi bare **postgres** som alltid er tilstede.  
+På **windows** går vi inn på Programmer og blar ned til postgres og finner **sql-shell**.  
+  -  du kan trykke enter på alle alternativer \(skriv inn passord dersom du valgte et\).
 
 ### Lage en ny database
 
-```sql
-CREATE DATABASE bib;
-```
-
-Legg merke til at linja slutter med semikolon, ingenting skjer dersom denne ikke er med.
-
-Fra postgres.app kan vi nå åpne den nye databasen
-
-Deretter bruker vi erdplus.com til å lage en databasemodell for tabellen **bok** og tabellen **forfatter**.  
-Modellen eksporteres som SQL som vi så limer inn i kommandovinduet.
+**MAC**: Dobbeltklikk på databasen postgres \(inne i postgres.app\) og du får fram et kommandovindu.  
+**WIN**:  Du er allerede inne i kommandovinduet \(sql-shell\).  
+Skriv som vist under:
 
 ```sql
-CREATE TABLE forfatter
-(
-  forfatterID INT NOT NULL,
-  navn CHAR(30) NOT NULL,
-  PRIMARY KEY (forfatterID)
+create role bib password '123';
+alter role bib with login;
+create database bib owner bib;
+```
+
+Legg merke til at linjene slutter med semikolon, ingenting skjer dersom denne ikke er med.  
+Vi har nå laga en ny database med navnet bib som eies av brukeren bib med passord 123 og som kan logge inn på serveren \(database-serveren\).
+
+Fra postgres.app kan vi nå åpne den nye databasen  
+På windows stenger vi sql-shell og åpner det på nytt, nå skriver vi inn bib som bruker/database og 123 som passord.
+
+Vi definerer nå tabellen **bok** og tabellen **forfatter**. Åpne **bib.sql** i vs-code
+
+```sql
+CREATE TABLE forfatter (
+  forfatterid serial primary key,
+  fornavn text not null,
+  etternavn text not null,
+  fdato date,
+  kjonn text check (
+    kjonn = 'm'
+    or kjonn = 'f'
+  )
 );
 
-CREATE TABLE bok
-(
-  bokID INT NOT NULL,
-  isbn CHAR(20) NOT NULL,
-  tittel CHAR(60) NOT NULL,
-  antallSider INT NOT NULL,
-  forfatterID INT NOT NULL,
-  PRIMARY KEY (bokID),
-  FOREIGN KEY (forfatterID) REFERENCES forfatter(forfatterID),
-  UNIQUE (isbn)
+CREATE TABLE bok (
+  bokid serial primary key,
+  tittel text not null,
+  pdato date,
+  isbn text,
+  antallSider int check (antallsider > 0),
+  sjanger text,
+  spraak text,
+  forfatterid int references forfatter (forfatterid)
 );
 ```
 
-Vi bruker kommandoen \d til å vise hvilke tabeller vi har.  
-Vi kan også sjekke tabellen bok med \d bok   \(definisjon av bok\).
+Lag en ny kobling til databasen i vs-code: "ctrl+shift+p"  skriv _sqladd_ og velg  
+SQL Tools Managment: Add New Connection.  
+Gi koblingen navnet bib, databasen er bib, bruker er bib og passord 123. Save Connection.
+
+### Kjør sql kommandoer
+
+Marker all tekst i bib.sql og trykk \(cmd+e cmd+e\) eller \(cmd+shift+p sqlrunsel \).  
+Create table kommandoene blir nå kjørt i postgres - med litt flaks skal alt virke.
 
 ### Legge inn data \(insert-spørring\)
 

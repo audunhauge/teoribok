@@ -43,8 +43,8 @@ Dersom en skal teste en variabel mot flere mulige verdier - da kan det passe å 
 
 I spillet vi lager \(snake.js\) skal vi reagere på fire forskjellige tastetrykk. Dette gjør vi med en event-listener som sjekker verdien på keyCode.
 
-{% code-tabs %}
-{% code-tabs-item title="switch.js" %}
+{% tabs %}
+{% tab title="switch.js" %}
 ```javascript
 function tastTrykkes(e) {   // merk at vi MÅ ta imot e her
   switch(e.keyCode) {
@@ -66,9 +66,9 @@ function tastTrykkes(e) {   // merk at vi MÅ ta imot e her
   }
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="if\_else.js" %}
+{% tab title="if\_else.js" %}
 ```javascript
 function tastTrykkes(e) {   // merk at vi MÅ ta imot e her
   if (e.keyCode === 37 ) {
@@ -92,8 +92,8 @@ function tastTrykkes(e) {   // merk at vi MÅ ta imot e her
 }
   
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Typisk bruk for en switch er der hvor en variabel testes mot mange forskjellige muligheter.  
 Sammenlign løsningene over som bruker switch eller if-else.

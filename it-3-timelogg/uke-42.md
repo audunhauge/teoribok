@@ -32,8 +32,8 @@ Du skal kunne følgende til prøven:
 
 Eksemplet under lager en klasse for et geometrisk punkt \(klikk på fanene for å se innhold\) og viser bruk av klassen.
 
-{% code-tabs %}
-{% code-tabs-item title="Punkt.js" %}
+{% tabs %}
+{% tab title="Punkt.js" %}
 ```javascript
 class Punkt {
   constructor(x,y) {
@@ -42,9 +42,9 @@ class Punkt {
   }
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="klasseBruk.js" %}
+{% tab title="klasseBruk.js" %}
 ```javascript
 // vi antar at filen med klassen er lasta inn før bruk
 // eller at klassen er definert i samme fil som bruk, men før bruk.
@@ -53,8 +53,8 @@ let p = new Punkt(2,5);
 // p er nå punktet (2,5)
 // p.x === 2 og p.y === 5
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 #### Lagring i en array og traversering av en array
 

@@ -27,8 +27,8 @@ Denne modellen er laga med  [modelleringsprogrammet](https://erdplus.com) erdplu
 
 Under er koden for skjema hvor nye bøker registreres:
 
-{% code-tabs %}
-{% code-tabs-item title="bib.html" %}
+{% tabs %}
+{% tab title="bib.html" %}
 ```markup
 <!DOCTYPE html>
 <html lang="en">
@@ -75,9 +75,9 @@ Under er koden for skjema hvor nye bøker registreres:
 </html>
 
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="bokliste.html" %}
+{% tab title="bokliste.html" %}
 ```markup
 <!--  Merk at dette er innhold som skal inn mellom
   body og /body i bokliste.html
@@ -106,9 +106,9 @@ Under er koden for skjema hvor nye bøker registreres:
       bokliste();
     </script>
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="bib.css" %}
+{% tab title="bib.css" %}
 ```css
 form {
     margin-top: 1.2cm;
@@ -161,9 +161,9 @@ form::after {
     grid-template-columns: 1fr 1fr;
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="bib.js" %}
+{% tab title="bib.js" %}
 ```javascript
 // @ts-check
 
@@ -253,8 +253,8 @@ function filtrer(liste, egenskap, test) {
     return liste.filter(e => e[egenskap] === test);
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
   
 
