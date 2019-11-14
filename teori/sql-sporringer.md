@@ -30,8 +30,7 @@ CREATE TABLE bestilling
   dato DATE NOT NULL,
   betalt boolean default false,
   betalingsmetode text not null,
-  kundeid INT NOT NULL,
-  FOREIGN KEY (kundeid) REFERENCES kunde(kundeid)
+  kundeid INT REFERENCES kunde(kundeid)
 );
 
 CREATE TABLE linje
@@ -39,10 +38,8 @@ CREATE TABLE linje
   linjeid serial primary key,
   pris INT NOT NULL,
   antall INT default 1,
-  bestillingid INT NOT NULL,
-  vareid INT NOT NULL,
-  FOREIGN KEY (bestillingid) REFERENCES bestilling(bestillingid),
-  FOREIGN KEY (vareid) REFERENCES vare(vareid)
+  bestillingid INT REFERENCES bestilling(bestillingid),
+  vareid INT REFERENCES vare(vareid)
 );
 ```
 

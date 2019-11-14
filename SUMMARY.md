@@ -13,10 +13,10 @@
 * [Øvingsoppgaver](teori/ovingsoppgaver.md)
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1)
 * [Databaser](teori/databaser.md)
+* [SQL - spørringer](teori/sql-sporringer.md)
 * [Tegning i Blender](teori/tegning-i-blender.md)
 * [Befolkningspyramide](teori/befolkningspyramide.md)
 * [Kakediagram](teori/kakediagram.md)
-* [SQL - spørringer](teori/sql-sporringer.md)
 
 ## IT 1 timelogg <a id="it-2-timelogg"></a>
 
