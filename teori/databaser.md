@@ -69,33 +69,34 @@ Create table kommandoene blir nå kjørt i postgres - med litt flaks skal alt vi
 
 ### Legge inn data \(insert-spørring\)
 
-Vi kan nå registrere \(legge inn\) forfattere på denne måten:
+Vi kan nå registrere \(legge inn\) forfattere på denne måten i kommando-vinduet.
 
 ```sql
-insert into forfatter (forfatterID, navn) values (1,'ole olsen');
+insert into forfatter (fornavn, etternavn) values ('leo','tolstoj');
 # merk at vi MÅ bruke hermetegnet '  du kan ikke bruke "
 # legg inn flere forfattere ved å trykke pil opp og så rediger verdiene
-# merk at alle forfatttere må ha sitt eget forfatterID
 
 # vi kan velge ut alle forfattere fra tabellen slik:
 select * from forfatter
 # viser alle registrerte forfattere
 ```
 
+Vi kan også gjøre det fra vs-code, skriv inn linje 1 og 6 i bib.sql, marker begge linjene og kjør kommandoene med \(cmd+e cmd+e\) som vist over \(Kjør sql kommandoer\).
+
 ### Velge ut data \(spørring\)
 
 ```sql
-select * from forfatter where navn ~ 'ole';
-// finner alle forfattere som har navn som ligner på 'ole'
+select * from forfatter where fornavn ~ 'ole';
+// finner alle forfattere som har fornavn som ligner på 'ole'
 
-select isbn,antallSider from bok where tittel ~ 'krig';
-// alle isbn til bøker som inneholder 'krig' i tittelen
+select tittel,antallSider from bok where tittel ~ 'krig';
+//  bøker som inneholder 'krig' i tittelen
 ```
 
 ### Slette data \(slette-spørring\)
 
 ```sql
-delete from forfatter where navn ~ 'ole';
+delete from forfatter where fornavn ~ 'ole';
 // sletter alle forfattere som har navn som ligner på 'ole'
 
 delete from bok where tittel ~ 'krig';
@@ -105,7 +106,7 @@ delete from bok where tittel ~ 'krig';
 ### Velge fra to tabeller \(inner join\)
 
 ```sql
-select b.tittel, f.navn from bok b inner join forfatter f 
+select b.tittel, f.fornavn from bok b inner join forfatter f 
        on (b.forfatterid = f.forfatterid)
        where b.tittel ~ 'krig';
 // finner tittel,forfatternavn for alle bøker 
