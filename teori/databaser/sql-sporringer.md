@@ -136,5 +136,29 @@ select f.fornavn, f.etternavn, b.tittel
   on (f.forfatterid = b.forfatterid);
 ```
 
+### Where betingelser
 
+De fleste spørringer kan ende med en betingelse - en test som må oppfylles for at spørringen skal utføres.  
+Dette gjelder ikke **insert** spørringer.
+
+```sql
+-- slettespørringer med where
+--  tegnet ~ kan leses som "inneholder"
+delete from forfatter where fornavn ~ 'ole';
+-- update med where
+update forfatter set kjonn = 'm' where fornavn = 'anne';
+-- select med where
+select fornavn, etternavn from forfatter where kjonn = 'm';
+-- select med utvida where
+select fornavn, etternavn from forfatter where kjonn = 'm' and fornavn ~ 'anne';
+-- finner alle forfattere som er menn og har fornavn som inneholder "anne"
+
+-- spørring med inner join og where
+select f.fornavn, f.etternavn, b.tittel 
+  from forfatter f inner join bok b
+  on (f.forfatterid = b.forfatterid)
+  where b.antallsider > 100;
+-- finner fornavn,etternavn,tittel på forfatter/bok på over 100 sider
+
+```
 
