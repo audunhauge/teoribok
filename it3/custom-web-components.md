@@ -4,8 +4,7 @@
 
 Overskrift med Tittel, navn, meny og info
 
-{% tabs %}
-{% tab title="Homebar.js" %}
+{% code title="Homebar.js" %}
 ```javascript
 class HomeBar extends HTMLElement {
   constructor() {
@@ -56,8 +55,7 @@ class HomeBar extends HTMLElement {
 }
 window.customElements.define("home-bar", HomeBar);
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 ### Bruksmåte
 
@@ -71,8 +69,7 @@ Du kan nå lage instanser på det nye html-elementet slik:
 
 ### En digital klokke
 
-{% tabs %}
-{% tab title="DigitalTime.js" %}
+{% code title="DigitalTime.js" %}
 ```javascript
 // @ts-check
 class DigitalTime extends HTMLElement {
@@ -119,13 +116,11 @@ class DigitalTime extends HTMLElement {
   }
   window.customElements.define("digi-time", DigitalTime);
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 ### En befolkningspyramide
 
-{% tabs %}
-{% tab title="Pyramide.js" %}
+{% code title="Pyramide.js" %}
 ```javascript
 // @ts-check
 class Pyramide extends HTMLElement {
@@ -232,8 +227,7 @@ class Pyramide extends HTMLElement {
 }
 window.customElements.define("pop-pyr", Pyramide);
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 
 

@@ -11,8 +11,7 @@ Vi lager følgende html ved å skrive ! og trykke enter \(emmet abbreviation\).
 
 #### Resultat
 
-{% tabs %}
-{% tab title="skjema.html" %}
+{% code title="skjema.html" %}
 ```markup
 <!DOCTYPE html>
 <html lang="en">
@@ -27,8 +26,7 @@ Vi lager følgende html ved å skrive ! og trykke enter \(emmet abbreviation\).
 </body>
 </html>
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 Så gjør vi følgende endringer:
 

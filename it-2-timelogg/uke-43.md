@@ -7,8 +7,7 @@ Vi laster ned nodejs for vårt operativsystem og installerer på maskinen \(inst
 Deretter lager vi en ny mappe **webserver** som vi åpner i VS-code.  
 Vi lager en ny fil med navnet **app.js** og legger inn følgende innhold:
 
-{% tabs %}
-{% tab title="app.js" %}
+{% code title="app.js" %}
 ```javascript
 // @ts-check
 const CONNECTSTRING = "postgres://audun:123@localhost/bibliotek";
@@ -58,8 +57,7 @@ async function runsql(res, obj) {
   res.send({ results });
 }
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 CONNECTSTRING er koblingen til postgres-databasen, den er satt sammen av  
 brukernavn:passord:server:database. 

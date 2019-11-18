@@ -8,8 +8,7 @@ Bruk komponenten vi lagde sist som lager en Homebar med passende overskrift.
 
 Bruk metoden som er beskrevet i [Praktiske eksempler](praktiske-eksempler.md#lese-en-fil) til å lese data fra api-linken.
 
-{% tabs %}
-{% tab title="Eksempel med data for brazil" %}
+{% code title="Eksempel med data for brazil" %}
 ```javascript
 [
   {
@@ -46,8 +45,7 @@ Bruk metoden som er beskrevet i [Praktiske eksempler](praktiske-eksempler.md#les
   },
 ]
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 Eksemplet med data fra Brazil viser formatet som er brukt. Du må skrive kode som behandler denne Arrayen og tegner søyler for hver årsgruppe.
 

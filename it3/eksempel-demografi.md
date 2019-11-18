@@ -31,8 +31,7 @@ class Land {
 
 ### Kode for å lagre
 
-{% tabs %}
-{% tab title="function setup\(\)" %}
+{% code title="function setup\(\)" %}
 ```javascript
     let landListe = [ ];
 
@@ -59,6 +58,5 @@ class Land {
         divOversikt.innerHTML = innhold;
     }
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 

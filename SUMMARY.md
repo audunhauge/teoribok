@@ -13,6 +13,7 @@
 * [Øvingsoppgaver](teori/ovingsoppgaver.md)
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1)
 * [Databaser](teori/databaser.md)
+* [Database skjema](teori/database-skjema.md)
 * [SQL - spørringer](teori/sql-sporringer.md)
 * [Tegning i Blender](teori/tegning-i-blender.md)
 * [Befolkningspyramide](teori/befolkningspyramide.md)

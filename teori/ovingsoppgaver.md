@@ -108,8 +108,7 @@ Du trenger da 24 bilder som skal vises \(en for hver luke\). De skal være mindr
 Koden under ordner åpningen av luker ved klikk.  
 Forutsetningen for at den skal virke er at du har en div med id="vis", alle lukene har class="luke", alle bildene er navngitt som nevnt og at du har css regler som passer.
 
-{% tabs %}
-{% tab title="julekal.js" %}
+{% code title="julekal.js" %}
 ```javascript
 function setup() {
   let divVis = document.getElementById("vis");
@@ -125,8 +124,7 @@ function setup() {
   }
 }
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 ```text
 

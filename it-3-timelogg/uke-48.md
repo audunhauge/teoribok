@@ -10,8 +10,7 @@ Oppgaven er ganske kompleks - derfor prøver vi å bryte den ned i enkle trinn s
 Første trinn var å få fram årstallet på skjermen med to knapper slik at vi kan bla fram og tilbake.  
 Ved klikk på knappene skal årstallet endre seg.
 
-{% tabs %}
-{% tab title="cal.js" %}
+{% code title="cal.js" %}
 ```javascript
 function setup() {
   let divYear = document.getElementById("year");
@@ -46,8 +45,7 @@ function setup() {
   }
 }   // slutt på setup
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 Neste trinn var å gjøre det samme for måned, merk at når vi blar fra mnd=12 til neste, så må mnd bli 1 og året må økes med 1. Tilsvarende når vi blar bakover fra januar.  
 Igjen lager vi en enkel løsning først som bare vise nr for måned
