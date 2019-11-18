@@ -136,7 +136,7 @@ Vi bruker [dbdiagram](https://dbdiagram.io) til å tegne diagrammer som viser hv
 
 Du har nå laga de to første tabellene i modellen. Vi skal lage følgende tabeller i tillegg:   **laaner**, **eksemplar** og **utlaan**.
 
-![erd-diagram](../.gitbook/assets/skjermbilde-2019-11-14-kl.-13.08.42.png)
+![erd-diagram](../../.gitbook/assets/skjermbilde-2019-11-14-kl.-13.08.42.png)
 
 Du kan lage de tre nye tabellene i bib.sql og importere dem til dbdiagram.io, eller du kan lage dem i dbdiagram og eksportere som fil \(denne kan du kopiere til bib.sql\). Du kan lage koblingene mellom tabellene ved å dra nøkkelfelt fra en tabell bort til tilsvarende fremmednøkkel i en annen tabell.
 

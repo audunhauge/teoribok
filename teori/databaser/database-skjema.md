@@ -125,7 +125,7 @@ Kopier inn filene **DbForm.js, Dbtable.js** og **forfatter**.**html** fra [min v
 Merk at de **SKAL** ligge i public mappa.  
 I nettleseren kan du nå åpne localhost:3000/forfatter.html og du bør se en side som under:
 
-![forfatter](../.gitbook/assets/forfatter.png)
+![forfatter](../../.gitbook/assets/forfatter.png)
 
 
 

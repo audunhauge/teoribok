@@ -8,16 +8,16 @@
 * [Verktøy](teori/verktoy.md)
 * [HTML](teori/html.md)
 * [CSS](teori/untitled-1.md)
-* [Datamodeller](teori/datamodeller.md)
 * [Digital samtid](teori/digital-samtid.md)
-* [Øvingsoppgaver](teori/ovingsoppgaver.md)
-* [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1)
-* [Databaser](teori/databaser.md)
-* [Database skjema](teori/database-skjema.md)
-* [SQL - spørringer](teori/sql-sporringer.md)
+* [Databaser](teori/databaser/README.md)
+  * [Datamodeller](teori/databaser/datamodeller.md)
+  * [Database skjema](teori/databaser/database-skjema.md)
+  * [SQL - spørringer](teori/databaser/sql-sporringer.md)
 * [Tegning i Blender](teori/tegning-i-blender.md)
 * [Befolkningspyramide](teori/befolkningspyramide.md)
 * [Kakediagram](teori/kakediagram.md)
+* [Øvingsoppgaver](teori/ovingsoppgaver.md)
+* [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1)
 
 ## IT 1 timelogg <a id="it-2-timelogg"></a>
 
