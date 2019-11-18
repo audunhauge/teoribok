@@ -121,9 +121,12 @@ Lagre filen og deretter åpner vi en nettleser på adressen **localhost:3000/tes
 
 ## Web-skjema kobla til databasen
 
-Kopier inn filene **DbForm.js, Dbtable.js** og **forfatter**.**html** fra [min versjon](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1/Bibliotek/public) på github.  
+Kopier inn filene i public mappa fra [min versjon](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1/Bibliotek/public) på github.  
 Merk at de **SKAL** ligge i public mappa.  
-I nettleseren kan du nå åpne localhost:3000/forfatter.html og du bør se en side som under:
+I nettleseren kan du nå åpne localhost:3000/forfatter.html og du bør se en side som under:  
+\(bortsett fra at den viser forfatter - ikke låner\).  
+Lag filene eksemplar.html og laaner.html ut fra eksemplene \(copy/paste\).  
+Du må redigere litt for å få dem til å virke.
 
 ![forfatter](../../.gitbook/assets/forfatter.png)
 
