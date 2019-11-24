@@ -69,7 +69,7 @@ class Sprite {
   }
   render() {
     this.div.style.transform = 
-      `translate(${x},${y})`;
+      `translate(${this.x},${this.y})`;
   }
 }
 // antar at vi har en css regel som gjør at div.tree
@@ -115,9 +115,59 @@ class Movable extends Sprite {
 }
 ```
 
+Denne klassen \(Movable\) virker greit for ting som skal bevege seg rett fram, men dersom vi har krav om at noen ting på skjermen skal kunne snu seg \(rotere\) slik at det ser ut som de peker den veien de går - da lager vi en ny klasse:
 
+```javascript
+class Turnable extends Movable {
+  constructor(spriteInfo, angle, speed) {
+    let vx = Math.cos(angle) * speed;
+    let vy = Math.sin(angle) * speed;
+    super(spriteInfo,vx,vy);
+    this.angle = angle;
+    this.speed = speed;
+  }
+  turn(delta) {
+    this.angle = (this.angle + delta) % (Math.PI*2);
+    this.vx = Math.cos(this.angle) * this.speed;
+    this.vy = Math.sin(this.angle) * this.speed;
+  }
+  
+  // må lage egen render da Sprite sin render ikke
+  // har med rotasjon
+  render() {
+    this.div.style.transform = 
+      `translate(${x},${y}) rotate(${this.angle}rad)`;
+  }
+}
+```
 
+### Bruk av klassene Sprite, Movable og Rotatable
 
+```javascript
+// jeg lager en instans av hver klasse
+// antar at jeg har tre div´s div1 div2 og div3
+// som allerede er på stagen (inne i divMain)
+let x = 100;
+let y = 200;
+let w = 40;
+let h = 30;
+let s = new Sprite( { div:div1, x,y,w,h } );
+let m = new Movable( { div:div2, x,y,w,h }, 2, 3 );
+let r = new Rotatable( { div:div3, x,y,w,h }, 0.3, 10 );
+
+s.render()      // div1 plasseres på (x,y) = (100,200) 
+                // og blir værende der
+m.render()      // som s
+m.move()        // men nå flytter m seg til (102,203)
+// dette kan vi gjøre med setInterval slik at m flytter
+// seg med gitt interval
+
+r.render()      // som s og m
+                // men div3 vil være rotert 0.3 radianer
+r.move()        // som m
+r.turn(0.01)    // r snur seg litt
+r.move()        // beveger seg i den nye retningen
+```
 
 
 
