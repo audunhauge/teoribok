@@ -72,11 +72,30 @@ class Sprite {
       `translate(${x},${y})`;
   }
 }
-// antar at div-en finnes og har en css regel som gjør at den
+// antar at vi har en css regel som gjør at div.tree
 // vises etter kravspek.
-let div = document.getElementById('tre');
-let spriteTre = new Sprite( {div, x:100, y:200, w:10, h:100} );
+// lager 20 trær og plasserer dem i divMain
+for (let i=0; i<20; i++) {
+  let div = document.createElement('div');
+  div.className = 'tree';
+  divMain.appendChild(div)
+  let spriteTree = new Sprite( {div, x:100, y:200, w:10, h:100} );
+  spriteTree.render();
+  // merk at alle trærne ligger oppå hverandre
+  // da de har samme (x,y)
+  // linjene under lager tilfeldig x,y for hvert tre
+  // merk hvordan bruk av samme navn (x,y) som i 
+  // constructor gjør det lett å pakke {div,x,y .. }
+  /*
+  let x = Math.random()*500;
+  let y = Math.random()*300;
+  let spriteTree = new Sprite( {div, x, y, w:10, h:100} );
+  */
+}
 ```
+
+I eksemplet med spriteTree over kan vi selvsagt også bruke div.innerHTML til å vise tekst.  
+spriteTree.div.innerHTML = "noe text". Denne kunne være med i render\(\) dersom klassen har noen tekstegenskaper som skal vises.
 
 ### Utviding av en enkel klasse \(slik som Sprite\)
 
