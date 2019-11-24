@@ -1,7 +1,5 @@
 # Klasser
 
-
-
 ## Klasser <a id="klasser"></a>
 
 Jeg velger å beskrive klasser ut fra siste versjon som er implementert i nettleseren Chrome \(mars 2016\).  
@@ -55,94 +53,52 @@ elever.push(elev);
 ...  // repetert mange ganger
 ```
 
-### Eksempel - definisjon av klassen Tank <a id="eksempel---definisjon-av-klassen-tank"></a>
+### Eksempel - definisjon av Sprite <a id="eksempel---definisjon-av-klassen-tank"></a>
 
-Denne klassen skal vi bruke i spillet vi lager.
-
-Merk at klassen har en construktor funksjon. Det er denne funksjonen som kjøres når du lager en ny instans av klassen.
+For å plasser/flytte ting rundt på skjermen lager vi ofte en Sprite klasse.  
+Den inneholder nok info til å kunne legge noe på skjermen på en bestemt plass \(x,y\) og med en bestemt størrelse \(w,h\). I eksemplet under bruker vi en div som det grafiske elementet - dette kunne selvsagt vært kode for å tegne på canvas eller svg.
 
 ```javascript
-let t34 = new Tank("t"+tankcount, "active");
+class Sprite {
+  constructor({ div, x, y, w, h } ) {
+    this.div = div;
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+  }
+  render() {
+    this.div.style.transform = 
+      `translate(${x},${y})`;
+  }
+}
+// antar at div-en finnes og har en css regel som gjør at den
+// vises etter kravspek.
+let div = document.getElementById('tre');
+let spriteTre = new Sprite( {div, x:100, y:200, w:10, h:100} );
 ```
 
-Merk også måten du lager funksjoner som er knytta til en klasse
+### Utviding av en enkel klasse \(slik som Sprite\)
+
+Vi har flere ting på skjermen som er Sprite - de kan plasseres, men vi trenger ting som kan bevege seg med en gitt fart/retning. Vi lager en ny klasse som utvider Sprite:
 
 ```javascript
-  hit(klass) {
-    return 5;
+class Movable extends Sprite {
+  constructor(spriteInfo, vx,vy) {
+    super(spriteInfo);
+    this.vx = vx;
+    this.vy = vy;
   }
-```
-
-Dette betyr at du kan skrive t32.hit\(\) for å kjøre denne funksjonen. I alle slike funksjoner definert inne i klassen vil **this** referere til instansen \(t34 i vårt eksempel\).
-
-Dermed kan vi skrive en klassefunksjon som dette
-
-```javascript
-  move(delta) {
-    if (this.alive) {
-      this.body.move(delta);
-      this.setpos();
-    }
-  }
-```
-
-**this** er her tanksen som vi kjører koden på, f.eks t34.move\(5\)
-
-```javascript
-
-const THW = 16;
-
-class Tank {
-  constructor(id, klass) {
-    this.div = document.createElement("div");
-    this.div.className = "tanks " + klass;
-    this.div.id = id;
-    this.speed = 1;
-    this.a = 0.035;
-    this.body = new RigidBody(0,0,THW,THW,0);
-    this.delay = 0;
-    this.turnrate = 2;
-    this.alive = true;
-    this.owner = null;
-    this.is = 'Tank';
-    this.idnum = 0;
-    this.hitpoints = 100;
-  }
-
-  hit(klass) {
-    return 5;
-  }
-
-  takeDamage(amount) {
-    this.hitpoints -= amount;
-    if (this.hitpoints < 50) {
-      this.div.classList.add("damaged");  
-    }
-  }
-
-  move(delta) {
-    if (this.alive) {
-      this.body.move(delta);
-      this.setpos();
-    }
-  }
-
-  setpos() {
-    this.div.style.left = this.body.x + "px";
-    this.div.style.top = this.body.y + "px";
-  }
-
-  turn(delta) {
-    if (this.alive) {
-      if (this.body.v < 0) delta *= 2.5;        //turn fast when reversing
-      let d = (this.body.rot + delta) % 360;
-      this.body.rot = d;
-    }
-  }
-
-  direction(angle) {
-    this.div.style.transform = 'rotate(' + angle + 'deg)';
+  move() {
+    this.x += this.vx;
+    this.y += this.vy;
   }
 }
 ```
+
+
+
+
+
+
 
