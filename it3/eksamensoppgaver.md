@@ -70,3 +70,70 @@ Det begynner å bli fyllt for bestillinger for 18/19 på hyttene. Tabellen viser
 
 Lag app
 
+## Eksamen høst 2019
+
+{% file src="../.gitbook/assets/it2\_h19.pdf" caption="IT2 heldag høst 2019.pdf" %}
+
+### Oppgave 1.   animasjon - redigering - eventlistener
+
+Ting du må kunne
+
+* [ ] Redigere en gif - endre størrelse til 607 x 700 px
+* [ ] Redigere en mp3 - ta vekk område med støy \(klippe filen\)
+* [ ] Lage evenlisteners slik at du kan klikke på områder av et bilde. En enkel løsning er å lage en div som du plasserer oppå bildet. Denne kan da ha en eventlistener. Du kan bruke css - clip-path `clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0 23%);` til å matche div med muskel på bildet. Div-en er transparent og fungerer bare som click target. Bruk inspect til å redigere verdiene slik at de treffer godt.
+
+
+
+### Oppgave 2.  Enkel app med combo, input, radio, knapp og resultat
+
+Ting du må kunne
+
+* [ ] Lage en kombo med value og visning : &lt;option value="814"&gt;Aerobics&lt;/option&gt;
+* [ ] Lage en input type="radio" med verdier:  \(alle tre har samme name="intensitet" \) &lt;label&gt; &lt;input name="intensitet" type="radio" value="1.2"&gt; Middels &lt;/label&gt;
+* [ ] Lese valgte verdier
+* [ ] Beregne forbruk og vise i en html
+* [ ] Lage flytdiagram
+
+Dette er en klassisk oppgave 1, enkelt skjema med en enkel beregning. Se eksempler.
+
+### Oppgave 3.  combo som styrer en combo
+
+Ting du må kunne \(del 1\)
+
+* [ ] Lage en combo med gitte valg og en eventlistener på change
+* [ ] Lage en ny \(eller sette options for\) en kombo med valg styrt av forrige combo
+* [ ] Enkel løsning er: object: { armer: "Bicepscurl med stang,Fransk press".split\(\),  ... } Den første comboen velger f.eks "armer" som value, bruker denne til å slå opp i obj. henter ut alternativene \(en  array\). Trenger da en funksjon som kan lage select+options fra en array med alternativer Jeg søkte på 'option' i min github og fant denne:
+
+```javascript
+// en funksjon som lager en nedtrekksliste
+/**
+ * @param {Object}  tabell      Inneholder verdier som skal brukes i nedtrekk
+ * @param {string} valgtNokkel  Nøkkel fra første nedtrekk 
+ *                              - fyller ut den andre med verdier fra tabell
+ * @returns {string}            Innhold til en select, 
+ *                              bruk sel.innerHTML = lagNedTrekk(..)
+ */
+
+function lagNedtrekk(valgtNokkel, tabell) {
+    let s = '';
+    if (tabell[valgtNokkel]) {
+        let verdier = tabell[valgtNokkel];
+        for (let v of verdier) {
+            s += `<option>${v}</option>`;
+        }
+    }
+    return s;
+}
+```
+
+Ting du må kunne \(del 2\)
+
+* [ ] Dette er egenlig et registrerings-skjema slik som for person.
+* [ ] Lag en class Trening {  navn, reps,motstand }  // viser bare navnene på egenskaper i klassen.
+* [ ] NB! merk at både **set** og **Set** allerede er brukt av javascript, **set** er et keyword, bør unngå variable eller klasser med disse navnene, derfor class Trening og ikke class Sett \(som er forvirrende likt Set\).
+* [ ] Registrer nye sett \(bør også trigge/kjøre funksjon som viser alle registrerte, neste punkter\).
+* [ ] Vis deltakerliste \(alle sett\) og en oppsummering
+* [ ] For å beregne totalvolum må vi travasere lista med sett `let sum = 0; for (let s of setListe) {   sum += s.reps * s. motstand; }`
+
+
+
