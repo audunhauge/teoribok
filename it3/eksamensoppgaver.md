@@ -81,7 +81,7 @@ Ting du må kunne
 * [ ] Redigere en gif - endre størrelse til 607 x 700 px
 * [ ] Redigere en mp3 - ta vekk område med støy \(klippe filen\)
 * [ ] Lage evenlisteners slik at du kan klikke på områder av et bilde. En enkel løsning er å lage en div som du plasserer oppå bildet. Denne kan da ha en eventlistener. Du kan bruke css - clip-path `clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0 23%);` til å matche div med muskel på bildet. Div-en er transparent og fungerer bare som click target. Bruk inspect til å redigere verdiene slik at de treffer godt.
-* [ ] Spille av lyd styrt av en evenlistener Legg inn `<audio id="lyd1" src="lyd.mp3">` Lag en kobling i html :  `let audioLyd1 = document.getElementById("lyd1")` I eventlistener for klikk på muskel kan du skrive `audioLyd1.play()`
+* [ ] Spille av lyd styrt av en evenlistener Legg inn `<audio id="lyd1" src="lyd.mp3"></audio>` Lag en kobling i html :  `let audioLyd1 = document.getElementById("lyd1")` I eventlistener for klikk på muskel kan du skrive `audioLyd1.play()`
 
 
 
