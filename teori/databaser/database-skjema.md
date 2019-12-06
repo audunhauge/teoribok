@@ -3,24 +3,39 @@
 ## Installasjon av node og npm
 
 Søk på _install nodejs mac_ og installer \([https://nodejs.org/en/download/](https://nodejs.org/en/download/)\).  
-Etter installasjon kan du åpne et nytt kommandovindu og teste:
+Du gjør det samme for windows \(windows har kjøpt både nodejs og github\).  
+Etter installasjon kan du åpne et nytt kommandovindu \(se win/mac under\) og teste:
 
 {% tabs %}
-{% tab title="Node" %}
+{% tab title="På mac" %}
 ```text
+I søkefeltet skriver du terminal - velg terminal.app
+
 :~ bruker$  node
 Welcome to Node,js vxx.xxx
 Type .help for more information
 // trykk ctrl+d for å avslutte node
+
+Sjekk at npm også virker (antar du har avslutta node)
+:~ bruker$  npm
+Usage: npm <command>
+.... masse tekst
 ```
 {% endtab %}
 
-{% tab title="NPM" %}
+{% tab title="Windows" %}
 ```
-:~ bruker$  npm
+I søkefeltet skriver du power shell og starter programmet.
+
+c:\xxx\xxx   node.exe
+Welcome to Node,js vxx.xxx
+Type .help for more information
+// trykk ctrl+d for å avslutte node
+
+Sjekk at npm også virker (antar du har avslutta node)
+c:\xxx\xxx  npm.exe
 Usage: npm <command>
-.....
-npm@x.xx.x /usr/local...
+.... masse tekst
 ```
 {% endtab %}
 {% endtabs %}
@@ -77,7 +92,7 @@ app.post("/runsql", function (req, res) {
 });
 
 app.listen(3000, function () {
-  console.log(`Quiz server started on port ${PORT}`);
+  console.log(`Node server started on port ${PORT}`);
 });
 
 async function runsql(res, obj) {
@@ -102,16 +117,17 @@ async function runsql(res, obj) {
 
 ### Start av node server
 
-I visual studio code kan du nå åpne en terminal ved å trykke cmd+shift+p og skrive **integ temi** .  
-Du får nå fram en terminal inne i vs-code som er åpna i samme mappe som vs-code viser i filvinduet.  
-Du kan da lett bruke **cd bibliotek** etc for å komme inn i bibliotek-mappa.  
-Skriv **ls** og du skal se filene _app.js, bib.sql og package.json_ .
+I visual studio code kan du nå høyre-klikke \(ctrl+venstre osv\) på filen app.js og velge  
+**Open in terminal** . Du får nå opp en integrert terminal i vs-code.  
+Sjekk at vi er i riktig mappe ved å skrive   
+**ls** og du skal se mappa **public** og filene _**app.js, bib.sql** og **package.json**_ .
 
 Skriv **npm install** i terminalvinduet for å legge til nødvendige node filer til prosjektet.  
+DETTE MÅ DU GJØRE HVER GANG DU STARTER ETT NYTT NODE PROSJEKT.  
 Nå kan du teste at serveren virker ved å skrive  
 **node app.js**   
 Du skal se  
-**Quiz server started on port 3000**
+**Node server started on port 3000**
 
 ### **Testing av en enkel html fil**
 
@@ -133,16 +149,20 @@ Du må redigere litt for å få dem til å virke.
 ### Hovedskjema og underskjema med custom components
 
 Jeg har laga følgende custom components som gjør det enklere å lage et skjema som er kobla til databasen. Du bør ta "pull" på min github for å sikre deg at du har siste versjon.  
-Du finner komponentene i mappa [it1/SikkertBibliotek](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1/SikkertBibliotek).
+Du finner komponentene i mappa [it1/SikkertBibliotek](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1/SikkertBibliotek). Se i public/components.
 
 ### **DbTable** 
 
-Du trenger  &lt;script src="DbTable.js"&gt;&lt;/script&gt; i html-filen, kan legges i &lt;head&gt;
+Denne komponenten brukes til å vise en tabell med poster fra en spørring. Spørringen kan være enkel, slik som "select \* from bok" eller inneholde join, group by osv. Kan også brukes til å slette valgte poster fra en tabell. Kan kombineres med db-insert og db-update \(synkronisert\).
 
-```javascript
-<db-table>  update="bok" delete="bok"
+Du trenger  &lt;script src="DbTable.js"&gt;&lt;/script&gt; i html-filen, kan legges i &lt;head&gt;  
+Legg inn riktig sti \( i mine eksempler ligger html filene i mappa html, komponentene ligger i components, derfor må jeg skrive src="../components/DbTable.js"      ".." betyr gå opp ett mappenivå.\)
+
+```markup
+<db-table  update="bok" 
+            delete="bok"
             fields="bokid:hidden,tittel,antallsider:number"
-               sql="select * from bok">
+               sql="select * from bok"  >
         <span slot="caption"> Bøker </span>
 </db-table>
 ```
@@ -162,5 +182,56 @@ Selve &lt;db-table&gt; tar imot disse verdiene fra css:  { --head:beige;  --alte
 
 ![Visning for &amp;lt;db-table&amp;gt; over](../../.gitbook/assets/dbtable.png)
 
+### DbInsert
 
+Denne komponenten lar deg registrere nye poster i en tabell. Støtter enkle fremmednøkler \(verdi hentes fra en annen tabell\). Dersom du ønsker/trenger en fremmednøkkel basert på en spørring, da kan du bruke   
+**db-foreign** som en subkomponent. Typisk vil du ha med **db-table** på samme skjema/webside slik at bruker får god feedback på at innsetting var vellykka.
+
+Koble til script som for db-table.
+
+```markup
+<!-- NR.1 enkel versjon -->
+<db-insert id="f1" 
+       fields="fornavn,etternavn" 
+        table="forfatter"  >
+   <span slot="heading">Registrer Forfatter</span>
+</db-insert>
+
+<!-- NR.2 flere fremmednøkler -->
+<db-insert id="f2" 
+       fields="innlevert:checkbox" 
+      foreign="laaner.laanerid:fornavn+etternavn" 
+        table="utlaan"  >
+    <span slot="heading">Registrer Utlån</span>
+    <db-foreign  label="tittel" 
+               foreign="eksemplarid"
+                   sql="select e.eksemplarid,
+   concat(e.eksemplarid,':',b.tittel,' av ',f.fornavn, ' ',f.etternavn,
+          ', tillstand:',e.tillstand) as tittel 
+   from eksemplar e join bok b on (e.bokid = b.bokid) 
+   join forfatter f on (f.forfatterid = b.forfatterid)"  >
+     </db-foreign>
+</db-insert>
+```
+
+Det første eksemplet er rett fram, en tabell uten fremmednøkler er lett å sette opp.
+
+Eksempel nr 2 har to fremmednøkler, laanerid og eksemplarid.  
+Fremmednøkkelen for **laanerid** kan lages ved hjelp av  
+  foreign="laaner.laanerid:fornavn+etternavn"  
+laaner.laanerid sier at vi henter laanerid fra tabellen laaner - dette gir verdi til fremmednøkkelen.  
+:fornavn+etternavn sier at vi ønsker å vise navn på låner i kombo-boksen, ellers vil bare laanerid vises.  
+Fremmednøkkelen for **eksemplarid** kan ikke lages så enkelt, da tabellen eksemplar ikke har tittel på bok eller navn på forfatter \(som vi nesten må vise\). Dermed bruker vi komponenten db-foreign som lar oss sette sammen en komboboks basert på en spørring. Sjekk nedenfor hvordan du kan bruke **db-foreign** .
+
+### DbForeign
+
+Denne komponenten lar deg lage en komboboks \(&lt;select&gt;\) basert på en spørring.
+
+label="navn"     teksten som vises som label for &lt;select&gt;  
+foreign="felt"    feltet som skal få verdi fra denne komponenten  
+sql = "..."            sql som velger verdier for &lt;select&gt;, både felt som gir verdi til fremmednøkkel og felt som  
+                           skal brukes til å vise valg i comboen må tas med.
+
+Ved change i denne komponenten sendes en custom event dbChange med id på &lt;select&gt;.  
+Intereserte komponenter \(slik som dbinsert\) kan da hente ut verdien.
 
