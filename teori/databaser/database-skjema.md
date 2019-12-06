@@ -235,3 +235,65 @@ sql = "..."            sql som velger verdier for &lt;select&gt;, både felt som
 Ved change i denne komponenten sendes en custom event dbChange med id på &lt;select&gt;.  
 Intereserte komponenter \(slik som dbinsert\) kan da hente ut verdien.
 
+![Tittel er laga med db-foreign, laaner er laga av db-insert](../../.gitbook/assets/dbforeign.png)
+
+### DbUpdate
+
+Denn komponenten lar deg redigere poster som allerede er registrerte. Passer også godt til å lage hoved-underskjema. Underskjema er da laga med db-table som oppdateres når du blar i hovedskjema   
+\(db-update\). Foreløpig kan du ikke ha flere nivå.
+
+```markup
+<db-update  id="form" 
+           key="bokid" 
+        update="true"
+        fields="bokid,tittel,pdato:date,isbn,antallsider:number" 
+         table="bok"  >
+    <span slot="heading">Rediger Bok</span>
+</db-update>
+
+<div class="table">
+   <db-table connected="form:bokid" fields="eksemplarid,tillstand" 
+             sql="select * from eksemplar">
+       <span slot="caption">Eksemplar av valgt bok</span>
+   </db-table>
+
+   <db-table connected="form:bokid" fields="antall:number"
+        sql="select count(u.utlaanid) as antall from 
+            utlaan u join eksemplar e on (u.eksemplarid=e.eksemplarid)" >
+        <span slot="caption">Antall utlån av denne boka</span>
+   </db-table>
+</div>
+```
+
+I eksemplet over vil de to tabellene følge valgt post i db-update. Dersom update="true" kan du redigere feltene og lagre nye verdier.   
+key="nøkkel"  -- dette er nøkkelfelt i tabellen - antas å være auto-increment / serial primary key.  
+                            dette feltet kan ikke redigeres \(disabled som default\).
+
+![Redigering av bok, pilene blar gjennom hele datasettet](../../.gitbook/assets/dbupdate.png)
+
+### Et eksempel på enkelt skjema
+
+```markup
+<head>
+ <script src="/components/DbInsert.js"></script>
+ <script src="/components/DbTable.js"></script>
+</head>
+<body>
+    <div id="admin">
+        <div class="table">
+            <db-table id="table" update="true" delete="bok" 
+              fields="bokid,tittel,fornavn,etternavn,antallsider:number"
+              sql="select b.*,f.fornavn,f.etternavn from bok b 
+                 join forfatter f on (b.forfatterid = f.forfatterid)" >
+              <span slot="caption">Bøker</span>
+            </db-table>
+        </div>
+        <db-insert id="form" fields="tittel,antallsider" 
+                  foreign="forfatter.forfatterid:fornavn+etternavn" 
+                  table="bok">
+            <span slot="heading">Registrer Bok</span>
+        </db-insert>
+    </div>
+</body>
+```
+
