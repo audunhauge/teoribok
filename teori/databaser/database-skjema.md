@@ -130,5 +130,37 @@ Du må redigere litt for å få dem til å virke.
 
 ![forfatter](../../.gitbook/assets/forfatter.png)
 
+### Hovedskjema og underskjema med custom components
+
+Jeg har laga følgende custom components som gjør det enklere å lage et skjema som er kobla til databasen. Du bør ta "pull" på min github for å sikre deg at du har siste versjon.  
+Du finner komponentene i mappa [it1/SikkertBibliotek](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1/SikkertBibliotek).
+
+### **DbTable** 
+
+Du trenger  &lt;script src="DbTable.js"&gt;&lt;/script&gt; i html-filen, kan legges i &lt;head&gt;
+
+```javascript
+<db-table>  update="bok" delete="bok"
+            fields="bokid:hidden,tittel,antallsider:number"
+               sql="select * from bok">
+        <span slot="caption"> Bøker </span>
+</db-table>
+```
+
+update = bok   ---  fører til at tabellen lastes på nytt dersom tabellen bok endres av andre komponenter  
+                                typisk bruk er at du har en db-insert og en db-table mot samme tabell på samme side.  
+                                da vil lagring av ny bok trigge oppdatering av db-table.  
+delete = bok    ---  du kan markere og slette poster \(sletter i tabellen bok\) - forutsetter at nøkkelfelt for  
+                               tabellen bok er første felt i fields="..."  
+fields                ---  list de feltene du vil vise, du kan bruke number,checkbox,date,hidden som felttype.  
+                               :hidden gjør at feltet er med, men vises ikke   
+                               \(trengs kanskje til å koble komponenter\)  
+sql                     ---  skriv ønska sql, må returnere feltene som er nevnt i fields, kan bruke \*, all lovlig sql.    
+slot=caption    ---  her kan du legge inn ønska overskrift for tabellen. Du kan style den med vanlig css.  
+  
+Selve &lt;db-table&gt; tar imot disse verdiene fra css:  { --head:beige;  --alternate:lightsteelblue; }
+
+![Visning for &amp;lt;db-table&amp;gt; over](../../.gitbook/assets/dbtable.png)
+
 
 
