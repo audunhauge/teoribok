@@ -132,8 +132,9 @@ select fornavn,etternavn,tittel from
    
 -- ofte nyttig å gi et kortnavn til tabellen slik som dette:
 select f.fornavn, f.etternavn, b.tittel 
-  from forfatter f inner join bok b
+  from forfatter f join bok b
   on (f.forfatterid = b.forfatterid);
+-- merk at "inner join" og "join" er synonymer
 ```
 
 ### Where betingelser
@@ -160,5 +161,68 @@ select f.fornavn, f.etternavn, b.tittel
   where b.antallsider > 100;
 -- finner fornavn,etternavn,tittel på forfatter/bok på over 100 sider
 
+```
+
+### Aggregatfunksjoner og subselects
+
+I en spørring kan du bruke aggregat-funksjoner som kan beregne count, sum, avg, min og max.  
+Dersom du vil finne antallet bøker med tittel som inneholder ordet "fred" kan du kjøre denne:  
+`select count(*) from bok where tittel ~ 'fred';`  
+For å få en finere kolonne-overskrift kan du bruke **as** til å sette navn på verdien:  
+`select count(*)`**`as`**`antall from bok where tittel ~ 'fred';`  
+De andre aggregat-funksjonene \(sum,min,max,avg\) brukes på tall-felt.
+
+```sql
+-- hvor lang er den lengste boka ?
+select max(antallsider) from bok;
+
+-- Versjon 1: hvem har skrevet den lengste boka ?
+-- denne bruker subselect
+-- MERK: denne feiler dersom det er fler som har lengst bok
+select fornavn,etternavn from forfatter 
+       where forfatterid =  
+       (select forfatterid from bok where antallsider = 
+         (select max(antallsider) from bok) 
+        );
+
+-- Versjon 2: hvem har skrevet den lengste boka ? 
+-- takler flere vinnere
+-- MERK: skifter "=" til "in"
+select fornavn,etternavn from forfatter 
+       where forfatterid in  
+       (select forfatterid from bok where antallsider = 
+         (select max(antallsider) from bok) 
+        );
+        
+-- hvor lange er astrid lingrens bøker i gjennomsnitt ?
+-- versjon 1, vi kjenner forfatterid til astrid
+select avg(antallsider) from bok where forfatterid = 22;
+
+-- versjon 2 - vi kjenner ikke forfatterid        
+select avg(antallsider) from bok 
+  where forfatterid =
+  (select forfatterid from forfatter where 
+        fornavn='Astrid' and etternavn='Lindgren');
+-- merk at her må fornavn/etternavn matche eksakt
+-- "astrid" er ikke lik "Astrid"
+-- dersom flere har dette navnet må vi skifte til "in" som på linje 17
+```
+
+### Aggregatfunksjoner med group by og having
+
+Vi kan gruppere resultatene av en aggregatfunksjon med **group by**, og filtrere med **having**.
+
+```sql
+-- hvor mange sider har hver forfatter skrevet tilsammen ?
+select f.fornavn, f.etternavn, sum(b.antallsider) as total from 
+       forfatter f join bok b on (b.forfatterid=f.forfatterid) 
+       group by f.forfatterid;
+-- får kolonner: fornavn,etternavn,total
+
+-- hvilke forfattere har skrevet minst 500 sider tilsammen ?
+select f.fornavn, f.etternavn, sum(b.antallsider) as total from 
+       forfatter f join bok b on (b.forfatterid=f.forfatterid) 
+       group by f.forfatterid having sum(b.antallsider) > 500;
+-- merk at jeg ikke kan skrive "having total > 500", må gjenta beregningen
 ```
 
