@@ -167,16 +167,27 @@ Legg inn riktig sti \( i mine eksempler ligger html filene i mappa html, kompone
 </db-table>
 ```
 
-update = bok   ---  fører til at tabellen lastes på nytt dersom tabellen bok endres av andre komponenter  
-                                typisk bruk er at du har en db-insert og en db-table mot samme tabell på samme side.  
-                                da vil lagring av ny bok trigge oppdatering av db-table.  
-delete = bok    ---  du kan markere og slette poster \(sletter i tabellen bok\) - forutsetter at nøkkelfelt for  
-                               tabellen bok er første felt i fields="..."  
-fields                ---  list de feltene du vil vise, du kan bruke number,checkbox,date,hidden som felttype.  
-                               :hidden gjør at feltet er med, men vises ikke   
-                               \(trengs kanskje til å koble komponenter\)  
-sql                     ---  skriv ønska sql, må returnere feltene som er nevnt i fields, kan bruke \*, all lovlig sql.    
-slot=caption    ---  her kan du legge inn ønska overskrift for tabellen. Du kan style den med vanlig css.  
+update = bok     
+        fører til at tabellen lastes på nytt dersom tabellen bok endres av andre komponenter  
+        typisk bruk er at du har en db-insert og en db-table mot samme tabell på samme side.  
+        da vil lagring av ny bok trigge oppdatering av db-table.  
+connected = id:field  
+        kobler denne db-table opp mot en annen komponent \(med gitt id\)  
+        dersom denne endres - da hentes feltverdien \(field\) og denne tabellen tegnes på nytt.  
+        En db-table\#hovedskjema med forfatter, ved klikk på forfatter oppdaters boklista  
+        \(en db-table med  connected="hovedskjema:forfatterid"\)  
+delete = bok      
+         du kan markere og slette poster \(sletter i tabellen bok\) - forutsetter at nøkkelfelt for  
+         tabellen bok er første felt i fields="..."  
+key    
+         verdien som gir value til denne komponenten, brukes av avhengige komponenter  
+fields  
+         list de feltene du vil vise, du kan bruke number,checkbox,date,hidden som felttype.  
+         :hidden gjør at feltet er med, men vises ikke   
+sql  
+        skriv ønska sql, må returnere feltene som er nevnt i fields, kan bruke \*, all lovlig sql.    
+slot=caption  
+         her kan du legge inn ønska overskrift for tabellen. Du kan style den med vanlig css.  
   
 Selve &lt;db-table&gt; tar imot disse verdiene fra css:  { --head:beige;  --alternate:lightsteelblue; }
 
