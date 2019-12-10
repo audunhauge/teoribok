@@ -3,9 +3,18 @@
 ## Klasser <a id="klasser"></a>
 
 Jeg velger å beskrive klasser ut fra siste versjon som er implementert i nettleseren Chrome \(mars 2016\).  
-Den eldre løsningen for klasser vises i et tillegskapittel.
+Merk at klasser i js egentlig er objects med pene klær.
+
+[Denne linken](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model) gir en dypere innføring i javascript klasser - sammenligna med java.
 
 ### Class <a id="class"></a>
+
+{% hint style="info" %}
+I språk som Java,C++,D,C\# osv er det et klart skille mellom klasser og instanse.  
+Klassen er definisjonen - instansen er objektet du bruker.  
+  
+I javascript er Klassen egentlig et Object \(prototype object\) og instansen er en kopi av dette objectet. Funksjonaliteten blir den samme ved at kopien har en link til prototypen \(som igjen kan ha en videre link\). Dette er måten arv implementeres på i js.
+{% endhint %}
 
 ```javascript
 class Rektangel {
@@ -20,7 +29,7 @@ var r1 = new Rektangel(30,40);
 
 Her har jeg definert en ny klasse med navnet Rektangel. Merk at jeg må definere klassen før jeg bruker den, klasser blir ikke _hoisted_ \(flyttet til toppen av scopet\) slik som funksjoner.
 
-En klasse kan bare ha en funksjon med navnet **constructor**. Det er denne funksjonen som kjøres når du lager en ny instans \(en variabel av klassen, slik som r1 er en instans av klassen Rektangle\).
+En klasse kan bare ha én funksjon med navnet **constructor**. Det er denne funksjonen som kjøres når du lager en ny instans \(en variabel av klassen, slik som r1 er en instans av klassen Rektangle\).
 
 Dersom du tester koden over i consol \(ctrl+shift+j\) \(copy paste koden inn i consol, trykk deretter enter\) og så skriver **r1** og trykker enter, da viser chrome:
 
@@ -69,7 +78,7 @@ class Sprite {
   }
   render() {
     this.div.style.transform = 
-      `translate(${this.x},${this.y})`;
+      `translate(${this.x}px,${this.y}px)`;
   }
 }
 // antar at vi har en css regel som gjør at div.tree
@@ -136,12 +145,12 @@ class Turnable extends Movable {
   // har med rotasjon
   render() {
     this.div.style.transform = 
-      `translate(${x},${y}) rotate(${this.angle}rad)`;
+      `translate(${this.x}px,${this.y}px) rotate(${this.angle}rad)`;
   }
 }
 ```
 
-### Bruk av klassene Sprite, Movable og Rotatable
+### Bruk av klassene Sprite, Movable og Turnable
 
 ```javascript
 // jeg lager en instans av hver klasse
@@ -153,7 +162,7 @@ let w = 40;
 let h = 30;
 let s = new Sprite( { div:div1, x,y,w,h } );
 let m = new Movable( { div:div2, x,y,w,h }, 2, 3 );
-let r = new Rotatable( { div:div3, x,y,w,h }, 0.3, 10 );
+let r = new Turnable( { div:div3, x,y,w,h }, 0.3, 10 );
 
 s.render()      // div1 plasseres på (x,y) = (100,200) 
                 // og blir værende der
@@ -168,6 +177,132 @@ r.move()        // som m
 r.turn(0.01)    // r snur seg litt
 r.move()        // beveger seg i den nye retningen
 ```
+
+### En liten kjørbar demo med Sprite, Movable og Turnable
+
+Lag et nytt prosjekt i vs-code og legg inn koden under. Koble css og js som vanlig
+
+{% tabs %}
+{% tab title="HTML" %}
+```
+<div id="game">
+</div>
+<script>
+  setup();
+</script>
+```
+{% endtab %}
+
+{% tab title="CSS" %}
+```css
+#game {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border: solid 1px gray;
+  background-color: whitesmoke;
+}
+
+.tree {
+  width: 5px;
+  height: 25px;
+  background-color: teal;
+}
+
+.bird {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.dog {
+  width: 30px;
+  height: 15px;
+  background-color: red;
+}
+```
+{% endtab %}
+
+{% tab title="JS" %}
+```javascript
+class Sprite {
+  constructor({ div, x, y, w, h }) {
+    this.div = div;
+    this.x = x || 0;
+    this.y = y || 0;
+    this.w = w || 10;
+    this.h = h || 10;
+  }
+  render() {
+    this.div.style.transform = `translate(${this.x}px,${this.y}px)`
+  }
+}
+
+class Movable extends Sprite {
+  constructor(spriteInfo, vx, vy) {
+    super(spriteInfo);
+    this.vx = vx;
+    this.vy = vy;
+  }
+  move() {
+    this.x += this.vx;
+    this.y += this.vy;
+  }
+}
+
+class Turnable extends Movable {
+  constructor(spriteInfo, angle, speed) {
+    let vx = Math.cos(angle) * speed;
+    let vy = Math.sin(angle) * speed;
+    super(spriteInfo, vx, vy);
+    this.angle = angle;
+    this.speed = speed;
+  }
+  turn(delta) {
+    this.angle = (this.angle + delta) % (Math.PI * 2);
+    this.vx = Math.cos(this.angle) * this.speed;
+    this.vy = Math.sin(this.angle) * this.speed;
+  }
+
+  // må lage egen render da Sprite sin render ikke har med rotasjon
+  render() {
+    this.div.style.transform = `translate(${this.x}px,${this.y}px) 
+    rotate(${this.angle}rad)`;
+  }
+}
+
+const g = id => document.getElementById(id);
+const getdiv = () => document.createElement("div");
+
+function setup() {
+  let divGame = g("game");
+  let x = 100,
+    y = 100,
+    w = 10,
+    h = 10;
+  let s = new Sprite({ div: getdiv(), x, y, w: 5, h: 25 });
+  let m = new Movable({ div: getdiv(), x, y, w: 20, h: 20 }, 2, 3);
+  let r = new Turnable({ div: getdiv(), x, y, w: 30, h: 15 }, 0.3, 3);
+  s.div.className = "tree";
+  m.div.className = "bird";
+  r.div.className = "dog";
+  divGame.appendChild(s.div);
+  divGame.appendChild(m.div);
+  divGame.appendChild(r.div);
+  const itemList = [s,m,r];
+
+  setInterval(() => {
+      for (let item of itemList) {
+          item.render();
+          if (item instanceof Movable) item.move();
+          if (item instanceof Turnable) item.turn(0.05);
+      }
+  }, 40);
+}
+```
+{% endtab %}
+{% endtabs %}
 
 
 
