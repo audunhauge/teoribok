@@ -134,9 +134,15 @@ function lagNyListeMedFolkFraBy(arr,by) {
 {% endtab %}
 
 {% tab title="Arrow" %}
-```
+```javascript
 // her kommer løsningsforslag
 const add = (a,b) => a+b;
+
+const summer = (arr) => arr.reduce( (s,v) => s+v, 0 );
+
+const find = (arr, n) => arr.find( p => p.navn === n);
+
+const fraBy = (arr, by) => arr.filter( p => p.adresse === by);
 ```
 {% endtab %}
 {% endtabs %}
