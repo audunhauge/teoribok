@@ -194,3 +194,20 @@ setTimeout(() => {
 }, 400);
 ```
 
+## Summere opp verdier fra et array
+
+```javascript
+// for et array med rene tallverdier kan du bruke denne
+let a = [ 1,2,3,4,5,6,7,8,9,10 ];
+let sum = a.reduce( (sum, verdi) => sum+verdi, 0);
+
+// for en array av objekter
+let a = [ { navn:"ole", poeng:12 } , {..}, ... ];
+let sum = a.reduce( (s,e) => s + e.poeng, 0 );
+
+// array av objekter, men med antall og pris
+let a = [ { vare:"spiker", antall:1000, pris:0.3 },
+          { vare:"hammmer", antall:2, pris:217 }, .... ]
+let sum = a.reduce( (s,e) => s + e.antall * e.pris, 0 );
+```
+
