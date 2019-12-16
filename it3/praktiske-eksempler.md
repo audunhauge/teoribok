@@ -234,3 +234,47 @@ let a = [ { vare:"spiker", antall:1000, pris:0.3 },
 let sum = a.reduce( (s,e) => s + e.antall * e.pris, 0 );
 ```
 
+## Finne verdier/plassering i en array
+
+```javascript
+// sjekk om et tall finnes i et array
+let a = [ 1,2,3,4,5 ];
+if (a.includes(3) { /* kjøres dersom 3 finnes i a */ }
+// det samme for tekst
+let s = "det er en fin dag"
+if (s.includes("fin") { .... }
+
+// finn POSISJON til en verdi
+let p = a.findIndex( e => e === 3 ) // p = 2
+let q = a.findIndex( e => e > 3 )  // q = 3
+// q finner posisjon til første verdi som er større enn 3
+let nope = a.findIndex(e => e > 100) // nope = -1, ikke funnet
+
+// finn en VERDI som oppfyller et krav
+let odd = a.find( e => e > 3 && e % 2 === 0) // finner 5
+let kvad = a.find( e => Number.isInteger(Math.sqrt(e)) ) // finner 4
+
+// Finn alle verdier som oppfyller et krav
+// Merk at nå er resultatet et array
+let partall = a.filter(e => e%2 === 0) // [2,4]
+let odde = a.filter(e => e%2 === 1) // [1,3,5]
+```
+
+## Endre alle verdier i et array
+
+```javascript
+// øke alle verdier med 20%
+// elementene { } kan inneholde flere egenskaper
+let vareListe = [ { pris:200 }, { pris:300 } ]
+vareListe.forEach( e => e.pris *= 1.2 );
+
+// plukk ut prisene (bare tallverdiene)
+let priser = vareListe.map(e => e.pris)
+// priser = [ 200,300 ]
+
+// endre alle ord til uppercase
+let ord = "mange ord som skal bli uppercase".split(" ")
+let storeOrd = ord.map(e => e.upperCase() );
+// storeOrd = [ "MANGE","ORD", ... ]
+```
+
