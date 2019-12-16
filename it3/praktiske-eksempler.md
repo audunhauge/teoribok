@@ -98,6 +98,50 @@ if ( betingelse1 ) {
 // kan gjentas med så mange betingelser som nødvendig
 ```
 
+## Switch
+
+Kan brukes for både tall og tekst
+
+{% tabs %}
+{% tab title="Tekst" %}
+```javascript
+switch(key) {
+  case "en":
+    // kode for dette tilfellet
+    break;
+  case "to":
+    // kode
+    break;
+  case "tre":
+  case "fire":
+    // kode for 3 og 4
+    break;
+  default:
+    // alle andre
+}
+```
+{% endtab %}
+
+{% tab title="Tall" %}
+```javascript
+switch(key) {
+  case 12:
+    // kode for dette tilfellet
+    break;
+  case 13:
+    // kode
+    break;
+  case 14:
+  case 15:
+    // kode for 14 og 15
+    break;
+  default:
+    // alle andre
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ## Løkker
 
 **for løkke**
@@ -150,11 +194,11 @@ let storst = Math.max( ... tabell);
 
 ## Lese en fil
 
-NB! Denne metoden virker bare dersom du laster sida fra en webserver.
+{% hint style="info" %}
+#### NB! Denne metoden virker bare dersom du laster sida fra en webserver.
+{% endhint %}
 
 I eksemplene under antar vi at funksjonen **behandle** tar seg av bearbeiding av motatt data.
-
-**bruk av fetch**
 
 Koden under bruker fetch metoden som støttes av moderne nettlesere slik som Chrome og Firefox.
 
@@ -163,27 +207,6 @@ let url = "elevliste.json";
 fetch(url).then(r => r.json())
   .then(data => behandle(data))
   .catch(e => console.log("Dette virka ikke."))
-```
-
-~~**bruk av xhr**~~
-
-~~Denne metoden virker i alle nettlesere, også de som er gått ut på dato.~~
-
-```javascript
-var url = "elevliste.json";
-var xhr = new XMLHttpRequest();
-xhr.open('GET', url);
-xhr.responseType = 'json';
-
-xhr.onload = function() {
-  behandle(xhr.response);
-};
-
-xhr.onerror = function() {
-  console.log("Dette gikk ikke bra.");
-};
-
-xhr.send();
 ```
 
 ## Kjøre kode etter en delay \(forsinkelse\)
