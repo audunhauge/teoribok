@@ -44,6 +44,7 @@
 * [Klasser](it3/klasser.md)
 * [Web API](it3/web-api.md)
 * [Praktiske eksempler](it3/praktiske-eksempler.md)
+* [Øvingsoppgaver](it3/ovingsoppgaver.md)
 * [Eksamensoppgaver](it3/eksamensoppgaver.md)
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it2)
 * [Custom web components](it3/custom-web-components.md)
