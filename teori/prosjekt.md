@@ -7,7 +7,11 @@ Du må endre litt på kommandoene
 `create role bib password '123';`  
 må redigeres til  `create role xxx password 'yyy';`
 
-Gjør det samme for begge\[sic\] de tre linjene.
+Gjør det samme for begge\[sic\] de tre linjene. Linjene skal kjøres i postgres.  
+Lag en prosjektnavn.sql for databasen i vs-code. Denne kan du importere i dbdiagram.io og sjekke  
+om den virker. Når den er i orden kan du kjøre den i postgres -  
+startes med `psql databaseNavn -U databaseEier` \(psql bib -U bib for forrige prosjekt\).  
+Lim inn koden fra prosjektnavn.sql i dette vinduet. Da lages tabellene.
 
 ### Opprett en felles github
 
@@ -44,5 +48,17 @@ main
 
 Filen app.js må redigeres - endre   
 `const CONNECTSTRING = "postgres://bib:123@localhost/bib";`  
-til riktig versjon for ditt prosjekt. Bytt ut bib med den nye brukeren du laga
+til riktig versjon for ditt prosjekt. Bytt ut bib med den nye brukeren du laga tidligere.  
+Strukturen er:  postgres://brukernavn:passord@server/databasenavn
+
+### Første testkjøring
+
+Når databasen er laga, app.js er redigert og mappestrukturen er som vist - da kan du kjøre første test:.
+
+* [ ] Høyre-klikk på app.js og velg **open in terminal**.
+* [ ] Skriv `npm install`.
+* [ ] Skriv `node app.js` .
+
+Med litt flaks skriver serveren ut   
+`Du kan koble deg til på` [`http://localhost:3000`](http://localhost:3000)\`\`
 
