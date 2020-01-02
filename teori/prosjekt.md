@@ -1,6 +1,15 @@
 # Prosjekt
 
-### appOpprett en felles github
+### Lag en database for prosjektet
+
+Se [oppskrift](databaser/#lag-en-ny-database) på hvordan du lager en ny database.  
+Du må endre litt på kommandoene   
+`create role bib password '123';`  
+må redigeres til  `create role xxx password 'yyy';`
+
+Gjør det samme for begge\[sic\] de tre linjene.
+
+### Opprett en felles github
 
 En på gruppa lager en ny repository på github.  
 Klikk på det nye repositoriet \( i github.com\) og velg **settings**.  
@@ -33,5 +42,7 @@ main
      og sider som krever vanlig brukernavn
 ```
 
-Filen app.js må redigeres - endre 
+Filen app.js må redigeres - endre   
+`const CONNECTSTRING = "postgres://bib:123@localhost/bib";`  
+til riktig versjon for ditt prosjekt. Bytt ut bib med den nye brukeren du laga
 
