@@ -1,0 +1,37 @@
+# Prosjekt
+
+### appOpprett en felles github
+
+En på gruppa lager en ny repository på github.  
+Klikk på det nye repositoriet \( i github.com\) og velg **settings**.  
+Under **options** vil du se **collaborators**, klikk på denne.  
+Skriv in brukernavn \(på github\) for de som skal være med i prosjektet.
+
+### Last ned det nye prosjektet
+
+Gå inn på repositoriet \(på github.com\), klikk på navnet og du skal se en grønn knapp med  
+**clone or download** som tekst. Klikk på denne og velg https - ta kopi av linken.  
+Åpne **terminal** og skriv inn følgende: \(men med den kopierte linken\)  
+`git clone` [`https://github.com/brukernavnetDitt/prosjektnavn.git`](https://github.com/audunhauge/studietid.git)\`\`
+
+### Kopier sikkert-bibliotek
+
+Bruk vs-code til å å sjekke at du har siste versjon av audunhauge.github.io \(git pull\).  
+Kopier innholdet av Sikkert-bibliotek til den nye prosjektmappa \(den du fikk med git clone\).  
+Gå inn i mappa \(bruk vs-code\). Du skal se samme struktur som i Sikkert-Bib.
+
+```text
+app.js          --- må være med
+package.json    --- må være med
+public
+  |------
+     her ligger websider som alle kan se
+     du trenger ikke logge inn
+main
+  |------
+     her ligger admin sider som er beskytta av passord
+     og sider som krever vanlig brukernavn
+```
+
+Filen app.js må redigeres - endre 
+
