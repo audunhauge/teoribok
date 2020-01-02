@@ -13,6 +13,16 @@ om den virker. Når den er i orden kan du kjøre den i postgres -
 startes med `psql databaseNavn -U databaseEier` \(psql bib -U bib for forrige prosjekt\).  
 Lim inn koden fra prosjektnavn.sql i dette vinduet. Da lages tabellene.
 
+```sql
+-- Jeg la inn linjene under i mitt forsøk: shop.sql
+-- Dette fikser eierskap på alle tabellene mine.
+-- Endre til dine tabellnavn og ditt brukernavn.
+alter table bestilling owner to shop;
+alter table vare owner to shop;
+alter table kunde owner to shop;
+alter table linje owner to shop;
+```
+
 ### Opprett en felles github
 
 En på gruppa lager en ny repository på github.  
@@ -31,16 +41,24 @@ Gå inn på repositoriet \(på github.com\), klikk på navnet og du skal se en g
 
 Bruk vs-code til å å sjekke at du har siste versjon av audunhauge.github.io \(git pull\).  
 Kopier innholdet av Sikkert-bibliotek til den nye prosjektmappa \(den du fikk med git clone\).  
-Gå inn i mappa \(bruk vs-code\). Du skal se samme struktur som i Sikkert-Bib.
+Gå inn i mappa \(bruk vs-code\). Du skal se samme struktur som i Sikkert-Bib.  
+Merk at følgende filer MÅ VÆRE MED:
+
+* app.js
+* package.json
+* public/  \(en mappe\)
+* public/index.html   \(startsida\)
+* admin/  \(en mappe\)
 
 ```text
 app.js          --- må være med
 package.json    --- må være med
 public
   |------
-     her ligger websider som alle kan se
-     du trenger ikke logge inn
-main
+     // her ligger websider som alle kan se
+     // du trenger ikke logge inn
+     index.html    --- må være med, dette er startsida
+admin
   |------
      her ligger admin sider som er beskytta av passord
      og sider som krever vanlig brukernavn
@@ -60,5 +78,7 @@ Når databasen er laga, app.js er redigert og mappestrukturen er som vist - da k
 * [ ] Skriv `node app.js` .
 
 Med litt flaks skriver serveren ut   
-`Du kan koble deg til på` [`http://localhost:3000`](http://localhost:3000)\`\`
+`Du kan koble deg til på` [`http://localhost:3000`](http://localhost:3000)
+
+Den sida som vises er public/index.html. Dette er forsida til prosjektet ditt og skal inneholde overskrift, bilder og anna snadder. I tillegg linker til admin-sider og andre sider som bruker databasen.
 
