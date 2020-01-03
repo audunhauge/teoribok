@@ -1,28 +1,5 @@
 # Prosjekt
 
-### Lag en database for prosjektet
-
-Se [oppskrift](databaser/#lag-en-ny-database) på hvordan du lager en ny database.  
-Du må endre litt på kommandoene   
-`create role bib password '123';`  
-må redigeres til  `create role xxx password 'yyy';`
-
-Gjør det samme for begge\[sic\] de tre linjene. Linjene skal kjøres i postgres.  
-Lag en prosjektnavn.sql for databasen i vs-code. Denne kan du importere i dbdiagram.io og sjekke  
-om den virker. Når den er i orden kan du kjøre den i postgres -  
-startes med `psql databaseNavn -U databaseEier` \(psql bib -U bib for forrige prosjekt\).  
-Lim inn koden fra prosjektnavn.sql i dette vinduet. Da lages tabellene.
-
-```sql
--- Jeg la inn linjene under i mitt forsøk: shop.sql
--- Dette fikser eierskap på alle tabellene mine.
--- Endre til dine tabellnavn og ditt brukernavn.
-alter table bestilling owner to shop;
-alter table vare owner to shop;
-alter table kunde owner to shop;
-alter table linje owner to shop;
-```
-
 ### Opprett en felles github
 
 En på gruppa lager en ny repository på github.  
@@ -53,11 +30,13 @@ Merk at følgende filer MÅ VÆRE MED:
 ```text
 app.js          --- må være med
 package.json    --- må være med
+xxx.sql         --- skal være med (xxx => prosjektnavn)
 public
   |------
      // her ligger websider som alle kan se
      // du trenger ikke logge inn
      index.html    --- må være med, dette er startsida
+     plan.html     --- plandokument for prosjektet
 admin
   |------
      her ligger admin sider som er beskytta av passord
@@ -65,9 +44,104 @@ admin
 ```
 
 Filen app.js må redigeres - endre   
-`const CONNECTSTRING = "postgres://bib:123@localhost/bib";`  
-til riktig versjon for ditt prosjekt. Bytt ut bib med den nye brukeren du laga tidligere.  
+`const CONNECTSTRING = "postgres://xxx:123@localhost/xxx";`  
+til riktig versjon for ditt prosjekt. Bytt ut xxx med den nye brukeren du lager for prosjektet.  
 Strukturen er:  postgres://brukernavn:passord@server/databasenavn
+
+### Lag en database for prosjektet
+
+Under en grovskisse til xxx.sql \(xxx byttes ut med prosjektnavnet deres\).  
+**Merk at tabellen** _**users**_ **må finnes dersom nye brukere skal kunne registrere seg selv.**  
+Ta kopi og rediger filen under, legg den på samme nivå som app.js i prosjektet.  
+Åpne en terminal \(ctrl+klikk på app.js, velg Open in terminal\) og start opp postgres \(skriv psql\).  
+Skriv denne kommandoen i psql:  `\i xxx.sql` \(igjen:  xxx.sql er navnet på fila under, xxx byttes ut\).  
+Da lastes denne fila inn og alle kommandoene kjøres.  
+**Alternativt** kan du starte postgres.app, åpne postgres databasen og paste inn innholdet under.
+
+{% tabs %}
+{% tab title="SQL" %}
+{% code title="xxx.sql" %}
+```sql
+-- lag database,bruker og set passord
+-- kan gjøres fra postgres databasen i postgres.app
+
+create role xxx password '123';     -- xxx er brukeren
+alter role xxx with login;          -- kan logge in via net
+create database xxx owner xxx;      -- lag en database xxx
+
+-- skift til den nye databasen
+\c xxx;
+
+--- viser eksempel for en webshop
+--- ALLE SKAL HA MED USERS 
+
+DROP TABLE IF EXISTS users cascade;
+DROP TABLE IF EXISTS kunde cascade;
+DROP TABLE IF EXISTS vare cascade;
+DROP TABLE IF EXISTS bestilling cascade;
+DROP TABLE IF EXISTS linje cascade;
+
+
+create table users (
+    userid SERIAL PRIMARY KEY,
+    username text unique not null,
+    email text unique not null,
+    role text default 'user',
+    password text not null
+);
+
+--- denne tabellen inneholder ekstrafelt
+--- users er det som MÅ FINNES
+CREATE TABLE kunde (
+  kundeid SERIAL PRIMARY KEY,
+  fornavn text NOT NULL,
+  etternavn text NOT NULL,
+  adresse text,
+  epost text,
+  tlf text,
+  kjonn text,
+  userid int unique not null
+);
+
+CREATE TABLE  vare  (
+   vareid  SERIAL PRIMARY KEY,
+   navn  text NOT NULL,
+   pris  int NOT NULL
+);
+
+CREATE TABLE  bestilling  (
+   bestillingid  SERIAL PRIMARY KEY,
+   dato  date NOT NULL,
+   kundeid  int NOT NULL
+);
+
+CREATE TABLE  linje  (
+   linjeid  SERIAL PRIMARY KEY,
+   antall  int DEFAULT 1,
+   vareid  int NOT NULL,
+   bestillingid  int NOT NULL
+);
+
+ALTER TABLE  bestilling  ADD FOREIGN KEY ( kundeid ) 
+      REFERENCES  kunde  ( kundeid );
+ALTER TABLE  linje  ADD FOREIGN KEY ( bestillingid ) 
+      REFERENCES  bestilling  ( bestillingid );
+ALTER TABLE  linje  ADD FOREIGN KEY ( vareid ) 
+      REFERENCES  vare  ( vareid );
+ALTER TABLE  kunde  ADD FOREIGN KEY ( userid ) 
+      REFERENCES  users  ( userid );
+      
+
+-- sørg for at bruker xxx eier alle tabellene
+alter table users owner to xxx;
+alter table bestilling owner to xxx;
+alter table vare owner to xxx;
+alter table kunde owner to xxx;
+alter table linje owner to xxx;
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 ### Første testkjøring
 
