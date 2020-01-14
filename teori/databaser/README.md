@@ -42,8 +42,7 @@ create database bib owner bib;
 Legg merke til at linjene slutter med semikolon, ingenting skjer dersom denne ikke er med.  
 Vi har nå laga en ny database med navnet bib som eies av brukeren bib med passord 123 og som kan logge inn på serveren \(database-serveren\).
 
-For de heldige kan du nå skrive `psql bib -U bib` i et terminalvindu. Da vil alle tabellene vi lager få **bib** som eier. Dersom det ikke virker - da får du bruke postgres.app og åpne den nye databasen derifra.  
-Problemet er at nå vil ikke **bib** eie tabellene - det må vi rette på senere.  
+Fra postgres.app kan vi nå åpne den nye databasen.  
 På **windows** stenger vi sql-shell og åpner det på nytt, nå skriver vi inn bib som bruker/database og 123 som passord.
 
 Vi definerer nå tabellen **bok** og tabellen **forfatter**. Åpne **bib.sql** i vs-code
@@ -80,22 +79,7 @@ Klikk på **Save Connection**.
 ### Kjør sql kommandoer
 
 Marker all tekst i bib.sql og trykk \(cmd+e cmd+e\) eller \(cmd+shift+p sqlrunsel \).  
-Create table kommandoene blir nå kjørt i postgres - med litt flaks skal alt virke.  
-_Dersom det ikke går fra vs-code - da gjør du dette i postgres.app for databasen bib._
-
-### Fix dersom bib ikke eier tabellene \(bare på mac\)
-
-Dersom du måtte lage tabeller fra postgres.app \(psql bib -U bib   virker ikke\) - da må vi endre eier av tabellene til **bib**. Åpne **bib** i postgres.app og kjør følgende kommandoer:
-
-```sql
-\d   -- viser alle tabeller/relasjoner i databasen
-alter table forfatter owner to bib;
-alter table bok owner to bib;
--- gjør dette for alle tabellene
-
--- sjekk at vi har riktig eier
-\d   -- eieren vises i siste kolonne
-```
+Create table kommandoene blir nå kjørt i postgres - med litt flaks skal alt virke.
 
 ### Legge inn data \(insert-spørring\)
 

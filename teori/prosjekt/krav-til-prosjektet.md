@@ -34,7 +34,36 @@ Dere må ha med minst en av hver sort. Under vises noen delvise eksempler.
 * Update   update vare set pris= pris\*1.2;  -- 20% prisøkning   &lt; db-update ... &gt;
 * Select   &lt;db-table  sql="select ..."&gt;    select a.x,b.y from a join b on \(a.aid = b.aid\)
 
- 
+Alle spørringer kan legges inn i db-table/db-insert/db-update.   
+Det er tilstrekkelig at admin kan kjøre spørringene, men for de som har lyst kan det være interessant å legge inn nye spørringer i app.js.
+
+Komponenten **db-list** gjør mye av det samme som **db-table**, men her kan du legge inn din egen html som vist under
+
+```text
+<db-list sql="select fornavn,etternavn,adresse from kunde">
+  <div class="brukerliste">
+     <span>${fornavn}</span> 
+     <span>${etternavn}</span> 
+     ${adresse}
+  </div>
+</db-list>
+```
+
+Denne komponenten kan styles fra vanlig css, skriv en regel for _.brukerliste_ 
+
+```text
+db-list {
+  border: solid gray 1px;
+}
+
+.brukerliste {
+  color:blue;
+}
+
+.brukerliste span {
+  text-transform: capitalize;
+}
+```
 
 
 
