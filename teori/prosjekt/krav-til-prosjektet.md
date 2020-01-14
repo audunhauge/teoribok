@@ -33,6 +33,7 @@ Dere må ha med minst en av hver sort. Under vises noen delvise eksempler.
 * Delete   delete from vare where pris = 0;   Merk at &lt; db-table delete="vare" ... &gt; vil la deg slette varer
 * Update   update vare set pris= pris\*1.2;  -- 20% prisøkning   &lt; db-update ... &gt;
 * Select   &lt;db-table  sql="select ..."&gt;    select a.x,b.y from a join b on \(a.aid = b.aid\)
+* Aggregat spørringer   select count\(\*\) from varer;  -- teller varer   select sum\(pris\*antall\) from linje where bestillingid=xx; -- totalsum for bestilling
 
 Alle spørringer kan legges inn i db-table/db-insert/db-update.   
 Det er tilstrekkelig at admin kan kjøre spørringene, men for de som har lyst kan det være interessant å legge inn nye spørringer i app.js.
@@ -49,7 +50,8 @@ Komponenten **db-list** gjør mye av det samme som **db-table**, men her kan du 
 </db-list>
 ```
 
-Denne komponenten kan styles fra vanlig css, skriv en regel for _.brukerliste_ 
+Denne komponenten kan styles fra vanlig css, skriv en regel for _.brukerliste_ .  
+Merk at du kan bare ha **en** hovedkomponent \(div,li ... \) inne i **db-list**, men denne kan inneholde mange under-elementer.
 
 ```text
 db-list {
