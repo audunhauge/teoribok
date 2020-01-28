@@ -25,7 +25,7 @@ Under index.html \(linker fra denne\) skal det være sider som:
 * skisse for kobling mellom sidene
 * link til datamodell på dbdiagram.io
 
-![Lag en layout som denne](../../.gitbook/assets/plan.png)
+![Lag en layout som dette](../../.gitbook/assets/plan.png)
 
 ### Spørringer
 
