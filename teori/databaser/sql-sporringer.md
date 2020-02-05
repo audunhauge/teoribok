@@ -226,3 +226,11 @@ select f.fornavn, f.etternavn, sum(b.antallsider) as total from
 -- merk at jeg ikke kan skrive "having total > 500", må gjenta beregningen
 ```
 
+### Begrens antall rader
+
+```sql
+-- dersom du bare vil ha noen få rader kan du bruke limit
+select * from bok order by antallsider limit 1;
+-- finner boka med flest sider (bare en)
+```
+
