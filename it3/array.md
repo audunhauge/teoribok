@@ -133,9 +133,9 @@ Denne er viktig å kjenne til slik at du kan finne lengden på tabellen \(antall
         blir limt sammen med sep i mellom.</td>
     </tr>
     <tr>
-      <td style="text-align:left">slice(start,lengde)</td>
+      <td style="text-align:left">slice(start,end+1)</td>
       <td style="text-align:left">
-        <p>[1,2,3].slice(0,2) === [1,2]</p>
+        <p>[1,2,3].slice(0,3) === [1,2]</p>
         <p>let b = a.slice(); // b blir en separat kopi</p>
         <p>let c = a; // c er bare et alias for a, endringer i a vises i c</p>
       </td>
