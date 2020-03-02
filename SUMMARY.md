@@ -54,6 +54,7 @@
 * [Canvas](it3/canvas.md)
 * [Eksempel - Demografi](it3/eksempel-demografi.md)
 * [Filformat](it3/filformat.md)
+* [Testing](it3/testing.md)
 
 ## IT 2 TIMELOGG <a id="it-3-timelogg"></a>
 
