@@ -2,12 +2,13 @@
 
 ### Oversikt
 
-* png
-* jpg
-* gif
-* svg
+* png      tekst og bilder, god kompresjon, men større en jpg
+* jpg       bilder, ikke tekst \(forvrenges\), kan komprimeres mye \(med tap\)
+* gif        mye som png, men færre farger.
+* svg      vektorgrafikk - ikoner og tegninger som skal vises i mange størrelser
 * google sin
-* bmp
+* bmp    bitmap - veldig plasskrevende, brukt av ms-paint \(eldre versjoner\).
+* ANDRE FORMAT: tiff,targa ..
 
 ### PNG
 
@@ -21,4 +22,8 @@ Støtter ikke gjennomsiktighet/transparency. Kan komprimeres i ekstrem grad, men
 ### SVG
 
 Vektorgrafikk - veldig godt egna til tekst og bilder som skal vises i mange forskjellige størrelser - da det ikke taper kvalitet ved forstørring \(ingen pixler\).
+
+### GIF
+
+Enklere versjon av png, men støtter bare et begrensa antall forskjellige farger. Brukes mye til å lage enkle animasjoner - en gif med flere lag - hvert lag vises med korte mellomrom - fungerer som frame-by-frame animasjon.
 
