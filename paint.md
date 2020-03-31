@@ -324,3 +324,10 @@ Dette genereres automatisk når du saver en js fil med jsdoc - kommentarer.
 
 Link til denne versjonen: [https://github.com/audunhauge/jspaint/tree/v1.2](https://github.com/audunhauge/jspaint/tree/v1.2)
 
+### Oppdrag denne uka.
+
+* [ ] Legg til støtte for å velge fyllfarge
+* [ ] Legg til kode slik at **erase** tilbakestiller fargen til blå.
+* [ ] Oppdater render\(\) slik at den bruker fyllfarge
+* [ ] Lag en default fyllfarge som er transparent
+
