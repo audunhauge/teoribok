@@ -20,6 +20,7 @@
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1)
 * [Prosjekt](teori/prosjekt/README.md)
   * [Krav til prosjektet](teori/prosjekt/krav-til-prosjektet.md)
+* [Paint](paint.md)
 
 ## IT 1 timelogg <a id="it-2-timelogg"></a>
 
