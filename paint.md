@@ -327,7 +327,73 @@ Link til denne versjonen: [https://github.com/audunhauge/jspaint/tree/v1.2](http
 ### Oppdrag denne uka.
 
 * [ ] Legg til støtte for å velge fyllfarge
-* [ ] Legg til kode slik at **erase** tilbakestiller fargen til blå.
+* [ ] Legg til kode slik at **erase** tilbakestiller fargen til blå og fyllfarge til gjennomsiktig.
 * [ ] Oppdater render\(\) slik at den bruker fyllfarge
 * [ ] Lag en default fyllfarge som er transparent
+
+{% tabs %}
+{% tab title="Løsningsforslag" %}
+```javascript
+Prøv selv før du sjekker forslagene.
+sjekk canvas fill()
+sjekk "transparent"
+```
+{% endtab %}
+
+{% tab title="Fyllfarge" %}
+```javascript
+const divFill = g("fill"); // topp av setup
+let fill = "transparent";  // ca linje 136
+divFill.addEventListener("click",chooseFill); // ca l. 140
+function chooseFill() { .. } // ca 147
+// kopi av chooseColor - men endrer fill
+```
+{% endtab %}
+
+{% tab title="Erase " %}
+```javascript
+// nær bunn av activateTool
+case "erase":
+  ctx.clearRect(0, 0, 500, 500);
+  color = "blue"; fill = "transparent";
+  break;
+```
+{% endtab %}
+
+{% tab title="Render" %}
+```javascript
+ctx.beginPath();
+ctx.strokeStyle = this.c;
+ctx.fillStyle = this.c;
+// i denne løsningen er fill og stroke samme farge
+// hva må endres for at vi kan ha to forskjellige?
+ctx.strokeRect(this.x, this.y, this.w, this.h);
+ctx.fill();
+```
+{% endtab %}
+
+{% tab title="Render++" %}
+```javascript
+// Problemet med Render løsningen er at vi ikke bruker den valgte fyllfargen.
+// Fill og Stroke er samme farge - den som blir satt når vi lager figuren
+const shape = new Circle({ x: 200, y: 200, r: 50, c: color });
+shape.render(ctx);
+// Vi trenger egentlig å kunne lagre fyllfarge på samme måte som vi lagrer
+// strek-farge - dvs vi må endre konstruktoren.
+// Nå kan vi legge til fyllfarge som en property på Square,
+//  men må da gjøre det samme for Circle.
+// En bedre løsning er å endre Shape slik at den har to egenskaper
+// utover Point, nemlig this.c og this.f  (fill og color)
+// Når du endrer Shape  må du sjekke at alle som bruker Shape har
+// de riktige parametrene til konstruktoren
+// super({x,y,c}) må endres til super({x,y,c,f})
+
+/****************************  NB *******************/
+// grunnen til at jeg har veldig korte navn på klasse-egenskapene
+//   er at jeg skal kunne lagre en tegning som en tekstfil.
+//   Denne filen blir mye mindre dersom egenskapene er {x,y,c,f,w,h,r}
+//   enn dersom jeg har beskrivende navn.
+```
+{% endtab %}
+{% endtabs %}
 
