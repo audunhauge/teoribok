@@ -443,3 +443,6 @@ Her kan du bruke samme teknikk med skjult radioknapp og css regler.
 * [ ] Lag regler og html slik at verktøylinja viser hvilken som er valgt \(skjult input type="radio"\)
 * [ ] Utvid peker-verktøyet slik at det har fire varianter
 
+Link til versjon med delvis implementasjon av disse endringene:  
+[https://github.com/audunhauge/jspaint/tree/v1.3](https://github.com/audunhauge/jspaint/tree/v1.3)
+
