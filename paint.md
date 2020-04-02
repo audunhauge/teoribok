@@ -1,5 +1,7 @@
 # Paint - design av gui
 
+## Første utkast til Paint  \(it1 uke 12\)
+
 Vi skal lage en simple paint versjon, du kan hente første versjon fra [https://github.com/audunhauge/jspaint/tree/v1.0](https://github.com/audunhauge/jspaint/tree/v1.0)
 
 ![](.gitbook/assets/paint.png)
@@ -324,7 +326,7 @@ Dette genereres automatisk når du saver en js fil med jsdoc - kommentarer.
 
 Link til denne versjonen: [https://github.com/audunhauge/jspaint/tree/v1.2](https://github.com/audunhauge/jspaint/tree/v1.2)
 
-### Oppdrag denne uka.
+### Oppdrag denne uka
 
 * [ ] Legg til støtte for å velge fyllfarge
 * [ ] Legg til kode slik at **erase** tilbakestiller fargen til blå og fyllfarge til gjennomsiktig.
@@ -396,4 +398,48 @@ shape.render(ctx);
 ```
 {% endtab %}
 {% endtabs %}
+
+## En utvida verktøylinje \(it1 uke 12\)
+
+Slik Paint virker nå er det ingen feedback på hvilket verktøy du har valgt.  
+Første oppdrag er å legge til css regler slik at det verktøet du klikker på blir tydelig markert.  
+Det skal nå være det valgte verktøyet \(tenk på metoden vi brukte for å velge varer i nettbutikk - legg til en skjult radioknapp for hvert verktøy\).
+
+Mange vertøylinjer virker slik at dersom du velger et verktøy - så kommer det fram varianter av det valgte verktøyet. Så det vil skal prøve på er skissert under:
+
+{% tabs %}
+{% tab title="HTML" %}
+```markup
+<div title="pointer">
+  <div title="select"></div>
+  <div title="move"></div>
+  <div title="scale"></div>  
+  <div title="rotate"></div>  
+</div>
+```
+{% endtab %}
+
+{% tab title="Kode fra nettbutikk" %}
+```markup
+// eksempel på bruk av radio/checkbox med css
+<div title="peker">
+  <input class="aa" type="radio" name="xxx">
+</div>
+```
+{% endtab %}
+
+{% tab title="CSS" %}
+```
+input.aa:checked ~ div {  }
+```
+{% endtab %}
+{% endtabs %}
+
+Her er tanken at dersom du velger peker-verktøyet - da skal alternative versjoner av denne vises. Den første er automatisk valgt \(den mest brukte\), men du kan velge en av de andre.  
+Her kan du bruke samme teknikk med skjult radioknapp og css regler.
+
+### Oppdrag denne økten \(torsdag uke 12\)
+
+* [ ] Lag regler og html slik at verktøylinja viser hvilken som er valgt \(skjult input type="radio"\)
+* [ ] Utvid peker-verktøyet slik at det har fire varianter
 
