@@ -402,10 +402,10 @@ shape.render(ctx);
 ## En utvida verktøylinje \(it1 uke 12\)
 
 Slik Paint virker nå er det ingen feedback på hvilket verktøy du har valgt.  
-Første oppdrag er å legge til css regler slik at det verktøet du klikker på blir tydelig markert.  
-Det skal nå være det valgte verktøyet \(tenk på metoden vi brukte for å velge varer i nettbutikk - legg til en skjult radioknapp for hvert verktøy\).
+Første oppdrag er å legge til css regler slik at det verktøyet du klikker på blir tydelig markert.  
+Det skal nå være det aktive verktøyet \(tenk på metoden vi brukte for å velge varer i nettbutikk - legg til en skjult radioknapp for hvert verktøy\).
 
-Mange vertøylinjer virker slik at dersom du velger et verktøy - så kommer det fram varianter av det valgte verktøyet. Så det vil skal prøve på er skissert under:
+Mange vertøylinjer virker slik at dersom du velger et verktøy - så kommer det fram varianter av det valgte verktøyet. Så det vi skal prøve på er skissert under:
 
 {% tabs %}
 {% tab title="HTML" %}
@@ -424,6 +424,7 @@ Mange vertøylinjer virker slik at dersom du velger et verktøy - så kommer det
 // eksempel på bruk av radio/checkbox med css
 <div title="peker">
   <input class="aa" type="radio" name="xxx">
+  <div> Innhold som vises når input er checked </div>
 </div>
 ```
 {% endtab %}
