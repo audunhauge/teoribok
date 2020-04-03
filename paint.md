@@ -447,3 +447,223 @@ Her kan du bruke samme teknikk med skjult radioknapp og css regler.
 Link til versjon med delvis implementasjon av disse endringene:  
 [https://github.com/audunhauge/jspaint/tree/v1.3](https://github.com/audunhauge/jspaint/tree/v1.3)
 
+### Verktøylinje med valg av alternative tools
+
+Denne versjonen implementerer løsningen som er beskrevet over. Hvert verktøy kan ha varianter som kan velges. Det valgte verktøyet vises istedenfor den generiske versjonen \(du velger et flytteverktøy - denne vises istedenfor vanlig peker\).  
+Denne løsningen finner jeg ikke eksempler av på nett - kan hende den er unik?  
+Den ligner veldig på meny-submeny slik du finner på w3schools, men det var litt ekstra putling for å få effekten av at valgt delverktøy skjuler standardverktøyet. I HTML har jeg nå følgende struktur for verktøylinja:
+
+{% tabs %}
+{% tab title="Verktøylinje HTML" %}
+```markup
+<!-- merk at jeg bruker utf-8 symboler som ikoner -->
+<div id="tools">
+    <div>
+        <label>
+            <input name="main" type="radio" checked>
+            <div>⭾</div>
+            <div>
+                <div>
+                    <label>
+                        <input name="point" type="radio" checked>
+                        <div title="select a">↖</div>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input name="point" type="radio">
+                        <div title="rotate r">↻</div>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input name="point" type="radio">
+                        <div title="size s">⇔</div>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input name="point" type="radio">
+                        <div title="grab g">⇰</div>
+                    </label>
+                </div>
+            </div>
+        </label>
+    </div>
+</div>
+```
+{% endtab %}
+
+{% tab title="CSS" %}
+```css
+/* Viser de mest spesielle av reglene */
+/* Kommentarene mine på github er på engelsk */
+/* this may be the only div if no subtools */
+#tools label > div:nth-of-type(1) {
+  text-align: center;;
+  font-size: 3rem;
+  width: 64px;
+  height: 64px;
+}
+/* Mens du velger delverktøy - fader vi hovedverktøy */
+#tools > div > label:hover > div:nth-of-type(1) {
+  color:rgba(128, 128, 128, 0.2);
+}
+
+/* skjuler radio/checkbox */
+/* the inputs are used to trigger :checked rules 
+  they are inside labels so easy to click even if not visible */
+#tools input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* subtools - not visible unless :checked or :hover */
+#tools label label > div {
+  margin: 2px;
+  width: 64px;
+  height: 64px;
+  border: solid black 1px;
+  background-color: white;
+  position: absolute;
+  left: 0px;
+  opacity: 0;
+}
+
+/* a checked subtool - place over main tool */
+#tools label label input:checked ~ div {
+  left: 0px;
+  top:0;
+  opacity: 1;
+}
+
+/* show subtools when main tool is hovered */
+#tools label:hover > div:nth-of-type(2) div {
+  position: relative;  /* so that flex can lay them out */
+  opacity: 1;
+}
+
+/* hilite choosen subtool */
+#tools label:hover label input:checked ~ div {
+  color:blue;
+  box-shadow: 1px 1px 2px blue;
+}
+
+/* div containing subtools - only checked subtool will show */
+#tools label > div:nth-of-type(2) {
+  display: block;
+  position: absolute;
+  z-index:2;
+  top:-3px;
+  left:-3px;
+  height: 64px;
+}
+
+/* hover over main tool - show all subtools */
+#tools label:hover > div:nth-of-type(2) {
+  display: flex;
+  width: calc(70px * 5);
+  flex-direction: row;
+  left:64px;
+  padding-left: 12px;
+  justify-content: flex-start;
+}
+
+/*  indicate active tool */
+#tools > div > label > input:checked ~ div:nth-of-type(1) {
+  box-shadow: 3px 3px 2px blue;
+}
+```
+{% endtab %}
+{% endtabs %}
+
+En ting jeg ikke er helt fornøyd med er at bruker må velge hoved-verktøy i tillegg til å velge del-verktøy.  
+Denne biten overlater jeg til javascript - fant ikke noen kjapp løsning i css.  
+CSS må også endres litt dersom du har fler enn 4 delverktøy - calc\(70px \* 5\).
+
+Link til versjon med forbedra verktøylinje:  [https://github.com/audunhauge/jspaint/tree/v1.4](https://github.com/audunhauge/jspaint/tree/v1.4)
+
+## Flere egenskaper i klassen Shape \(it2 - påske\)
+
+Foreløpig har klassen Shape egenskapene {x,y,c,f} hvor c=color og f=fill.  
+Vi bør kunne legge til rotate på en shape - da blir det enkelt å modifisere enhver shape med rotering.  
+En rotert sirkel kan virke meningsløs - men dersom sirkelen er en ellipse så er det en nyttig egenskap.  
+For å endre sirkel -&gt; ellipse  trenger vi skew \(transform\), men tar det senere.  
+Legg merke til at nå har mye av tegnekoden blitt flytta inn i Shape - Square og Circle har bare en linje hver - det som var forskjellen på de to sin render\(\) funksjon. Her har Shape en virtuell funksjon drawme\(\) som MÅ implementeres av subklassene Circle og Square.  
+De tre linjene med translate og rotate er Canvas-metode for å rotere.  
+Jeg har fjerna js-doc-kommentarer for å fokusere på ny kode - jsdoc finnes fortsatt på github.
+
+{% tabs %}
+{% tab title="Shape" %}
+```javascript
+/* Fjerna jsdoc kommentarer for å fokusere på koden*/
+class Shape extends Point {
+  
+  constructor({ x, y, c, f }) {
+    super({ x, y });
+    this.c = c;
+    this.f = f;
+    this.rot = 0; // No rotation - short name bcs save space in file
+  }
+  
+  render(ctx) {
+    ctx.beginPath();
+    ctx.strokeStyle = this.c;
+    ctx.fillStyle = this.f;
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.rot);
+    ctx.translate(-this.x, -this.y);
+    this.drawme(ctx);
+    ctx.stroke();
+    ctx.fill();
+  }
+ 
+  // Circle og Square må lage egen versjon av denne.
+  // En funksjon definert i en subclass (en som EXTENDS en annen)
+  // blir kjørt istedenfor en med samme navn i super klassen.
+  // Shape er super, Square og Circle er subclass.
+  drawme(ctx) {
+    // virtual function - override in subclass
+    console.log("drawme must be implemented in subclass",this);
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Square" %}
+```javascript
+// fjerna kommentarene for å fokusere på koden
+class Square extends Shape {
+  constructor({ x, y, w, h, c, f }) {
+    super({ x, y, c, f });
+    this.w = w;
+    this.h = h;
+  }
+  // Shape vil kjøre denne inne i render()
+  drawme(ctx) {
+    ctx.strokeRect(this.x, this.y, this.w, this.h);
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Circle" %}
+```
+class Circle extends Shape {
+  constructor({ x, y, r, c, f }) {
+    super({ x, y, c, f });
+    this.r = r;
+  }
+  drawme(ctx) {
+    ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+Merk at heller ikke denne endringen gjør at vi kan tegne mer enn før - vi driver og lager infrastruktur slik at vi kan legge til ny funksjonalitet senere. Du kan teste om rotering virker ved å sette   
+`this.rot = 0.2;` i constructoren for Shape - det bør vise igjen når du lager en firkant.
+
+Link til denne versjonen: [https://github.com/audunhauge/jspaint/tree/v1.4](https://github.com/audunhauge/jspaint/tree/v1.4)
+
