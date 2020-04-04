@@ -71,7 +71,7 @@ Jeg legger også til et nytt canvas i html - med id= **ghost** . Denne brukes ti
 Den er gjennomsiktig, ligger over canvas og reagerer ikke på pointer-events \(se Ghost css over\).  
 **const B**  lagrer \(x,y\) for øvre venstre hjørne på canvas - brukes til å beregne \(x,y\) for pointer.
 
-{% hint style="info" %}
+{% hint style="danger" %}
 Dersom jeg fikk klager på det korte navnet **B** i en "code review"   
 ville jeg kalt den **canvasBoundingRect**.  
 Min personlige preferanse er å bruke korte navn på variable som   
