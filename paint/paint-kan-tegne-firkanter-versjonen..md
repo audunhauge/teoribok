@@ -256,3 +256,5 @@ function makeShape(ctx, start, end) {
 **makeShape** tegner en figur på et gitt canvas, bruker Vector klassen til å finne avstand mellom to punkt.  
   
 
+Link til denne versjonen: [https://github.com/audunhauge/jspaint/tree/v1.5](https://github.com/audunhauge/jspaint/tree/v1.5)
+
