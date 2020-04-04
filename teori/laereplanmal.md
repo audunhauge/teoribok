@@ -29,3 +29,5 @@
 * utvikle, presentere og begrunne databaseapplikasjoner 
 * lage dynamiske nettsider som bruker en database ved hjelp av spørrespråk og programvare på tjener
 
+Link til gitbook [https://app.gitbook.com/invite/audun?invite=-M44sxadSmNOViPKT6ce](https://app.gitbook.com/invite/audun?invite=-M44sxadSmNOViPKT6ce)
+
