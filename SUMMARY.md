@@ -22,6 +22,7 @@
   * [Krav til prosjektet](teori/prosjekt/krav-til-prosjektet.md)
 * [Paint - design av gui](paint/README.md)
   * [Paint - "kan tegne firkanter" versjonen.](paint/paint-kan-tegne-firkanter-versjonen..md)
+  * [Paint - "angre funksjon"](paint/paint-angre-funksjon.md)
 
 ## IT 1 timelogg <a id="it-2-timelogg"></a>
 
