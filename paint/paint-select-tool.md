@@ -119,3 +119,5 @@ case "pointer": {
 {% endtab %}
 {% endtabs %}
 
+Versjon med fungerende select [https://github.com/audunhauge/jspaint/tree/v1.6](https://github.com/audunhauge/jspaint/tree/v1.6)
+
