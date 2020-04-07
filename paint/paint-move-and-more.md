@@ -123,3 +123,5 @@ static update(what, color) {
   }
 ```
 
+Link til denne versjonen: [https://github.com/audunhauge/jspaint/tree/v1.7](https://github.com/audunhauge/jspaint/tree/v1.7)
+
