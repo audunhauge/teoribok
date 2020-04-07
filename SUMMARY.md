@@ -24,6 +24,7 @@
   * [Paint - "kan tegne firkanter" versjonen.](paint/paint-kan-tegne-firkanter-versjonen..md)
   * [Paint - "angre funksjon"](paint/paint-angre-funksjon.md)
   * [Paint - select tool](paint/paint-select-tool.md)
+  * [Paint - move and more](paint/paint-move-and-more.md)
 
 ## IT 1 timelogg <a id="it-2-timelogg"></a>
 
