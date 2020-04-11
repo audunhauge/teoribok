@@ -44,7 +44,7 @@ De andre endrer canvas og ghost - kan ikke lett gjøres pure.
 
 Jeg har tre lange funksjoner - **keyAction, activateTool** og **makeShape**.  
 Disse vil sannsynligvis vokse seg enda større når nye kommandoer/figurer legges til.  
-I denne versjonen bruker begge en switch til å velge vilken handling som skal utføres. Jeg tror kanskje det blir enklere kode med en function-dispatcher - dvs en tabell hvor en slår opp og finner funksjonen som skal kjøres. Jeg flytter også en god del funksjoner ut av **setup** slik at de ikke er lokale funksjoner.  
+I denne versjonen bruker begge en switch til å velge hvilken handling som skal utføres. Jeg tror kanskje det blir enklere kode med en function-dispatcher - dvs en tabell hvor en slår opp og finner funksjonen som skal kjøres. Jeg flytter også en god del funksjoner ut av **setup** slik at de ikke er lokale funksjoner.  
 De må da få tilsendt parametre slik som **ctx** og **gtx**. Fordelen med å ha dem utenfor setup er at de da blir enklere å teste. Ulempen er at variable definert i **setup** må sendes som parametre.
 
 Jeg prøver først å flytte **activateTool**. Ser da at en mengde andre må også flyttes:  
@@ -88,6 +88,11 @@ function activateTool(e,ctx,divShapelist) {
 
 Den forrige versjonen var på ca 50 linjer \(en stor switch\) og ville vokse når nye verktøy blir lagt til.  
 Nå er hver case i den switchen splitta ut som en egen funksjon - en static func i klassen Tools - denne har samme formål som klassen Math - samler funksjoner som har et felles tema.
+
+{% hint style="info" %}
+Klassene AT, Tools, MakeShapes o.l. er litt spesielle.  
+For å dokumentere disse klassene bruker jeg @namespace i jsdoc. Det gir en kompakt og fin doc på alle de statiske funksjonene i en slik klasse - klassen fungerer egentlig som en slags innpakning for funksjoner med et felles formål.
+{% endhint %}
 
 ### One for all and all for Al  \(Al Capones valgspråk\).
 
