@@ -25,6 +25,7 @@
   * [Paint - "angre funksjon"](paint/paint-angre-funksjon.md)
   * [Paint - select tool](paint/paint-select-tool.md)
   * [Paint - move and more](paint/paint-move-and-more.md)
+  * [Refactoring og tester \(it2\) - mye kode i en fil](paint/refactoring-og-tester-it2-mye-kode-i-en-fil.md)
 
 ## IT 1 timelogg <a id="it-2-timelogg"></a>
 
