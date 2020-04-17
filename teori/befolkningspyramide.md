@@ -1,4 +1,9 @@
-# Befolkningspyramide
+# Befolkningspyramide \(defunkt\)
+
+{% hint style="danger" %}
+Desverre har netsida som leverte api som vi brukte forsvunnet.  
+Så dette prosjektet virker ikke lenger - lar det stå som et minne over en tapt tid.
+{% endhint %}
 
 Vi har allerede laga en webside med to komponenter - Homebar og Digitime.  
 Vi har også lagt til et skjema med forskjellige input-typer som vist under:

@@ -118,7 +118,11 @@ class DigitalTime extends HTMLElement {
 ```
 {% endcode %}
 
-### En befolkningspyramide
+### En befolkningspyramide \(defunkt\)
+
+{% hint style="danger" %}
+Den api-en som brukes her er nå død - finner ingen andre som leverer bef.data
+{% endhint %}
 
 {% code title="Pyramide.js" %}
 ```javascript

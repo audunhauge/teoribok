@@ -14,7 +14,7 @@
   * [Database skjema](teori/databaser/database-skjema.md)
   * [SQL - spørringer](teori/databaser/sql-sporringer.md)
 * [Tegning i Blender](teori/tegning-i-blender.md)
-* [Befolkningspyramide](teori/befolkningspyramide.md)
+* [Befolkningspyramide \(defunkt\)](teori/befolkningspyramide.md)
 * [Kakediagram](teori/kakediagram.md)
 * [Øvingsoppgaver](teori/ovingsoppgaver.md)
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1)
@@ -26,6 +26,7 @@
   * [Paint - select tool](paint/paint-select-tool.md)
   * [Paint - move and more](paint/paint-move-and-more.md)
   * [Refactoring og tester \(it2\) - mye kode i en fil](paint/refactoring-og-tester-it2-mye-kode-i-en-fil.md)
+  * [Farger og linjetykkelse](paint/farger-og-linjetykkelse.md)
 
 ## IT 1 timelogg <a id="it-2-timelogg"></a>
 
