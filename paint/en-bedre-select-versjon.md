@@ -308,3 +308,26 @@ Jeg starta med å endre Square slik at den kan levere fra seg en array med punkt
 Jeg tenker at det er lettere å lage et generelt Polygon \(en firkant er en variant\) som støtter rotasjon på den måten at koordinatene til punktene beregnes ut fra gitt vinkel. Polygonet lagrer bare punktene - ikke rotasjonen. En rotasjon endrer bare punktene.  
 Fordelen er jo da at trekanter, firkanter og andre polygon kommer direkte ut av denne løsningen.
 
+### Hvordan lagre et polygon
+
+Dersom jeg lagrer et polygon som en liste med punkt \(x,y\) og så flytter polygonet - da må alle punkt i lista oppdateres. Dersom jeg lagrer center til polygonet som \(x,y\) og lista som \(dx,dy\) relativt til \(x,y\) - da trenger jeg bare oppdatere \(x,y\) for å flytte polygonet. Dermed virker et polygon mye likt en sirkel.
+
+Under prøver jeg å finne ut om dette kan være en god løsning for polygoner:
+
+{% tabs %}
+{% tab title="Pro" %}
+* Lett å flytte polygonet - bare endre \(x,y\)
+* Like lett/lettere å rotere som alternativet Roterer om center \(x,y\) - alternativet er ikke like klart
+* Passer godt med tegnemetoden Path2d som bruker svg path [https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
+* blir dermed lettere å skifte til svg
+* vil ta mindre plass når vi lagrer som tekst - fordi dx,dy verdiene blir mindre
+{% endtab %}
+
+{% tab title="Contra" %}
+* Må beregne center av polygonet når det lages
+* Passer dårlig med tegnemåten moveTo og lineTo
+{% endtab %}
+{% endtabs %}
+
+Synes at Pro vinner her. Jeg går for denne løsningen.
+
