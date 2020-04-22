@@ -300,5 +300,11 @@ sjekker bare om koden ser ut til å virke -- forstår itno
 {% endtabs %}
 
 Prøv om dere kan bruke denne løsningen istedenfor overlap/touching.  
-Løsning finner dere som v1.9 \(legges ut snart\)
+~~Løsning finner dere som v1.9 \(legges ut snart\)~~
+
+## Forsøk på implementering
+
+Jeg starta med å endre Square slik at den kan levere fra seg en array med punkt slik som kreves for polygonPolygon, men ser da at dette ikke vil virke bra dersom firkanten er rotert. Da må punktene omregnes slik at vi får med rotasjonen.  
+Jeg tenker at det er lettere å lage et generelt Polygon \(en firkant er en variant\) som støtter rotasjon på den måten at koordinatene til punktene beregnes ut fra gitt vinkel. Polygonet lagrer bare punktene - ikke rotasjonen. En rotasjon endrer bare punktene.  
+Fordelen er jo da at trekanter, firkanter og andre polygon kommer direkte ut av denne løsningen.
 
