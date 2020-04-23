@@ -27,7 +27,7 @@
   * [Paint - move and more](paint/paint-move-and-more.md)
   * [Refactoring og tester \(it2\) - mye kode i en fil](paint/refactoring-og-tester-it2-mye-kode-i-en-fil.md)
   * [Farger og linjetykkelse](paint/farger-og-linjetykkelse.md)
-  * [Linjetykkelse](paint/linjetykkelse.md)
+  * [Linjetykkelse og overskrift \(it1\)](paint/linjetykkelse.md)
   * [En bedre select versjon \(it2\)](paint/en-bedre-select-versjon.md)
 
 ## IT 1 timelogg <a id="it-2-timelogg"></a>
