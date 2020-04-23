@@ -201,3 +201,22 @@ window.customElements.define("home-bar", HomeBar);
 Oppdraget i dag er å legge til home-bar og tilpasse slik at det ser ut som en naturlig del av programmet.  
 Det er rimelig at en god del endringer må gjøres i CSS.
 
+### En forbedring av brukervennlighet
+
+Slik programmet virker nå  kan du velge linjefarge ved å klikke på en av swatch-rutene nederst. For å skifte fyll-farge må du Shift-klikke på en av disse.  
+Jeg merker at jeg oftere ønsker å skifte fyll-farge enn linjefrage.  
+Se litt på koden og prøv å finne ut om du enkelt kan skifte slik at det blir omvendt.  
+Jeg vil velge fyll med enkelt klikk, Shift-klikk skal sette linjefarge.
+
+{% tabs %}
+{% tab title="Prøv selv" %}
+Du kan bruke søkefunksjonen i vs-code - det andre ikonet fra toppen i venstre kant - et forstørrelsesglass. Søk etter "Shift"
+{% endtab %}
+
+{% tab title="Hint" %}
+Se i filen ActionTools.js
+
+Helt nederst finner du funksjonen chooseColor. Her kan du prøve å snu logikken slik at fill og color bytter rolle med hensyn til Shift.
+{% endtab %}
+{% endtabs %}
+
