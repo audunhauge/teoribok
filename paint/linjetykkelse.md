@@ -31,9 +31,19 @@ Koden for home-bar kan dere hente fra min github [https://github.com/audunhauge/
 Eller bare kopiere herfra:
 
 {% tabs %}
+{% tab title="Bruk i html" %}
+```markup
+ // husk link i head
+ <script src="Homebar.js"></script>
+ 
+ <home-bar heading="Painter" >
+        <li>New</li>
+ </home-bar>
+```
+{% endtab %}
+
 {% tab title="HomeBar.js" %}
 ```javascript
- 
 // @ts-check
 class HomeBar extends HTMLElement {
   constructor() {
@@ -184,17 +194,6 @@ class HomeBar extends HTMLElement {
 }
 
 window.customElements.define("home-bar", HomeBar);
-```
-{% endtab %}
-
-{% tab title="Bruk i html" %}
-```markup
- // husk link i head
- <script src="Homebar.js"></script>
- 
- <home-bar heading="Painter" >
-        <li>New</li>
- </home-bar>
 ```
 {% endtab %}
 {% endtabs %}
