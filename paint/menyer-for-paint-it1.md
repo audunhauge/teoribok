@@ -45,7 +45,7 @@ Du må også lage en label som viser en tekst for radioknappen - knappen har ikk
 {% endtabs %}
 
 Når du har fått skjema til å se ordentlig ut - skal du sette på en klasse **hidden** slik at skjema er skjult.  
-Bruk `display:non;` for denne klassen.
+Bruk `display:none;` for denne klassen.
 
 Jeg legger til kode som tar vekk **hidden** fra \#**newpage** når bruker klikker på New i menyen.
 

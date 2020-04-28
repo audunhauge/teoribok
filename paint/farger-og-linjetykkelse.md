@@ -1,4 +1,4 @@
-# Farger og linjetykkelse
+# Farger  \(it1 it2\)
 
 ## Utvidelese av color-swatches \(fargekladder?\) \(it1\)
 

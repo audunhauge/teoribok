@@ -1,3 +1,9 @@
+---
+description: >-
+  Denne er litt heftig - gå til kap. som behandler data fra Ny fil skjema for
+  enklere kost.
+---
+
 # En bedre select versjon \(it2\)
 
 Bruker skal kunne velge shapes med peker - løsningen vi har nå er mildt sagt dårlig. Første versjon var at vi tegna en firkant og fant overlap mellom alle Shapes og denne firkanten \(Shape.overlap \).  
