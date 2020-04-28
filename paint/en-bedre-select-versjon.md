@@ -331,3 +331,6 @@ Under prøver jeg å finne ut om dette kan være en god løsning for polygoner:
 
 Synes at Pro vinner her. Jeg går for denne løsningen.
 
+Link til versjon som implementerer disse endringene:  
+[https://github.com/audunhauge/jspaint/tree/v1.10](https://github.com/audunhauge/jspaint/tree/v1.10)
+
