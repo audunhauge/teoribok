@@ -220,3 +220,6 @@ Helt nederst finner du funksjonen chooseColor. Her kan du prøve å snu logikken
 {% endtab %}
 {% endtabs %}
 
+En versjon som har med det meste av dette:  
+[https://github.com/audunhauge/jspaint/tree/v1.10](https://github.com/audunhauge/jspaint/tree/v1.10)
+
