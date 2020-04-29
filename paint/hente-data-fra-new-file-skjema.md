@@ -73,6 +73,12 @@ function startNewPage() {
   --width: 1024px;
   --height: 800px;
 }
+
+#canvas {
+  width: var(--width);
+  background-color: var(--backgrd);
+  ...
+}
 ```
 {% endtab %}
 
