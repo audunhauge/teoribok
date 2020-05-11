@@ -20,18 +20,22 @@ static l(obj) {
       if (inside.length > 0) {
         const target = inside[inside.length - 1];
         if (target.isa("Picture")) {
-          const np = g("newpage");
-
-          // plasserer venstre kant omtrent på rammen
-          np.style.left = target.x + "px";
-          // må gjøre det samme for top,width,height
-
-          
+          const np = g("newpage");         
           makeForm(
             np,
             "loadpic",
             () => {
               const loader = g("imgloader");
+              
+         // Ny kode
+              const lf = g("loadfile");
+              np.style.left = target.x + "px";
+         //  mangler linjer for top,width,height
+              loader.style.width = target.width + "px";
+         //  må overstyre tre elementer
+              lf.style.height = 32 + target.height + "px";
+         // kunne vært enklere dersom vi endra html+css
+        
               loader.addEventListener("change", e => {
                 var output = document.createElement("img");
                 output.src = URL.createObjectURL(event.target.files[0]);
