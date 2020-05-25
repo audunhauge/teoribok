@@ -50,21 +50,23 @@ Dersom du ser på koden for saveToFile ser du at den sender funksjonen under som
 Jeg har googla "_javascript save png to file_" og fant denne koden:
 
 ```text
-<a href="#" class="button" 
-id="btn-download" download="my-file-name.png">Download</a>
+canvas.toBlob(function(blob) {
+  // blob ready, download it
+  let link = document.createElement('a');
+  link.download = 'example.png';
 
-var button = document.getElementById('btn-download');
-button.addEventListener('click', function (e) {
-    var dataURL = canvas.toDataURL('image/png');
-    button.href = dataURL;
-});
+  link.href = URL.createObjectURL(blob);
+  link.click();
+
+  // delete the internal blob reference, to let the browser clear memory from it
+  URL.revokeObjectURL(link.href);
+}, 'image/png');
 ```
 
 ### Dagens oppdrag \(it2\)
 
 Bruk denne koden til å lagre tegninger som fil \(png\). 
 
-* Du må endre template "save-file" i paint.html slik at "ok" knappen blir en `<a>` som vist.
 * Event-lytteren settes opp automatisk for "ok" - du må bare sende en funksjon som skal kjøres.
 * Du trenger bare skifte ut `console.log(..)` med den nye koden.
 * Merk at **canvas** i eksemplet skal være en kobling til det canvas som skal lagres - må endres i din kode.
