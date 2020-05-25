@@ -70,5 +70,5 @@ Bruk denne koden til å lagre tegninger som fil \(png\).
 * Event-lytteren settes opp automatisk for "ok" - du må bare sende en funksjon som skal kjøres.
 * Du trenger bare skifte ut `console.log(..)` med den nye koden.
 * Merk at **canvas** i eksemplet skal være en kobling til det canvas som skal lagres - må endres i din kode.
-* Sørg også for at filnavnet brukeren velger blir satt som egenskapen **download** på "\#ok". Du trenger muligens setAttribute\( .. \) for å gjøre det.
+* Sørg også for at filnavnet brukeren velger blir satt som egenskapen **download** på den nye linken.
 
