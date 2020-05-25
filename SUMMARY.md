@@ -32,6 +32,7 @@
   * [Menyer for Paint \(it1\)](paint/menyer-for-paint-it1.md)
   * [Hente data fra "New file" skjema](paint/hente-data-fra-new-file-skjema.md)
   * [Last inn bilde](paint/last-inn-bilde.md)
+  * [Lagre bilde som fil](paint/lagre-bilde-som-fil.md)
 
 ## IT 1 timelogg <a id="it-2-timelogg"></a>
 
