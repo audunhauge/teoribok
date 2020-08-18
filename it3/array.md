@@ -150,7 +150,9 @@ Denne er viktig å kjenne til slik at du kan finne lengden på tabellen \(antall
         each</td>
     </tr>
   </tbody>
-</table>## Flere dimensjoner
+</table>
+
+## Flere dimensjoner
 
 Flerdimensjonale tabeller. Tenk deg at du skal lage et sudoku brett. Brettet er 9 x 9 ruter. Du ønsker å bruke en array til å lagre brettet.
 

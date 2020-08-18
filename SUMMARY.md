@@ -20,7 +20,11 @@
 * [Eksempler på github](https://github.com/audunhauge/audunhauge.github.io/tree/master/it1)
 * [Prosjekt](teori/prosjekt/README.md)
   * [Krav til prosjektet](teori/prosjekt/krav-til-prosjektet.md)
+
+---
+
 * [Paint - design av gui](paint/README.md)
+  * [IT2 2020](paint/it2-2020.md)
   * [Paint - "kan tegne firkanter" versjonen.](paint/paint-kan-tegne-firkanter-versjonen..md)
   * [Paint - "angre funksjon"](paint/paint-angre-funksjon.md)
   * [Paint - select tool](paint/paint-select-tool.md)
