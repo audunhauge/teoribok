@@ -1,9 +1,11 @@
 # Table of contents
 
 * [Teori og timelogg for it1/it2](README.md)
+* [IT2 2020](it2-2020.md)
 
 ## IT1 <a id="teori"></a>
 
+* [Untitled](teori/untitled.md)
 * [Læreplanmål](teori/laereplanmal.md)
 * [Verktøy](teori/verktoy.md)
 * [HTML](teori/html.md)
@@ -24,7 +26,6 @@
 ---
 
 * [Paint - design av gui](paint/README.md)
-  * [IT2 2020](paint/it2-2020.md)
   * [Paint - "kan tegne firkanter" versjonen.](paint/paint-kan-tegne-firkanter-versjonen..md)
   * [Paint - "angre funksjon"](paint/paint-angre-funksjon.md)
   * [Paint - select tool](paint/paint-select-tool.md)
