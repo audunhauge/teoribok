@@ -24,7 +24,7 @@ Vi lager et terningspill
 {% endtab %}
 
 {% tab title="terning.css" %}
-```
+```css
 #spill {
     position: absolute;
     top: 10px;
