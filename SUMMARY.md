@@ -2,6 +2,7 @@
 
 * [Teori og timelogg for it1/it2](README.md)
 * [IT2 2020](it2-2020.md)
+* [Terningspill](terningspill.md)
 
 ## IT1 <a id="teori"></a>
 
