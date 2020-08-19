@@ -15,8 +15,10 @@ Vi lager et terningspill
 </head>
 <body>
     <div id="forklaring">Dette er et spill</div>
-    <div id="spill">
-        
+    <div id="spill">     
+    </div>
+    <div id="knapper">
+        <button id="roll">Roll</button>
     </div>
 </body>
 </html>
@@ -41,7 +43,18 @@ Vi lager et terningspill
     top: 10px;
     left: 650px;
 }
+
+#knapper {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 220px;
+    left: 650px;
+    border: blue solid 1px;
+}
 ```
 {% endtab %}
 {% endtabs %}
+
+
 
