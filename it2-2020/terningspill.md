@@ -1,6 +1,13 @@
 # Terningspill
 
-Vi lager et terningspill
+## Vi lager et terningspill.
+
+Første versjon ser du i kodevinduet under.  
+Når du har installert git på maskinen din  - da kan du klone  
+[https://github.com/audunhauge/it2-2020.git](https://github.com/audunhauge/it2-2020.git) .  
+Kommandoen du skriver er da:  
+`git clone` [`https://github.com/audunhauge/it2-2020.git`](https://github.com/audunhauge/it2-2020.git) ``  
+og du får da en lokal kopi av alle eksempler fra undervisningen.
 
 {% tabs %}
 {% tab title="terning.html" %}
