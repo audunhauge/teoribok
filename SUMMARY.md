@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Teori og timelogg for it1/it2](README.md)
+* [Teori](README.md)
 * [IT2 2020](it2-2020/README.md)
   * [Sammendrag](it2-2020/sammendrag.md)
   * [Eksempler](it2-2020/eksempler/README.md)
