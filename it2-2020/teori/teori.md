@@ -23,7 +23,7 @@ void SimpleBeanFactoryAwareAspectInstanceFactory() { ... };
 boolean InternalFrameInternalFrameTitlePaneInternalFrameTitlePaneMaximizeButtonWindowNotFocusedState = false;
 ```
 
-### Variabeldeklrarasjon
+### Variabeldeklarasjon
 
 Øverst i alle js filene dine bør du skrive :
 
@@ -33,7 +33,7 @@ boolean InternalFrameInternalFrameTitlePaneInternalFrameTitlePaneMaximizeButtonW
 
 Dette er en melding til vs-code om at du ønsker feilmeldinger dersom du bruker en variabel uten først å ha deklarert den.
 
-Test ut koden under i consoll \(høyre-klikk + inspiser i chrome\)
+Test ut koden under i consol \(høyre-klikk + inspiser i chrome\)
 
 ```javascript
 let antall = 0;   
