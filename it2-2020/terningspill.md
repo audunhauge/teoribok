@@ -2,7 +2,9 @@
 
 ## Vi lager et terningspill.
 
-Første versjon ser du i kodevinduet under.  
+Første versjon ser du i kodevinduet under.
+
+På mandag 24.08 skal vi sjekke at alle har git og kan bruke det på sin maskin.  
 Når du har installert git på maskinen din  - da kan du klone  
 [https://github.com/audunhauge/it2-2020.git](https://github.com/audunhauge/it2-2020.git) .  
 Kommandoen du skriver er da:  
