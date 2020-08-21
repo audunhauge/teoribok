@@ -8,7 +8,7 @@ Denne oppdateres etter hver undervisningstime.
 
 * [x] Lage en enkel variabel som lagrer en tallverdi `let a = 12;`
 * [x] Kjenne reglene for gyldige variabelnavn. Må starte med bokstav \(a-zA-Z\) eller \_ $. Et navn bør være beskrivende, men ikke for langt.
-* [x] Lese om variable i teoridelen.
+* [x] Lese om variable i [teoridelen](teori/teori.md).
 * [x] Lage en enkel funksjon \(bare skjelettet\). `function setup() { }`
 * [x] Du skal ha konto på github
 

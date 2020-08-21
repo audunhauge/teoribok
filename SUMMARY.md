@@ -3,7 +3,14 @@
 * [Teori og timelogg for it1/it2](README.md)
 * [IT2 2020](it2-2020/README.md)
   * [Sammendrag](it2-2020/sammendrag.md)
-  * [Terningspill](it2-2020/terningspill.md)
+  * [Eksempler](it2-2020/eksempler/README.md)
+    * [Terningspill](it2-2020/eksempler/terningspill.md)
+  * [Teori](it2-2020/teori/README.md)
+    * [Variable og funksjoner](it2-2020/teori/teori.md)
+    * [String](it2-2020/teori/string.md)
+    * [Beregninger](it2-2020/teori/beregninger.md)
+    * [Betingelser](it2-2020/teori/betingelser.md)
+    * [Løkker](it2-2020/teori/lokker.md)
 
 ## IT1 <a id="teori"></a>
 
@@ -54,11 +61,6 @@
 ## IT2 <a id="it3"></a>
 
 * [Læreplanmål](it3/laereplanmal.md)
-* [Variable og funksjoner](it3/teori.md)
-* [Beregninger](it3/beregninger.md)
-* [Betingelser](it3/betingelser.md)
-* [Løkker](it3/lokker.md)
-* [String](it3/string.md)
 * [Array](it3/array.md)
 * [Map og Set](it3/map-og-set.md)
 * [Funksjoner](it3/funksjoner.md)
