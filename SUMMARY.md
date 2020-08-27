@@ -2,9 +2,12 @@
 
 * [Teori](README.md)
 * [IT2 2020](it2-2020/README.md)
-  * [Sammendrag](it2-2020/sammendrag.md)
+  * [Sammendrag](it2-2020/sammendrag/README.md)
+    * [Uke 34](it2-2020/sammendrag/uke-34.md)
+    * [Uke 35](it2-2020/sammendrag/uke-35.md)
   * [Eksempler](it2-2020/eksempler/README.md)
     * [Terningspill](it2-2020/eksempler/terningspill.md)
+    * [Tall](it2-2020/eksempler/tall.md)
   * [Teori](it2-2020/teori/README.md)
     * [Variable og funksjoner](it2-2020/teori/teori.md)
     * [String](it2-2020/teori/string.md)
