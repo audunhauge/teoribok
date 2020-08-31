@@ -5,6 +5,7 @@
   * [Sammendrag](it2-2020/sammendrag/README.md)
     * [Uke 34](it2-2020/sammendrag/uke-34.md)
     * [Uke 35](it2-2020/sammendrag/uke-35.md)
+    * [Uke 36](it2-2020/sammendrag/uke-36.md)
   * [Eksempler](it2-2020/eksempler/README.md)
     * [Terningspill](it2-2020/eksempler/terningspill.md)
     * [Tall](it2-2020/eksempler/tall.md)
