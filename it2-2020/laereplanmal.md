@@ -19,15 +19,15 @@ Mål for opplæringen er at eleven skal kunne
 Mål for opplæringen er at eleven skal kunne
 
 * lese og bruke dokumentasjon og kode
-* definere [variabler](../it2-2020/teori/teori.md) og velge hensiktsmessige datatyper 
+* definere [variabler](teori/teori.md) og velge hensiktsmessige datatyper 
 * tilordne uttrykk til variabler
-* programmere med enkle og [indekserte](array.md) variabler eller andre kolleksjoner av variabler
-* programmere med valg og [gjentakelser](../it2-2020/teori/lokker.md)
-* lage egne og bruke egne og andres [funksjoner](funksjoner.md) eller metoder med parametere
+* programmere med enkle og [indekserte](teori/array.md) variabler eller andre kolleksjoner av variabler
+* programmere med valg og [gjentakelser](teori/lokker.md)
+* lage egne og bruke egne og andres [funksjoner](../it3/funksjoner.md) eller metoder med parametere
 * programmere funksjoner eller metoder som blir aktivisert av hendelser
 * utvikle og sette sammen delprogrammer
 * teste og finne feil i programmer ved å bruke vanlige teknikker
-* gjøre rede for hensikten med [objektorientert](klasser.md) utvikling og begrepene klasse, objekt og arv
+* gjøre rede for hensikten med [objektorientert](../it3/klasser.md) utvikling og begrepene klasse, objekt og arv
 
 ### **Multimedieutvikling**
 

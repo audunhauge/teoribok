@@ -2,6 +2,7 @@
 
 * [Teori](README.md)
 * [IT2 2020](it2-2020/README.md)
+  * [Læreplanmål](it2-2020/laereplanmal.md)
   * [Sammendrag](it2-2020/sammendrag/README.md)
     * [Uke 34](it2-2020/sammendrag/uke-34.md)
     * [Uke 35](it2-2020/sammendrag/uke-35.md)
@@ -16,6 +17,7 @@
     * [Beregninger](it2-2020/teori/beregninger.md)
     * [Betingelser](it2-2020/teori/betingelser.md)
     * [Løkker](it2-2020/teori/lokker.md)
+    * [Array](it2-2020/teori/array.md)
 
 ## IT1 <a id="teori"></a>
 
@@ -65,8 +67,6 @@
 
 ## IT2 <a id="it3"></a>
 
-* [Læreplanmål](it3/laereplanmal.md)
-* [Array](it3/array.md)
 * [Map og Set](it3/map-og-set.md)
 * [Funksjoner](it3/funksjoner.md)
 * [Objekter](it3/objekter.md)
