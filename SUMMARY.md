@@ -12,6 +12,7 @@
     * [Terningspill](it2-2020/eksempler/terningspill.md)
     * [Tall](it2-2020/eksempler/tall.md)
     * [Løkker](it2-2020/eksempler/lokker.md)
+    * [Ballspill](it2-2020/eksempler/ballspill.md)
   * [Teori](it2-2020/teori/README.md)
     * [Variable og funksjoner](it2-2020/teori/teori.md)
     * [String](it2-2020/teori/string.md)
