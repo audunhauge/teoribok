@@ -8,6 +8,7 @@
     * [Uke 35](it2-2020/sammendrag/uke-35.md)
     * [Uke 36](it2-2020/sammendrag/uke-36.md)
     * [Uke 37](it2-2020/sammendrag/uke-37.md)
+    * [Uke 38](it2-2020/sammendrag/uke-38.md)
   * [Eksempler](it2-2020/eksempler/README.md)
     * [Terningspill](it2-2020/eksempler/terningspill.md)
     * [Tall](it2-2020/eksempler/tall.md)
