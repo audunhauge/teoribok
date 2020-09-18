@@ -50,3 +50,7 @@ Du skal kunne lage en funksjon som tar imot en array \(array parameter\) og bere
 
 Test deg selv på [array funksjoner](https://matte.oppgaver.net/free?qid=46364) - du kan generere nye versjoner med grønn sirkel-pil \(recycle\).
 
+Test deg selv på [summering](https://matte.oppgaver.net/free?qid=84221) av tall - fasit står over, men merk at du bare skal skrive inn   
+funksjons-kroppen, det som er markert med .... i `function summer(tabell) { ..... }` .  
+Merk også at oppgaven bruker navnet **a** på tabellen, ikke **tabell**.
+
