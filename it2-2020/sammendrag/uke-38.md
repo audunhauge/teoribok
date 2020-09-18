@@ -48,5 +48,5 @@ function summer(tabell) {
 
 Du skal kunne lage en funksjon som tar imot en array \(array parameter\) og beregner summen av tallene i denne tabellen.
 
-Test deg selv på [array funksjoner](https://matte.oppgaver.net/quiz?qid=46364)
+Test deg selv på [array funksjoner](https://matte.oppgaver.net/free?qid=46364) - du kan generere nye versjoner med grønn sirkel-pil \(recycle\).
 
