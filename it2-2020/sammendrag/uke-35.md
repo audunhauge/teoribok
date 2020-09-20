@@ -11,5 +11,7 @@
 * [x] Legge et element inn som barn av et annet element `divTall.append(div);`
 * [x] Les teori om [Løkker](../teori/lokker.md)
 
+Du kan teste deg selv med en quiz:  [Uke35](https://matte.oppgaver.net/quiz?qid=67541) .
+
 
 

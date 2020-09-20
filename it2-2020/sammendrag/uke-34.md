@@ -11,3 +11,7 @@
 * [x] Lage en enkel funksjon \(bare skjelettet\). `function setup() { }`
 * [x] Du skal ha konto på github
 
+Du kan teste deg selv med en quiz:  [Uke34](https://matte.oppgaver.net/quiz?qid=67541) .  
+Foreløpig får du ingen oppsummering av selvtesten, men du kan forsøke så mange ganger du vil.  
+Klikk på grønn recycle knapp for å nullstille/lage nytt spørsmål.
+
