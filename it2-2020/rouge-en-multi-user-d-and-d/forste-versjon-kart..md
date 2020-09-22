@@ -82,3 +82,6 @@ Vi lager en html-side og litt css slik at vi kan tegne et enkelt brukergrensesni
 Innholdet i \#board er 12x12 ruter \(divs\). Disse settes til 32x32 px i css.  
 Bakgrunnen i hver rute er henta fra tiles32.png  \(stjålet fra tyrant\). Dette er en samling med 32x32 bakgrunner som representerer terreng/gras/fjell osv.
 
+[https://github.com/audunhauge/rouge/tree/v0.01](https://github.com/audunhauge/rouge/tree/v0.01)  
+Dette er versjon 0.01 på github - versjonsnummeret viser at dette er en pre-release \(ikke regn med at ting fungerer\).
+
