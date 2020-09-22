@@ -58,11 +58,10 @@ Det er verdiene i denne variabelen som styrer løkka.
 Du kan avslutte en løkke før den er ferdig med **break**.
 
 ```javascript
-let i;   // løkketelleren
-let finnEtternavn = inpEtternavn.value;   // henter søkeordet fra skjema
-let antallElever = elev.length;  // lengden på arrayet == antall elever
-var funnet = false;
-for (i=0; i<antallElever; i+=1) {
+const finnEtternavn = inpEtternavn.value;   // henter søkeordet fra skjema
+const antallElever = elev.length;  // lengden på arrayet == antall elever
+let funnet = false;
+for (let i=0; i<antallElever; i+=1) {
   if (elev[i].etternavn === finnEtternav) {
     funnet = true;
     break;   // vi har funnet en elev med riktig etternavn
@@ -103,6 +102,32 @@ while (i<10) {
 // blir til
 for (let i=0; i<10; i++) {
   // kode som gjentas
+}
+```
+
+Under et eksempel hvor while passer best. Vi vet ikke hvor mange bokstaver vi må bla forbi før første siffer. Vi vet heller ikke hvor mange siffer vi finner i en klynge. Med en for-løkke vil vi helst vite hvor mange ganger vi skal iterere før vi starter løkka.
+
+```javascript
+//  finnTall("ole er 12 og per er 16 år") => [12,16]
+function finnTall(tekst) {
+  const numbers = [];
+  const isDigit = ch => "0123456789".includes(ch);
+  let i=0; const lengde = tekst.length;
+  while (i < lengde) {
+    const ch = tekst[i]; 
+    i++;
+    if (isDigit(ch) ) {
+       // fant et siffer
+       let strNum = ch;
+       // neste løkke suger opp alle påfølgende siffer
+       while(i < lengde && isDigit(tekst[i]) ) {
+          strNum += tekst[i];  // limer på neste siffer
+          i++;
+       }
+       numbers.push(Number(strNum));
+    }
+  }
+  return numbers;
 }
 ```
 
