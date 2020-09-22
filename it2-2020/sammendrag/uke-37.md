@@ -11,3 +11,5 @@ Vi kan bruke denne oppskriften til å lage mange identiske baller \(de har samme
 * [ ] Lage en betingelse som tester en verdi `if (b.x < 0) { .... }`
 * [ ] Lage en funksjon som gir tilbake en verdi \(return\) `function giMegEnFarge() {   return 'blue'; }`
 
+Her er en øvingsoppgave om [funksjoner](https://matte.oppgaver.net/quiz?qid=68370) .
+
