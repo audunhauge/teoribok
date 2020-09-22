@@ -2,7 +2,7 @@
 
 Jeg har lagt til kode som aktiveres av menyvalget New. Foreløpig fjerner den bare alle Shapes fra lista og visker ut canvas. Det vi skal lage er et skjema hvor bruker velger layout for arket de skal tegne på.
 
-![Eksemple p&#xE5; &quot;New File&quot; skjema](../.gitbook/assets/newfile.png)
+![Eksemple p&#xE5; &quot;New File&quot; skjema](../../.gitbook/assets/newfile.png)
 
 Oppdraget denne gang er da å lage en div med layout slik at vi får omtrent dette skjemaet.  
 Dette kan gjøres ved å legge til en div over main som i utgangspunktet er skjult.  

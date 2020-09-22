@@ -51,7 +51,7 @@ Eksemplet med data fra Brazil viser formatet som er brukt. Du må skrive kode so
 
 Søylene skal stables slik at de yngste er nederst, menn til venstre og kvinner til høyre.
 
-![UK 1950](../.gitbook/assets/image%20%282%29.png)
+![UK 1950](../../.gitbook/assets/image%20%282%29.png)
 
 Lag en webkompononent som tegner et slikt diagram:
 

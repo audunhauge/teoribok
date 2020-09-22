@@ -30,5 +30,5 @@ Sjekk ut [denne](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tut
 
 Prøv å lage et tegneprogram hvor du kan tegne forskjellige figurer - firkanter, sirkler osv.
 
-Du kan også sjekke ut et større eksempel som viser design av et Paint program - se [link](../paint/).
+Du kan også sjekke ut et større eksempel som viser design av et Paint program - se [link](../../it2-2020/paint/).
 

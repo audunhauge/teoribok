@@ -23,11 +23,11 @@ Mål for opplæringen er at eleven skal kunne
 * tilordne uttrykk til variabler
 * programmere med enkle og [indekserte](teori/array.md) variabler eller andre kolleksjoner av variabler
 * programmere med valg og [gjentakelser](teori/lokker.md)
-* lage egne og bruke egne og andres [funksjoner](../it3/funksjoner.md) eller metoder med parametere
+* lage egne og bruke egne og andres [funksjoner](teori/funksjoner.md) eller metoder med parametere
 * programmere funksjoner eller metoder som blir aktivisert av hendelser
 * utvikle og sette sammen delprogrammer
 * teste og finne feil i programmer ved å bruke vanlige teknikker
-* gjøre rede for hensikten med [objektorientert](../it3/klasser.md) utvikling og begrepene klasse, objekt og arv
+* gjøre rede for hensikten med [objektorientert](../teori/it2-teori/klasser.md) utvikling og begrepene klasse, objekt og arv
 
 ### **Multimedieutvikling**
 

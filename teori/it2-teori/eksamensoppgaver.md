@@ -72,7 +72,7 @@ Lag app
 
 ## Eksamen høst 2019
 
-{% file src="../.gitbook/assets/it2\_h19.pdf" caption="IT2 heldag høst 2019.pdf" %}
+{% file src="../../.gitbook/assets/it2\_h19.pdf" caption="IT2 heldag høst 2019.pdf" %}
 
 ### Oppgave 1.   animasjon - redigering - eventlistener
 

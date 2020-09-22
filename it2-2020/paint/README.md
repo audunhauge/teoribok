@@ -4,7 +4,7 @@
 
 Vi skal lage en simple paint versjon, du kan hente første versjon fra [https://github.com/audunhauge/jspaint/tree/v1.0](https://github.com/audunhauge/jspaint/tree/v1.0)
 
-![](../.gitbook/assets/paint.png)
+![](../../.gitbook/assets/paint.png)
 
 På venstre side har vi verktøy - peker firkant polygon polyline og visk.  
 Tegneområde \(canvas\) til høyre og fargevelgere nederst \(strek og fyll\).  
@@ -320,7 +320,7 @@ I VSCode kan du også installere et addon som automatisk generer dokumentasjon u
 
 I bildet under ser du dokumentasjon generert av jsdoc preview:
 
-![](../.gitbook/assets/jsdoc.png)
+![](../../.gitbook/assets/jsdoc.png)
 
 Dette genereres automatisk når du saver en js fil med jsdoc - kommentarer.
 

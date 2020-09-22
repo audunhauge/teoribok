@@ -11,7 +11,7 @@ Dette virka fint for uroterte firkanter, ikke veldig bra for sirkler \(men som o
 Problemet oppstår når vi tillater roterte firkanter \(og andre figurer\).   
 Illustrasjonen under er laga med Paint.js \(v1.8\).
 
-![Den bl&#xE5; firkanten er rotert - n&#xE5; er det overlap med den r&#xF8;de](../.gitbook/assets/overlap.png)
+![Den bl&#xE5; firkanten er rotert - n&#xE5; er det overlap med den r&#xF8;de](../../.gitbook/assets/overlap.png)
 
 For å komme enkelt ut av denne knipa laga jeg en ny test som sjekker senter + radius for hver figur for overlap. Problemet er selvsagt at da får jeg overlap mellom den røde og begge de blå - radius er slik at hele firkanten er inni, senter midt i firkanten.
 
@@ -195,7 +195,7 @@ function polygonPoint(points, x, y, tolerance)
 
 Problemet er nå å ta disse i bruk.  
 Dette er kompetansemålet  fra læreplanmålene:  
-  _lage egne og bruke egne og andres_ [_funksjoner_](../it3/funksjoner.md) _eller metoder med parametere_
+  _lage egne og bruke egne og andres_ [_funksjoner_](../teori/funksjoner.md) _eller metoder med parametere_
 
 ### Polygon Polygon
 

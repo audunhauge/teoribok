@@ -19,7 +19,7 @@ Diagram For å vise koblinger mellom tabeller skal vi lære å tegne ER-diagram.
 
  Under er koden for skjema hvor nye bøker registreres:
 
-![Enkel ER modell for bibliotek](../.gitbook/assets/bibsql.png)
+![Enkel ER modell for bibliotek](../../.gitbook/assets/bibsql.png)
 
 Denne modellen er laga med  [modelleringsprogrammet](https://erdplus.com) erdplus.
 

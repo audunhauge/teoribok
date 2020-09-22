@@ -5,7 +5,7 @@ Oppdraget i dag er å legge til kode som leser inn verdiene fra skjemaet og sett
 
 Skjemaet har omtrent denne utformingen:
 
-![Skjema for nytt Ark \(New file\)](../.gitbook/assets/newfile.png)
+![Skjema for nytt Ark \(New file\)](../../.gitbook/assets/newfile.png)
 
 Her er html som brukes i skjemaet - og koden for  å starte et nytt ark.  
 Oppdraget er å skrive kode som leser verdiene fra skjema og setter css-variablene slik at brukervalgene tar effekt.

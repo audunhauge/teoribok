@@ -74,7 +74,7 @@ function nextM() {
 }  
 ```
 
-For å fikse visning av navn på måneder legger vi til følgende [Map](../it3/map-og-set.md#map):
+For å fikse visning av navn på måneder legger vi til følgende [Map](../it2-teori/map-og-set.md#map):
 
 ```javascript
 let monthNames = new Map();

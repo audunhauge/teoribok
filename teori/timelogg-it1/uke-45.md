@@ -51,7 +51,7 @@ Summer 128+64+16+8+2+1 \(der hvor binærtallet har siffer 1\).
 
 ### Lekse
 
-{% page-ref page="../teori/untitled/digital-samtid.md" %}
+{% page-ref page="../untitled/digital-samtid.md" %}
 
 
 

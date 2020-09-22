@@ -132,7 +132,7 @@ div#imgform button { ... } ER mer presis
 {% endtab %}
 {% endtabs %}
 
-![Den bl&#xE5; biten skal dekke hele rammen](../.gitbook/assets/loadimg.png)
+![Den bl&#xE5; biten skal dekke hele rammen](../../.gitbook/assets/loadimg.png)
 
 Skissen viser omtrent hvordan skjema skal se ut. Den blå biten er \#loadfile, \#imgloader må ha samme størrelse. Hele skjema må ha plass til OK og Cancel under - de kommer utforbi bilderammen.  
 Lag css-regler slik at vi får dette utseende. Du kan få god bruk for funksjonene **calc**, **clamp**, **max** og **min** i reglene du skriver. Vi ønsker ikke at skjema skal bli mindre enn 150 x 150 px.
