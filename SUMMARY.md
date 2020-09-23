@@ -24,6 +24,7 @@
     * [Funksjoner](it2-2020/teori/funksjoner.md)
   * [Rouge - en multi user d&d](it2-2020/rouge-en-multi-user-d-and-d/README.md)
     * [Første versjon - kart.](it2-2020/rouge-en-multi-user-d-and-d/forste-versjon-kart..md)
+    * [Kill goblins](it2-2020/rouge-en-multi-user-d-and-d/kill-goblins.md)
   * [Paint - design av gui](it2-2020/paint/README.md)
     * [Paint - "kan tegne firkanter" versjonen.](it2-2020/paint/paint-kan-tegne-firkanter-versjonen..md)
     * [Paint - "angre funksjon"](it2-2020/paint/paint-angre-funksjon.md)
